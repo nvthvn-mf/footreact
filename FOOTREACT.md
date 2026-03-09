@@ -42,3 +42,15 @@ Une fois que notre application React affiche correctement les données publiques
 - **Gestion des limites d'API :** La version gratuite étant limitée, nous devrons utiliser des outils comme React Query (ou gérer intelligemment notre `useEffect`) pour mettre les données en cache et éviter de faire une requête à chaque fois qu'un utilisateur change de page.
 
 - **L'absence d'images d'action :** L'API fournit les écussons des clubs et des compétitions, mais pas de photos de joueurs ou de matchs. Notre design devra s'adapter à une interface très "data-driven" (basée sur la typographie, les couleurs des clubs et de belles interfaces minimalistes).
+
+## Couleurs
+
+- **⚫ Fond Principal :** #121212 (Noir très profond, mais pas 100% noir pour éviter la fatigue visuelle).
+
+**🔘 Cartes & Conteneurs :** #1E1E1E (Gris très foncé, pour détacher les matchs du fond).
+
+- **🟢 Couleur d'Accentuation :** #00FF87 (Vert néon éclatant, à utiliser pour les boutons, les scores en direct ou l'équipe gagnante).
+
+- **⚪ Texte Principal :** #FFFFFF (Blanc pur pour une lisibilité maximale).
+
+- **🩶 Texte Secondaire :** #A0A0A0 (Gris clair pour les dates, les noms de stades ou les stats moins importantes).
