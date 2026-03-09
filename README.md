@@ -1,16 +1,62 @@
-# React + Vite
+# FootReact
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bienvenue sur le dépôt de **FootReact** !
 
-Currently, two official plugins are available:
+Il s'agit d'une application web "Single Page" (SPA) moderne, développée en React, qui s'inspire d'applications comme OneFootball. Notre objectif est de fournir aux fans de football une interface claire et rapide pour suivre les matchs, les classements et les statistiques de leurs compétitions favorites.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Les données sont propulsées par l'API REST [football-data.org](https://www.football-data.org/).
 
-## React Compiler
+> **Note :** Pour plus d'informations sur la vision du projet, la liste détaillée des fonctionnalités et l'architecture prévue, veuillez lire le fichier [FOOTREACT.md](./FOOTREACT.md). Vous trouverez également notre planning de sprint dans [ROADMAP.md](./ROADMAP.md).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Stack Technique
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend :** React + Vite
+- **Routage :** React Router
+- **Appels API :** Fetch / Axios
+- **Stylisation :** (À définir - ex: Tailwind CSS / CSS Modules)
+- **Base de données (V2) :** Supabase
+
+---
+
+## Comment lancer le projet en local
+
+Pour faire tourner ce projet sur votre machine, assurez-vous d'avoir [Node.js](https://nodejs.org/) installé, puis suivez ces étapes :
+
+### 1. Cloner le dépôt
+
+Ouvrez votre terminal et clonez le projet :
+
+```bash
+git clone https://github.com/nvthvn-mf/footreact
+cd footreact
+```
+
+### 2. Installer les dépendances
+
+Installez les paquets Node nécessaires au fonctionnement de React :
+
+```bash
+npm install
+```
+
+### 3. Configurer la clé API
+
+Avant de lancer l'application, vous aurez besoin d'une clé API gratuite sur [football-data.org](https://www.football-data.org/).
+
+1. Créez un fichier nommé `.env` à la racine du projet.
+2. Ajoutez-y votre clé de cette manière :
+   ```env
+   VITE_FOOTBALL_API_KEY=votre_cle_api_ici
+   ```
+
+### 4. Lancer le serveur de développement
+
+Démarrez l'application en mode développement :
+
+```bash
+npm run dev
+```
+
+L'application sera accessible dans votre navigateur, généralement à l'adresse `http://localhost:5173`.
