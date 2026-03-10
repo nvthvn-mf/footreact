@@ -9,14 +9,12 @@ const LeagueStandings = () => {
 
     return (
         <div style={{ width: '320px' }}>
-            {/* Titre hors du tableau */}
             <h4 className="text-white mb-4 fw-bold" style={{ letterSpacing: '0.5px' }}>
                 League Standings
             </h4>
 
-            {/* Le conteneur du tableau avec le fond sombre arrondi */}
             <div className="p-3" style={{
-                backgroundColor: 'rgba(255, 255, 255, 0.05)', // Fond transparent sombre
+                backgroundColor: 'rgba(255, 255, 255, 0.05)',
                 borderRadius: '20px',
                 border: '1px solid rgba(255, 255, 255, 0.1)'
             }}>
