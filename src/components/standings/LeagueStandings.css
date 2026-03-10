@@ -1,0 +1,82 @@
+/* LeagueStandings.css */
+
+.standings-container {
+    width: 320px;
+}
+
+.standings-title {
+    letter-spacing: 0.5px;
+}
+
+.standings-box {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.standings-table {
+    color: #a0aec0;
+}
+
+.standings-thead {
+    opacity: 0.6;
+    font-size: 0.75rem;
+}
+
+/* Le style du bouton */
+.standings-btn {
+    color: #718096;
+    background-color: transparent;
+    border: 1px solid #2d3748;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.standings-btn:hover {
+    color: #ffffff;
+    border-color: #4a5568;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* --- Styles de base pour la ligne --- */
+.team-name-cell {
+    color: #cbd5e0 !important; /* Force le gris clair face à Bootstrap */
+    transition: color 0.3s ease;
+}
+
+.pts-cell {
+    font-weight: bold;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.pts-active {
+    color: #00ff85 !important; /* Force le vert fluo */
+}
+
+.pts-inactive {
+    color: #cbd5e0 !important; /* Force le gris clair */
+}
+
+/* --- Effets au survol (HOVER) --- */
+.standing-row-clickable {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* 1. Un très léger fond sur la ligne entière */
+.standing-row-clickable:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* 2. Le texte devient plus blanc */
+.standing-row-clickable:hover .team-name-cell {
+    color: #ffffff !important;
+}
+
+/* 3. Le score devient vert fluo et brille un peu */
+.standing-row-clickable:hover .pts-cell {
+    color: #00ff85 !important;
+    text-shadow: 0 0 8px rgba(0, 255, 133, 0.4);
+}
