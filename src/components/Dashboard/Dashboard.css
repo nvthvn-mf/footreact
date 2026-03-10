@@ -1,0 +1,97 @@
+/* Dashboard.css */
+
+/* --- Header & Search --- */
+.search-container {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem; /* Bords bien arrondis comme le design */
+  padding: 0.5rem 1rem;
+  width: 320px; /* Plus large comme sur le design */
+}
+
+.search-input {
+  background: transparent;
+  border: none;
+  color: var(--color-text-white);
+  width: 100%;
+  outline: none;
+  font-size: 0.875rem;
+}
+
+.search-input::placeholder {
+  color: #64748b; /* text-slate-500 */
+}
+
+.icon-btn {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-white);
+  border-radius: 0.75rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.icon-btn:hover {
+  background-color: var(--color-border);
+}
+
+/* --- Filtres de Dates (Hier, Aujourd'hui, Demain) --- */
+.filter-group {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 1rem; /* Forme de pilule allongée */
+  padding: 0.25rem;
+}
+
+.filter-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-text-white);
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover:not(.active) {
+  background-color: var(--color-border);
+}
+
+.filter-btn.active {
+  background-color: var(--color-primary);
+  color: var(--color-bg-dark); /* Texte sombre pour un contraste parfait */
+  box-shadow: 0 4px 15px rgba(0, 255, 136, 0.2); /* Légère lueur verte */
+}
+
+/* --- Menu Sort by League --- */
+.sort-container {
+  color: var(--color-text-muted);
+  transition: color 0.2s;
+}
+
+.sort-container:hover {
+  color: var(--color-primary);
+}
+
+/* On cache le style par défaut du select pour qu'il s'intègre au texte */
+.custom-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  outline: none;
+}
+.custom-select option {
+  background-color: var(--color-surface);
+  color: var(--color-text-white);
+}
