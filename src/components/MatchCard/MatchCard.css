@@ -1,0 +1,56 @@
+/* Conteneur principal de la carte et effet de survol */
+.match-card {
+  background-color: #162c22;
+  border-color: #223d31;
+  color: #ffffff;
+  border-radius: 1rem;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.match-card:hover {
+  transform: translateY(-6px);
+  border-color: #00ff88 !important;
+  box-shadow: 0 10px 20px rgba(0, 255, 136, 0.15) !important;
+}
+
+/* Textes et badges de l'en-tête */
+.match-card-league {
+  font-size: 0.65rem;
+  color: #64748b;
+  letter-spacing: 0.05em;
+  max-width: 70%;
+}
+
+.match-card-badge {
+  background-color: #0f231a;
+  color: #64748b;
+  border: 1px solid #223d31;
+}
+
+/* Logos des équipes */
+.match-card-logo-container {
+  width: 32px;
+  height: 32px;
+  background-color: #0f231a;
+  border: 1px solid #223d31;
+  padding: 4px;
+}
+
+.match-card-team-name {
+  font-size: 0.9rem;
+}
+
+/* Pied de la carte */
+.match-card-footer {
+  border-top: 1px solid #223d31;
+}
+
+.match-card-footer-text, 
+.match-card-footer-arrow {
+  color: #64748b;
+}
+
+.match-card-footer-text {
+  font-size: 0.75rem;
+}
