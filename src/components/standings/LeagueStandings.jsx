@@ -4,9 +4,9 @@ import './LeagueStandings.css';
 
 const LeagueStandings = () => {
     const teams = [
-        { pos: 1, team: 'Arsenal', p: 31, pts: 74, active: true },
-        { pos: 2, team: 'Liverpool', p: 31, pts: 72, active: true },
-        { pos: 3, team: 'Man City', p: 31, pts: 71, active: true },
+        { pos: 1, team: 'Arsenal', p: 31, pts: 74 },
+        { pos: 2, team: 'Liverpool', p: 31, pts: 72 },
+        { pos: 3, team: 'Man City', p: 31, pts: 71 },
     ];
 
     return (

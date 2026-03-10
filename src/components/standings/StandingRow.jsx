@@ -1,12 +1,15 @@
 import React from 'react';
 
-const StandingRow = ({ pos, team, p, pts, active }) => {
+const StandingRow = ({ pos, team, p, pts }) => {
+    const handleRowClick = () => {
+        console.log(`Redirection vers la page de l'équipe : ${team}`);
+    };
     return (
-        <tr key={pos}>
+        <tr className="standing-row-clickable" onClick={handleRowClick}>
             <td className="bg-transparent text-white py-3">{pos}</td>
-            <td className="bg-transparent" style={{ color: '#cbd5e0' }}>{team}</td>
+            <td className="bg-transparent team-name-cell">{team}</td>
             <td className="bg-transparent text-center text-white">{p}</td>
-            <td className="bg-transparent text-center" style={{ color: active ? '#00ff85' : '#cbd5e0' }}>
+            <td className="bg-transparent text-center pts-cell pts-inactive">
                 {pts}
             </td>
         </tr>

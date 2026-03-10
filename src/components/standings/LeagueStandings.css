@@ -40,16 +40,43 @@
     background-color: rgba(255, 255, 255, 0.05);
 }
 
-/* Les styles pour les lignes du tableau */
-.team-name {
-    color: #cbd5e0;
+/* --- Styles de base pour la ligne --- */
+.team-name-cell {
+    color: #cbd5e0 !important; /* Force le gris clair face à Bootstrap */
+    transition: color 0.3s ease;
 }
 
-/* Couleurs dynamiques pour les points */
+.pts-cell {
+    font-weight: bold;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
 .pts-active {
-    color: #00ff85; /* Vert fluo */
+    color: #00ff85 !important; /* Force le vert fluo */
 }
 
 .pts-inactive {
-    color: #cbd5e0; /* Gris */
+    color: #cbd5e0 !important; /* Force le gris clair */
+}
+
+/* --- Effets au survol (HOVER) --- */
+.standing-row-clickable {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* 1. Un très léger fond sur la ligne entière */
+.standing-row-clickable:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* 2. Le texte devient plus blanc */
+.standing-row-clickable:hover .team-name-cell {
+    color: #ffffff !important;
+}
+
+/* 3. Le score devient vert fluo et brille un peu */
+.standing-row-clickable:hover .pts-cell {
+    color: #00ff85 !important;
+    text-shadow: 0 0 8px rgba(0, 255, 133, 0.4);
 }
