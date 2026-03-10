@@ -7,7 +7,7 @@ function App() {
       <div className="app-container">
 
           <main style={{ padding: '20px', display: 'flex', justifyContent: 'flex-end' }}>
-              <LeagueStandings leagueCode="PL" />
+              <LeagueStandings leagueCode />
           </main>
       </div>
   )

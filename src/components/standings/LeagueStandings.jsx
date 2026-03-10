@@ -1,25 +1,23 @@
 import React from 'react';
+import StandingRow from "./StandingRow.jsx";
+import './LeagueStandings.css';
 
 const LeagueStandings = () => {
     const teams = [
         { pos: 1, team: 'Arsenal', p: 31, pts: 74, active: true },
-        { pos: 2, team: 'Liverpool', p: 31, pts: 72, active: false },
-        { pos: 3, team: 'Man City', p: 31, pts: 71, active: false },
+        { pos: 2, team: 'Liverpool', p: 31, pts: 72, active: true },
+        { pos: 3, team: 'Man City', p: 31, pts: 71, active: true },
     ];
 
     return (
-        <div style={{ width: '320px' }}>
-            <h4 className="text-white mb-4 fw-bold" style={{ letterSpacing: '0.5px' }}>
+        <div className="standings-container">
+            <h4 className="text-white mb-4 fw-bold standings-title">
                 League Standings
             </h4>
 
-            <div className="p-3" style={{
-                backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                borderRadius: '20px',
-                border: '1px solid rgba(255, 255, 255, 0.1)'
-            }}>
-                <table className="table table-borderless align-middle mb-0" style={{ color: '#a0aec0' }}>
-                    <thead className="small text-uppercase" style={{ opacity: 0.6, fontSize: '0.75rem' }}>
+            <div className="p-3 standings-box">
+                <table className="table table-borderless align-middle mb-0 standings-table">
+                    <thead className="small text-uppercase standings-thead">
                     <tr>
                         <th className="bg-transparent text-white">Pos</th>
                         <th className="bg-transparent text-white">Team</th>
@@ -29,28 +27,20 @@ const LeagueStandings = () => {
                     </thead>
                     <tbody className="fw-bold">
                     {teams.map((t) => (
-                        <tr key={t.pos}>
-                            <td className="bg-transparent text-white py-3">{t.pos}</td>
-                            <td className="bg-transparent" style={{ color: '#cbd5e0' }}>{t.team}</td>
-                            <td className="bg-transparent text-center text-white">{t.p}</td>
-                            <td className="bg-transparent text-center" style={{ color: t.active ? '#00ff85' : '#cbd5e0' }}>
-                                {t.pts}
-                            </td>
-                        </tr>
+                        <StandingRow
+                            key={t.pos}
+                            pos={t.pos}
+                            team={t.team}
+                            p={t.p}
+                            pts={t.pts}
+                            active={t.active}
+                        />
                     ))}
                     </tbody>
                 </table>
             </div>
 
-            <button className="btn w-100 mt-4 py-2 text-uppercase fw-bold" style={{
-                color: '#718096',
-                backgroundColor: 'transparent',
-                border: '1px solid #2d3748',
-                borderRadius: '12px',
-                fontSize: '0.8rem',
-                letterSpacing: '1px',
-                transition: 'all 0.3s ease'
-            }}>
+            <button className="btn w-100 mt-4 py-2 text-uppercase fw-bold standings-btn">
                 View Full Table
             </button>
         </div>

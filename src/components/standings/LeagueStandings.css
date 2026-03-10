@@ -1,0 +1,55 @@
+/* LeagueStandings.css */
+
+.standings-container {
+    width: 320px;
+}
+
+.standings-title {
+    letter-spacing: 0.5px;
+}
+
+.standings-box {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.standings-table {
+    color: #a0aec0;
+}
+
+.standings-thead {
+    opacity: 0.6;
+    font-size: 0.75rem;
+}
+
+/* Le style du bouton */
+.standings-btn {
+    color: #718096;
+    background-color: transparent;
+    border: 1px solid #2d3748;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.standings-btn:hover {
+    color: #ffffff;
+    border-color: #4a5568;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Les styles pour les lignes du tableau */
+.team-name {
+    color: #cbd5e0;
+}
+
+/* Couleurs dynamiques pour les points */
+.pts-active {
+    color: #00ff85; /* Vert fluo */
+}
+
+.pts-inactive {
+    color: #cbd5e0; /* Gris */
+}
