@@ -16,8 +16,7 @@ function Home() {
           </div>
 
           {/* Colonne de Droite : Insights (Taille fixe de 350px) */}
-          <aside className="home-right-sidebar d-flex flex-column gap-5 p-4 p-xl-5">
-              <TopScorer />
+            <aside className="home-right-sidebar d-none d-xl-flex flex-column gap-5 p-4 p-xl-5">              <TopScorer />
               <QuickTips />
               <LeagueStandings />
           </aside>
