@@ -1,16 +1,19 @@
 .home-container {
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .home-dashboard-area {
   flex-grow: 1;
-  overflow-y: auto; /* Permet au Dashboard de scroller indépendamment */
+  overflow-y: auto;
+  height: 100vh;
 }
 
 .home-right-sidebar {
   width: 100%;
-  overflow-y: auto; /* Permet à la colonne de droite de scroller indépendamment */
+  overflow-y: auto;
+  height: 100vh;
 }
 
 @media (min-width: 1200px) {
