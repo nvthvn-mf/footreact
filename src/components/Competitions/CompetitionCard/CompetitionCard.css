@@ -4,7 +4,7 @@
   border-radius: 1rem;
   transition: transform 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   cursor: pointer;
-  height: 100%; /* Ensure cards in a row have equal height */
+  /* height: 100%; /* Removed to prevent elongation */
 }
 
 .competition-card:hover {

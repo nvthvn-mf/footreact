@@ -53,7 +53,7 @@ const CompetitionCard = ({ competition }) => {
       </p>
 
       {/* Separator */}
-      <div className="card-separator my-3"></div> {/* Added separator */}
+      <div className="card-separator my-3"></div>
 
       <div className="d-flex justify-content-between align-items-center">
         <div>
