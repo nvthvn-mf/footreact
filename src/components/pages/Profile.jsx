@@ -2,9 +2,9 @@ import React from 'react';
 
 const Profile = () => {
     return (
-        <div className="p-4 text-white">
-            <h1>Mon Profil</h1>
-            <p>Paramètres de compte de Alex Johnson.</p>
+        <div className="container-fluid p-4 text-white">
+            <h2 className="fw-bold mb-4">Mon Profil</h2>
+            <p className="text-secondary">Paramètres de compte de Alex Johnson.</p>
         </div>
     );
 };

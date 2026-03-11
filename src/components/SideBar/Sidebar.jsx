@@ -1,15 +1,20 @@
 import React from 'react';
 import SidebarItem from './SidebarItem';
 import './Sidebar.css';
+import { useNavigate } from 'react-router-dom';
 
 const Sidebar = () => {
 
+    const navigate = useNavigate();
+
     const handleLogoClick = () => {
         console.log("Clic sur le logo : Retour à l'accueil");
+        navigate("/");
     };
 
     const handleProfileClick = () => {
         console.log("Clic sur le profil : Ouverture des paramètres utilisateur");
+        navigate("/profil");
     };
 
     return (
