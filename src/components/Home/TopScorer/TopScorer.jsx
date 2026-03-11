@@ -1,7 +1,7 @@
 // TopScorer/TopScorer.jsx
 import React from 'react';
 import './TopScorer.css';
-import competitionTopScorer from '../../mockData/competitionTopScorer.json';
+import competitionTopScorer from '../../../mockData/competitionTopScorer.json';
 
 const TopScorer = () => {
     

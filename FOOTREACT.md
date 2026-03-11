@@ -29,7 +29,7 @@ L'API nous donne accès aux compétitions, matchs, équipes, joueurs et classeme
 Une fois que notre application React affiche correctement les données publiques, l'intégration de Supabase la rendra interactive et personnalisée pour chaque utilisateur.
 
 - **Comptes Utilisateurs :** Inscription et connexion via email ou Google.
-- **Système de Favoris :** Possibilité de "liker" ou suivre des équipes, des joueurs ou des ligues spécifiques.
+- **Système de Favorites :** Possibilité de "liker" ou suivre des équipes, des joueurs ou des ligues spécifiques.
 - **Dashboard Personnalisé :** Une page d'accueil qui se modifie pour n'afficher que les matchs et actualités des équipes favorites de l'utilisateur connecté.
 - **Espace Social :** Un système de commentaires ou de mini-pronostics sur les matchs à venir, stocké dans la base de données Supabase.
 

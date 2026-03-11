@@ -1,9 +1,9 @@
 import React from 'react';
 import './Home.css';
-import Dashboard from '../Dashboard/Dashboard.jsx';
-import LeagueStandings from '../Standings/LeagueStandings.jsx';
-import TopScorer from '../TopScorer/TopScorer.jsx';
-import QuickTips from '../QuickTips/QuickTips.jsx';
+import Dashboard from './Dashboard/Dashboard.jsx';
+import LeagueStandings from './Standings/LeagueStandings.jsx';
+import TopScorer from './TopScorer/TopScorer.jsx';
+import QuickTips from './QuickTips/QuickTips.jsx';
 
 function Home() {
   return (

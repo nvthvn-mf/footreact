@@ -1,11 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "./App.jsx";
 import Home from "./components/Home/Home.jsx";
-import Standings from "./components/pages/Standings.jsx";
-import Teams from "./components/pages/Teams.jsx";
-import Players from "./components/pages/Players.jsx";
-import Favoris from "./components/pages/Favoris.jsx";
-import Profile from "./components/pages/Profile.jsx";
+import Competitions from "./components/Competitions/Competitions.jsx";
+import Teams from "./components/Teams/Teams.jsx";
+import Players from "./components/Players/Players.jsx";
+import Favorites from "./components/Favorites/Favorites.jsx";
+import Profile from "./components/Profile/Profile.jsx";
 import React from "react";
 
 const router = createBrowserRouter([
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "competitions",
-                element: <Standings />,
+                element: <Competitions />,
             },
             {
                 path: "equipes",
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "favoris",
-                element: <Favoris />,
+                element: <Favorites />,
             },
             {
                 path: "actualites",

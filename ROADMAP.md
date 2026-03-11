@@ -32,7 +32,7 @@
 - **Tâche 3.1 : UI Tableau de Classement** (Créer un composant tableau stylisé avec rang, logo équipe, nom, points, diff de buts) -> _Faites-le avec des données factices._
   - _Assignation :_ Dev B
   - _Dépendance :_ Tâche 1.1.
-- **Tâche 3.2 : Appels API Compétitions & Standings** (Créer les fonctions pour récupérer les classements d'une ligue spécifique).
+- **Tâche 3.2 : Appels API Compétitions & Competitions** (Créer les fonctions pour récupérer les classements d'une ligue spécifique).
   - _Assignation :_ Dev C
   - _Dépendance :_ Tâche 1.3.
 - **Tâche 3.3 : Page Ligue & Intégration** (Créer la page qui affiche le sélecteur de ligues et intègre le tableau de classement réel).
@@ -65,7 +65,7 @@
 **_Jour 6 : Anticipation V2 ou "Polishing"_**  
 **Objectif :** Préparer le terrain pour Supabase ou peaufiner l'app existante.
 
-- **Tâche 6.1 (Bonus) : Sauvegarde Locale des Favoris** (Permettre de cliquer sur une étoile à côté d'une équipe pour l'ajouter en favori dans le localStorage du navigateur. C'est la première étape avant Supabase).
+- **Tâche 6.1 (Bonus) : Sauvegarde Locale des Favorites** (Permettre de cliquer sur une étoile à côté d'une équipe pour l'ajouter en favori dans le localStorage du navigateur. C'est la première étape avant Supabase).
   - _Assignation :_ Dev A
   - _Dépendance :_ Tâche 4.3.
 - **Tâche 6.2 (Bonus) : Setup Supabase** (Créer le projet Supabase, installer le client JS, préparer la page de Login/Signup avec de la simple UI).

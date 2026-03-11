@@ -1,9 +1,9 @@
 import React from "react";
 import "./Dashboard.css";
 
-import DashboardHeader from "../DashboardHeader/DashboardHeader";
-import DashboardFilters from "../DashboardFilters/DashboardFilters";
-import MatchCard from "../MatchCard/MatchCard";
+import DashboardHeader from "../DashboardHeader/DashboardHeader.jsx";
+import DashboardFilters from "../DashboardFilters/DashboardFilters.jsx";
+import MatchCard from "../MatchCard/MatchCard.jsx";
 
 function Dashboard() {
 

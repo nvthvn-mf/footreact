@@ -38,7 +38,7 @@ const Sidebar = () => {
                 <SidebarItem icon="trophy" label="Compétitions" path="/competitions" />
                 <SidebarItem icon="diversity_3" label="Équipes" path="/equipes" />
                 <SidebarItem icon="person" label="Joueurs" path="/joueurs" />
-                <SidebarItem icon="bookmark_heart" label="Favoris" path="/favoris" />
+                <SidebarItem icon="bookmark_heart" label="Favorites" path="/favoris" />
                 <SidebarItem icon="newspaper" label="Actualités" path="/actualites" />
             </nav>
 
