@@ -2,9 +2,9 @@ import React from 'react';
 
 const Players = () => {
     return (
-        <div className="p-4 text-white">
-            <h1>Joueurs</h1>
-            <p>Statistiques des joueurs...</p>
+        <div className="container-fluid p-4 text-white">
+            <h2 className="fw-bold mb-4">Joueurs</h2>
+            <p className="text-secondary">Statistiques des joueurs...</p>
         </div>
     );
 };

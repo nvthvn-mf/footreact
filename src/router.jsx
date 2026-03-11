@@ -6,6 +6,7 @@ import Teams from "./components/pages/Teams.jsx";
 import Players from "./components/pages/Players.jsx";
 import Favoris from "./components/pages/Favoris.jsx";
 import Profile from "./components/pages/Profile.jsx";
+import React from "react";
 
 const router = createBrowserRouter([
     {
@@ -35,9 +36,9 @@ const router = createBrowserRouter([
             {
                 path: "actualites",
                 element: (
-                    <div className="p-4 text-white">
-                        <h1>Actualités</h1>
-                        <p>Dernières news du monde du foot.</p>
+                    <div className="container-fluid p-4 text-white">
+                        <h2 className="fw-bold mb-4">Actualités</h2>
+                        <p className="text-secondary">Dernières news du monde du foot.</p>
                     </div>
                 ),
             },
