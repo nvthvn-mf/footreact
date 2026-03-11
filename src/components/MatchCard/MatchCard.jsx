@@ -34,27 +34,33 @@ function MatchCard({ match }) {
         {/* Équipes & Scores */}
         <div className="d-flex flex-column gap-3 mb-4">
           {/* Équipe Domicile */}
-          <div className="d-flex justify-content-between align-items-center">
-            <div className="d-flex align-items-center gap-3">
-              <div className="rounded-circle d-flex align-items-center justify-content-center match-card-logo-container">
+          {/* Ajout d'un gap-2 pour aérer avec le score */}
+          <div className="d-flex justify-content-between align-items-center gap-2">
+            
+            {/* L'ajout de overflow-hidden ici permet au texte enfant d'activer ses "..." */}
+            <div className="d-flex align-items-center gap-3 overflow-hidden">
+              {/* flex-shrink-0 empêche le logo de se faire écraser par le long texte */}
+              <div className="rounded-circle d-flex align-items-center justify-content-center match-card-logo-container flex-shrink-0">
                 <img src={homeTeam.crest} alt={homeTeam.shortName} className="img-fluid object-fit-contain" />
               </div>
               <span className="fw-semibold match-card-team-name">{homeTeam.shortName}</span>
             </div>
-            <span className="fw-bold fs-5">
+            
+            {/* flex-shrink-0 empêche le score de se faire écraser */}
+            <span className="fw-bold fs-5 flex-shrink-0">
               {homeScore !== null ? homeScore : '-'}
             </span>
           </div>
 
           {/* Équipe Extérieur */}
-          <div className="d-flex justify-content-between align-items-center">
-            <div className="d-flex align-items-center gap-3">
-              <div className="rounded-circle d-flex align-items-center justify-content-center match-card-logo-container">
+          <div className="d-flex justify-content-between align-items-center gap-2">
+            <div className="d-flex align-items-center gap-3 overflow-hidden">
+              <div className="rounded-circle d-flex align-items-center justify-content-center match-card-logo-container flex-shrink-0">
                 <img src={awayTeam.crest} alt={awayTeam.shortName} className="img-fluid object-fit-contain" />
               </div>
               <span className="fw-semibold match-card-team-name">{awayTeam.shortName}</span>
             </div>
-            <span className="fw-bold fs-5">
+            <span className="fw-bold fs-5 flex-shrink-0">
               {awayScore !== null ? awayScore : '-'}
             </span>
           </div>
