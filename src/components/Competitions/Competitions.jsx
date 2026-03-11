@@ -8,7 +8,6 @@ const Competitions = () => {
     const allCompetitions = competitionsData.competitions;
 
     // Filtrage pour les "Compétitions Mondiales" (toutes les compétitions pour l'instant)
-    // Tu pourrais affiner ce filtre si tu veux exclure certains types ou zones
     const globalCompetitions = allCompetitions;
 
     // Filtrage pour les "Coupes Majeures"
@@ -18,10 +17,9 @@ const Competitions = () => {
     return (
         <div className="competitions-page d-flex flex-column flex-grow-1 p-4">
             <h2 className="text-white mb-4">Compétitions Mondiales</h2>
-            <p className="text-muted mb-4">
+            <p className="text-white mb-4"> {/* Changé de text-muted à text-white */}
                 Parcourez et analysez des données approfondies des plus grandes scènes de football mondiales.
             </p>
-
             {/* Navigation pour les catégories - Placeholder pour l'instant */}
             <div className="d-flex gap-3 mb-4">
                 <button className="btn btn-primary-outline active">Toutes les Compétitions</button>
@@ -29,8 +27,7 @@ const Competitions = () => {
                 <button className="btn btn-primary-outline">Coupes</button>
                 {/* Ajoute d'autres catégories si besoin */}
             </div>
-
-            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 flex-grow-1 overflow-y-auto mb-5">
+            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 flex-grow-1 overflow-y-auto mb-3"> {/* mb-3 au lieu de mb-5 */}
                 {globalCompetitions.map(competition => (
                     <div className="col" key={competition.id}>
                         <CompetitionCard competition={competition} />
@@ -41,8 +38,8 @@ const Competitions = () => {
             {/* Section Coupes Majeures */}
             {majorCups.length > 0 && (
                 <>
-                    <h2 className="text-white mt-5 mb-3">Coupes Majeures</h2>
-                    <p className="text-muted mb-4">
+                    <h2 className="text-white mt-3 mb-3">Coupes Majeures</h2> {/* mt-3 au lieu de mt-4 */}
+                    <p className="text-white mb-4">
                         Suivi des phases éliminatoires et des tournois de coupe nationaux.
                     </p>
                     <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
