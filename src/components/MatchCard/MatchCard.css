@@ -6,6 +6,8 @@
   border-radius: 1rem;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+  container-type: inline-size; 
+  container-name: matchcard;
 }
 
 .match-card:hover {
@@ -39,6 +41,10 @@
 
 .match-card-team-name {
   font-size: 0.9rem;
+  /* L'étape 2 : La magie pour ajouter "..." si le texte manque de place */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Pied de la carte */
@@ -53,4 +59,10 @@
 
 .match-card-footer-text {
   font-size: 0.75rem;
+}
+
+@container matchcard (max-width: 120px) {
+  .match-card-team-name {
+    display: none !important;
+  }
 }

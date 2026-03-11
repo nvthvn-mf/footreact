@@ -1,23 +1,20 @@
 import React from 'react';
 import './App.css';
+import Home from './components/Home/Home.jsx';
 import Sidebar from "./components/SideBar/Sidebar.jsx";
 import { Outlet } from "react-router-dom";
 
 function App() {
-  
   return (
-
-      <div className="d-flex min-vh-100" style={{ backgroundColor: 'var(--color-bg-dark)' }}>
+      <div className="d-flex vh-100 overflow-hidden" style={{ backgroundColor: 'var(--color-bg-dark)' }}>
 
           <Sidebar />
-
-          <main className="flex-grow-1" style={{ overflowY: 'auto' }}>
+          <main className="flex-grow-1 d-flex">
               <Outlet />
           </main>
 
       </div>
   );
-
 }
 
 export default App;
