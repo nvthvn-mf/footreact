@@ -110,6 +110,17 @@
     font-weight: bold; /* Ou 700 */
 }
 
+/* Style quand le lien est la page actuelle */
+.sidebar-item.active {
+    background-color: rgba(0, 255, 133, 0.1);
+}
+
+.sidebar-item.active .sidebar-icon,
+.sidebar-item.active .sidebar-label {
+    color: #00ff85 !important;
+    font-weight: bold;
+}
+
 /* Si tu avais une classe .active, tu peux la supprimer ou la commenter */
 /* .sidebar-item.active { ... } */
 

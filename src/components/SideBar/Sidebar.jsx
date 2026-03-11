@@ -29,12 +29,12 @@ const Sidebar = () => {
 
             {/* Menu principal */}
             <nav className="sidebar-menu">
-                <SidebarItem icon="home" label="Accueil" />
-                <SidebarItem icon="trophy" label="Compétitions" />
-                <SidebarItem icon="diversity_3" label="Équipes" />
-                <SidebarItem icon="person" label="Joueurs" />
-                <SidebarItem icon="bookmark_heart" label="Favoris" />
-                <SidebarItem icon="newspaper" label="Actualités" />
+                <SidebarItem icon="home" label="Accueil" path="/" />
+                <SidebarItem icon="trophy" label="Compétitions" path="/competitions" />
+                <SidebarItem icon="diversity_3" label="Équipes" path="/equipes" />
+                <SidebarItem icon="person" label="Joueurs" path="/joueurs" />
+                <SidebarItem icon="bookmark_heart" label="Favoris" path="/favoris" />
+                <SidebarItem icon="newspaper" label="Actualités" path="/actualites" />
             </nav>
 
             {/* Footer: Profil Utilisateur */}
