@@ -1,0 +1,73 @@
+/* TopScorer/TopScorer.css */
+
+.scorer-rank {
+  width: 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+
+.scorer-avatar-container {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.scorer-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Permet à l'image de bien remplir le cercle */
+}
+
+.scorer-info {
+  flex: 1;
+  overflow: hidden;
+}
+
+.scorer-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-white);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Ajoute des "..." si le nom est trop long */
+  margin-bottom: 0;
+}
+
+.scorer-team {
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0;
+}
+
+.scorer-goals {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-primary); /* Le vert fluo du design */
+}
+.scorer-row {
+  padding: 0.5rem;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.scorer-row:hover {
+  /* On utilise une couleur de fond légèrement plus claire au survol */
+  background-color: var(--color-border); 
+  /* Petit décalage élégant vers la droite */
+  transform: translateX(6px); 
+}
+
+/* On peut même faire briller le nombre de buts au survol de la ligne ! */
+.scorer-row:hover .scorer-goals {
+  text-shadow: 0 0 8px rgba(0, 255, 136, 0.4);
+}
