@@ -8,8 +8,21 @@
   --color-text-white: #ffffff;
 }
 
+/* Reset Vite default #root constraints */
+#root {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
 /* le fond global de notre app ! */
 body {
+  margin: 0;
+  padding: 0;
   background-color: var(--color-bg-dark);
   color: var(--color-text-white);
   font-family: 'Lexend', sans-serif;
