@@ -24,11 +24,12 @@ const QuickTips = () => {
                 </h3>
                 
                 <p className="quick-tips-text">
-                    You can set push notifications for specific teams to never miss a kickoff!
+                    Vous pouvez configurer des notifications push pour des équipes spécifiques 
+                    afin de ne jamais manquer un coup d'envoi !
                 </p>
                 
                 <button className="quick-tips-btn">
-                    Enable Alerts 
+                    Activez les alertes 
                     <span className="material-symbols-outlined" style={{ fontSize: '0.875rem' }}>
                         arrow_forward
                     </span>

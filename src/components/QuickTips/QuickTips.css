@@ -1,0 +1,74 @@
+/* QuickTips/QuickTips.css */
+
+.quick-tips-container {
+  /* Fond vert foncé semi-transparent et bordure subtile */
+  background-color: rgba(0, 255, 136, 0.1);
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  position: relative;
+  overflow: hidden; /* Empêche la lueur de déborder du cadre */
+  cursor: pointer;
+}
+
+/* La lueur verte floutée en bas à droite */
+.quick-tips-glow {
+  position: absolute;
+  right: -1rem;
+  bottom: -1rem;
+  width: 6rem;
+  height: 6rem;
+  background-color: rgba(0, 255, 136, 0.2);
+  border-radius: 50%;
+  filter: blur(24px); /* C'est ça qui crée l'effet de lueur douce */
+  transition: all 0.5s ease;
+  z-index: 0;
+}
+
+/* Au survol du conteneur, la lueur s'intensifie */
+.quick-tips-container:hover .quick-tips-glow {
+  background-color: rgba(0, 255, 136, 0.3);
+}
+
+/* Le contenu doit rester au-dessus de la lueur */
+.quick-tips-content {
+  position: relative;
+  z-index: 1;
+}
+
+.quick-tips-title {
+  color: var(--color-primary);
+  font-size: 0.875rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.quick-tips-text {
+  color: #94a3b8; /* Gris clair bleuté (équivalent au slate-400 de l'image) */
+  font-size: 0.75rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.quick-tips-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--color-primary);
+  font-size: 0.625rem; /* 10px */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: all 0.3s ease;
+}
+
+/* L'animation de la flèche qui recule légèrement au survol */
+.quick-tips-container:hover .quick-tips-btn {
+  gap: 0.5rem;
+}
