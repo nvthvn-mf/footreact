@@ -51,3 +51,23 @@
   font-weight: 700;
   color: var(--color-primary); /* Le vert fluo du design */
 }
+.scorer-row {
+  padding: 0.5rem;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.scorer-row:hover {
+  /* On utilise une couleur de fond légèrement plus claire au survol */
+  background-color: var(--color-border); 
+  /* Petit décalage élégant vers la droite */
+  transform: translateX(6px); 
+}
+
+/* On peut même faire briller le nombre de buts au survol de la ligne ! */
+.scorer-row:hover .scorer-goals {
+  text-shadow: 0 0 8px rgba(0, 255, 136, 0.4);
+}
