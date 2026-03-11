@@ -1,13 +1,10 @@
-/* QuickTips/QuickTips.css */
-
 .quick-tips-container {
-  /* Fond vert foncé semi-transparent et bordure subtile */
   background-color: rgba(0, 255, 136, 0.1);
   border: 1px solid rgba(0, 255, 136, 0.2);
   border-radius: 1rem;
   padding: 1.25rem;
   position: relative;
-  overflow: hidden; /* Empêche la lueur de déborder du cadre */
+  overflow: hidden; 
   cursor: pointer;
 }
 
@@ -20,7 +17,7 @@
   height: 6rem;
   background-color: rgba(0, 255, 136, 0.2);
   border-radius: 50%;
-  filter: blur(24px); /* C'est ça qui crée l'effet de lueur douce */
+  filter: blur(24px); 
   transition: all 0.5s ease;
   z-index: 0;
 }
@@ -47,7 +44,7 @@
 }
 
 .quick-tips-text {
-  color: #94a3b8; /* Gris clair bleuté (équivalent au slate-400 de l'image) */
+  color: #94a3b8; 
   font-size: 0.75rem;
   line-height: 1.6;
   margin-bottom: 1rem;

@@ -1,4 +1,3 @@
-// QuickTips/QuickTips.jsx
 import React from 'react';
 import './QuickTips.css';
 
@@ -11,10 +10,7 @@ const QuickTips = () => {
 
     return (
         <div className="quick-tips-container mb-4" onClick={handleEnableAlerts}>
-            {/* Lueur d'arrière-plan */}
             <div className="quick-tips-glow"></div>
-            
-            {/* Contenu principal (au-dessus de la lueur) */}
             <div className="quick-tips-content">
                 <h3 className="quick-tips-title">
                     <span className="material-symbols-outlined" style={{ fontSize: '1.125rem' }}>
