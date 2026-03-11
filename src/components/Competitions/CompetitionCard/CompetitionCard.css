@@ -68,3 +68,22 @@
 .bi-arrow-right {
     color: var(--color-primary);
 }
+
+/* Status Badges */
+.badge {
+    padding: 0.3em 0.6em;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--color-bg-dark); /* Text color for badges */
+}
+
+.badge-tier-one {
+    background-color: var(--color-primary); /* Vert fluo pour TIER_ONE */
+}
+
+.badge-default {
+    background-color: var(--color-text-muted); /* Gris pour les autres plans */
+    color: var(--color-text-white);
+}

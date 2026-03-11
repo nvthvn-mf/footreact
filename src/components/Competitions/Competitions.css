@@ -1,0 +1,30 @@
+.competitions-page {
+    background-color: var(--color-bg-dark); /* Ensure background matches global theme */
+    color: var(--color-text-white);
+    padding: 1.5rem; /* Adjust padding as needed */
+    height: 100%; /* Take full height of parent */
+    overflow-y: auto; /* Enable scrolling for this specific content area */
+}
+
+/* Custom button style for category navigation */
+.btn-primary-outline {
+    background-color: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-primary-outline:hover,
+.btn-primary-outline.active {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-bg-dark); /* Text color for active/hovered button */
+}
+
+/* Ensure the grid container takes available height and scrolls */
+.competitions-page .row.flex-grow-1 {
+    /* flex-grow-1 is applied in JSX, this ensures it works as expected */
+    /* min-height: 0; /* Important for flex items with overflow */
+}

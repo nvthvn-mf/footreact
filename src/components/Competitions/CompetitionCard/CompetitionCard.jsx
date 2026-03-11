@@ -2,50 +2,42 @@ import React from 'react';
 import './CompetitionCard.css';
 
 const CompetitionCard = ({ competition }) => {
-    const { name, emblem, area, currentMatchday, status, plan } = competition;
+    // Destructuration mise à jour pour currentMatchday
+    const { name, emblem, area, plan, type, currentSeason } = competition;
+    const currentMatchday = currentSeason ? currentSeason.currentMatchday : 'N/A';
 
-    // Determine status badge color based on status or plan
-    const getStatusBadgeClass = () => {
-        if (status === 'ACTIVE') {
-            return 'badge-active';
-        }
-        if (status === 'OFF-SEASON') {
-            return 'badge-off-season';
-        }
-        if (plan === 'TIER_ONE') { // Assuming TIER_ONE is for highlighted/premium leagues
-            return 'badge-highlight';
-        }
-        return 'badge-default'; // Fallback
-    };
-
-    const getStatusText = () => {
-        if (status === 'ACTIVE') {
-            return 'ACTIVE';
-        }
-        if (status === 'OFF-SEASON') {
-            return 'OFF-SEASON';
-        }
+    // Determine status badge color based on plan
+    const getPlanBadgeClass = () => {
         if (plan === 'TIER_ONE') {
-            return 'HIGHLIGHT'; // Or whatever makes sense for TIER_ONE
+            return 'badge-tier-one'; // Utilise une classe spécifique pour TIER_ONE
         }
-        return '';
+        // Tu peux ajouter d'autres conditions pour d'autres plans si nécessaire
+        return 'badge-default'; // Fallback pour les autres plans
     };
 
+    const getPlanText = () => {
+        if (plan === 'TIER_ONE') {
+            return 'PREMIUM'; // Ou 'HIGHLIGHT', 'TIER 1'
+        }
+        // Tu peux ajouter d'autres conditions pour d'autres plans si nécessaire
+        return 'FREE'; // Par défaut pour les autres plans
+    };
 
     return (
         <div className="competition-card d-flex flex-column p-3">
             <div className="d-flex justify-content-between align-items-start mb-3">
                 <img src={emblem} alt={`${name} emblem`} className="competition-emblem" />
-                {status || plan ? (
-                    <span className={`badge ${getStatusBadgeClass()}`}>
-            {getStatusText()}
+                {plan && ( // Affiche le badge si un plan est défini
+                    <span className={`badge ${getPlanBadgeClass()}`}>
+            {getPlanText()}
           </span>
-                ) : null}
+                )}
             </div>
             <h5 className="competition-name text-white mb-1">{name}</h5>
+
             <p className="competition-area text-muted mb-auto">
                 <img src={area.flag} alt={`${area.name} flag`} className="area-flag me-1" />
-                {area.name} • {plan === 'TIER_ONE' ? 'UEFA' : 'FIFA'} {/* Placeholder for league type */}
+                {area.name} • {type === 'LEAGUE' ? 'League' : 'Cup'} {/* Utilise le type pour distinguer */}
             </p>
             <div className="d-flex justify-content-between align-items-center mt-3">
                 <div>
