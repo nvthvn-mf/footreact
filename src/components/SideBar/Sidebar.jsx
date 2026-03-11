@@ -3,18 +3,27 @@ import SidebarItem from './SidebarItem';
 import './Sidebar.css';
 
 const Sidebar = () => {
+
+    const handleLogoClick = () => {
+        console.log("Clic sur le logo : Retour à l'accueil");
+    };
+
+    const handleProfileClick = () => {
+        console.log("Clic sur le profil : Ouverture des paramètres utilisateur");
+    };
+
     return (
         <div className="sidebar-container">
             {/* Header: Logo et Nom */}
-            <div className="sidebar-header">
+            <div className="sidebar-header clickable" onClick={handleLogoClick}>
                 <div className="logo-box">
                     <span className="material-symbols-outlined" style={{ fontSize: '24px' }}>
                         sports_soccer
                     </span>
                 </div>
                 <div>
-                    <h1 className="logo-text">FootReact</h1>
-                    <p className="logo-subtext">Match Day Hub</p>
+                    <h1 className="logo-text" >FootReact</h1>
+                    <p className="logo-subtext" >Match Day Hub</p>
                 </div>
             </div>
 
@@ -29,7 +38,7 @@ const Sidebar = () => {
             </nav>
 
             {/* Footer: Profil Utilisateur */}
-            <div className="sidebar-footer">
+            <div className="sidebar-footer clickable" onClick={handleProfileClick}>
                 <div className="user-info">
                     <span className="material-symbols-outlined" style={{ fontSize: '40px' }}>
                         account_circle
