@@ -1,14 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 
 function DashboardFilters({ onLeagueChange }) {
+
+  const [selectedDay, setSelectedDay] = useState("today");
+
+  const handleDayClick = (day) => {
+    setSelectedDay(day);
+  };
+
   return (
     <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-5">
 
       {/* Slider dates */}
-      <div className="filter-group d-flex/components/ gap-1">
-        <button className="filter-btn">Hier</button>
-        <button className="filter-btn active">Aujourd'hui</button>
-        <button className="filter-btn">Demain</button>
+      <div className="filter-group d-flex gap-1">
+
+        <button
+          className={`filter-btn ${selectedDay === "yesterday" ? "active" : ""}`}
+          onClick={() => handleDayClick("yesterday")}
+        >
+          Hier
+        </button>
+
+        <button
+          className={`filter-btn ${selectedDay === "today" ? "active" : ""}`}
+          onClick={() => handleDayClick("today")}
+        >
+          Aujourd'hui
+        </button>
+
+        <button
+          className={`filter-btn ${selectedDay === "tomorrow" ? "active" : ""}`}
+          onClick={() => handleDayClick("tomorrow")}
+        >
+          Demain
+        </button>
+
       </div>
 
       {/* Sort */}

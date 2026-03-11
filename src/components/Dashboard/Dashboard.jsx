@@ -45,7 +45,7 @@ function Dashboard() {
       <div className="d-flex justify-content-between align-items-end mb-4">
         <div>
           <h3 className="fw-bold text-white mb-1" style={{ fontSize: "1.25rem" }}>
-            Matches Today
+            Liste des Matchs 
           </h3>
 
           <p
@@ -55,7 +55,7 @@ function Dashboard() {
               fontSize: "0.875rem"
             }}
           >
-            Real-time football updates from around the world
+            Actualités footballistiques en temps réel du monde entier
           </p>
         </div>
 
