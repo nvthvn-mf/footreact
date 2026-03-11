@@ -96,7 +96,7 @@ function Dashboard() {
         
         {/* Sélecteur de Ligue (Sort by) */}
         <div className="sort-container d-flex align-items-center gap-2">
-          <span className="material-symbols-outlined fs-5">tune</span>
+          <span className="material-symbols-outlined fs-5">sort</span>
           <select 
             className="custom-select" 
             onChange={handleLeagueChange}
