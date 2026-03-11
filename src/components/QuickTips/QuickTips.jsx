@@ -1,0 +1,41 @@
+// QuickTips/QuickTips.jsx
+import React from 'react';
+import './QuickTips.css';
+
+const QuickTips = () => {
+    
+    // Fonction au clic (pour la future fonctionnalité de notifications)
+    const handleEnableAlerts = () => {
+        console.log("🔔 Action : Ouverture des paramètres de notifications");
+    };
+
+    return (
+        <div className="quick-tips-container mb-4" onClick={handleEnableAlerts}>
+            {/* Lueur d'arrière-plan */}
+            <div className="quick-tips-glow"></div>
+            
+            {/* Contenu principal (au-dessus de la lueur) */}
+            <div className="quick-tips-content">
+                <h3 className="quick-tips-title">
+                    <span className="material-symbols-outlined" style={{ fontSize: '1.125rem' }}>
+                        bolt
+                    </span>
+                    Quick Tip
+                </h3>
+                
+                <p className="quick-tips-text">
+                    You can set push notifications for specific teams to never miss a kickoff!
+                </p>
+                
+                <button className="quick-tips-btn">
+                    Enable Alerts 
+                    <span className="material-symbols-outlined" style={{ fontSize: '0.875rem' }}>
+                        arrow_forward
+                    </span>
+                </button>
+            </div>
+        </div>
+    );
+};
+
+export default QuickTips;
