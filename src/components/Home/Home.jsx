@@ -7,11 +7,20 @@ import TopScorer from '../TopScorer/TopScorer.jsx';
 function Home() {
   return (
 
-    <div className="min-vh-100 p-3 p-md-4" style={{ backgroundColor: 'var(--color-bg-dark)' }}>
-      <Dashboard />
-      <TopScorer />
-    <LeagueStandings />   
-  </div>
+      <div className="container-fluid p-3 p-md-4">
+          <div className="row g-4">
+
+              <div className="col-12 col-xl-8">
+                  <Dashboard />
+              </div>
+
+              <div className="col-12 col-xl-4 d-flex flex-column gap-4">
+                  <TopScorer />
+                  <LeagueStandings />
+              </div>
+
+          </div>
+      </div>
   );
 }
 
