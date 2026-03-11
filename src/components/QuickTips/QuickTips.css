@@ -6,6 +6,7 @@
   position: relative;
   overflow: hidden; 
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 /* La lueur verte floutée en bas à droite */
