@@ -60,3 +60,11 @@ npm run dev
 ```
 
 L'application sera accessible dans votre navigateur, généralement à l'adresse `http://localhost:5173`.
+
+### Logo
+
+ballon : <a href="https://www.flaticon.com/fr/icones-gratuites/football" title="football icônes">Football icônes créées par Freepik - Flaticon</a>
+Home : <a href="https://www.flaticon.com/fr/icones-gratuites/domicile" title="domicile icônes">Domicile icônes créées par Freepik - Flaticon</a>
+coupe : <a href="https://www.flaticon.com/fr/icones-gratuites/coupe" title="coupe icônes">Coupe icônes créées par Freepik - Flaticon</a>
+loupe : <a href="https://www.flaticon.com/fr/icones-gratuites/loupe" title="loupe icônes">Loupe icônes créées par Ayub Irawan - Flaticon</a>
+

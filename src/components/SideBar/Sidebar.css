@@ -1,0 +1,163 @@
+/* --- Classe utilitaire pour les éléments cliquables --- */
+.clickable {
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.clickable:active {
+    transform: scale(0.98); /* Petit effet de pression au clic */
+}
+
+/* --- Effet spécifique sur le logo --- */
+.sidebar-header.clickable:hover {
+    opacity: 0.8;
+}
+
+/* --- Effet spécifique sur le profil en bas --- */
+.sidebar-footer.clickable {
+    padding: 10px;
+    margin: -10px; /* On compense le padding pour ne pas décaler l'alignement */
+    border-radius: 12px;
+    transition: background-color 0.2s ease;
+}
+
+.sidebar-footer.clickable:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.sidebar-footer.clickable:hover .user-name {
+    color: #00ff85; /* Le nom passe en vert au survol du bloc profil */
+}
+
+.sidebar-container {
+    width: 260px;
+    height: 100vh;
+    background-color: #0b1a13; /* Très sombre, presque noir */
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Header */
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.logo-box {
+    background-color: #00ff85;
+    color: #0b1a13;
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.logo-text {
+    color: white;
+    font-weight: bold;
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.logo-subtext {
+    color: #00ff85;
+    font-size: 0.75rem;
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* Menu items */
+.sidebar-menu {
+    flex-grow: 1; /* Prend tout l'espace libre au milieu */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* ... garde le début de ton fichier intact ... */
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    color: #a0aec0; /* Gris par défaut */
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+/* --- EFFET AU SURVOL (HOVER) --- */
+.sidebar-item:hover {
+    background-color: rgba(0, 255, 133, 0.08); /* Un fond vert très léger */
+    color: #00ff85 !important; /* Force le texte en vert fluo */
+}
+
+/* On s'assure que l'icône change aussi de couleur au survol */
+.sidebar-item:hover .sidebar-icon {
+    color: #00ff85 !important;
+}
+
+.sidebar-item:hover .sidebar-label {
+    /*color: #ffffff !important;*/
+    font-weight: bold; /* Ou 700 */
+}
+
+/* Si tu avais une classe .active, tu peux la supprimer ou la commenter */
+/* .sidebar-item.active { ... } */
+
+.sidebar-label {
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.sidebar-icon {
+    font-size: 1.2rem;
+    transition: color 0.2s ease;
+}
+
+/* ... reste du fichier (footer, user info, etc.) ... */
+
+/* Footer */
+.sidebar-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-avatar {
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.user-name {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+    display: block;
+}
+
+.user-status {
+    color: #718096;
+    font-size: 0.75rem;
+}
+
+.settings-icon {
+    color: #718096;
+    cursor: pointer;
+}

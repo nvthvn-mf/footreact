@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css'
+import './App.css';
 import MatchCard from './components/MatchCard/MatchCard';
 import LeagueStandings from './components/Standings/LeagueStandings.jsx';
 import TopScorer from './components/TopScorer/TopScorer';
@@ -12,6 +12,7 @@ function App() {
    <Home />
    </>
   );
+
 }
 
 export default App;
