@@ -1,0 +1,70 @@
+.competition-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    transition: transform 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    cursor: pointer;
+    height: 100%; /* Ensure cards in a row have equal height */
+}
+
+.competition-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.3); /* Subtle glow */
+}
+
+.competition-emblem {
+    width: 48px; /* Adjust size as needed */
+    height: 48px;
+    object-fit: contain;
+}
+
+.competition-name {
+    font-size: 1.25rem; /* h5 equivalent */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.competition-area {
+    font-size: 0.875rem; /* small equivalent */
+    color: var(--color-text-muted);
+    display: flex;
+    align-items: center;
+}
+
+.area-flag {
+    width: 16px; /* Adjust size as needed */
+    height: 16px;
+    object-fit: contain;
+    border-radius: 50%; /* Make flags circular if desired */
+}
+
+/* Status Badges */
+.badge {
+    padding: 0.3em 0.6em;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--color-bg-dark); /* Text color for badges */
+}
+
+.badge-active {
+    background-color: var(--color-primary); /* Green for active */
+}
+
+.badge-off-season {
+    background-color: var(--color-text-muted); /* Grey for off-season */
+    color: var(--color-text-white);
+}
+
+.badge-highlight {
+    background-color: #00ff88; /* Specific green for highlight, similar to primary */
+    color: var(--color-bg-dark);
+}
+
+/* Arrow icon styling */
+.bi-arrow-right {
+    color: var(--color-primary);
+}
