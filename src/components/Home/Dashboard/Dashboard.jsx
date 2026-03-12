@@ -1,98 +1,126 @@
-import React from "react";
+import React, {useState} from "react";
 import "./Dashboard.css";
 
 import DashboardHeader from "../DashboardHeader/DashboardHeader.jsx";
 import DashboardFilters from "../DashboardFilters/DashboardFilters.jsx";
 import MatchCard from "../MatchCard/MatchCard.jsx";
+import {useFetch} from '../../../hooks/useFetch';
 
 function Dashboard() {
 
-  const handleDateChange = (event) => {
-    console.log("Date sélectionnée :", event.target.value);
-  };
+    const [activeFilter, setActiveFilter] = useState("today");
 
-  const handleLeagueChange = (event) => {
-    console.log("🏆 Ligue sélectionnée :", event.target.value);
-  };
+    const getDateString = (offsetDays) => {
+        const date = new Date();
+        date.setDate(date.getDate() + offsetDays);
+        console.log(date.toISOString().split('T')[0], 'Date récupéré : ')
+        return date.toISOString().split('T')[0];
+    };
 
-  const matchesData = [
-    {
-      competition: { name: "UEFA Champions League" },
-      utcDate: "2026-03-10T17:45:00Z",
-      status: "TIMED",
-      homeTeam: { shortName: "Galatasaray", crest: "https://crests.football-data.org/610.png" },
-      awayTeam: { shortName: "Liverpool", crest: "https://crests.football-data.org/64.png" },
-      score: { fullTime: { home: null, away: null } }
-    },
-    {
-      competition: { name: "Championship" },
-      utcDate: "2026-03-10T19:45:00Z",
-      status: "FINISHED",
-      homeTeam: { shortName: "Sheffield Wed", crest: "https://crests.football-data.org/345.png" },
-      awayTeam: { shortName: "Watford", crest: "https://crests.football-data.org/346.png" },
-      score: { fullTime: { home: 2, away: 1 } }
-    }
-  ];
+    // On associe notre filtre au bon décalage de jour
+    const dateMap = {
+        yesterday: getDateString(-1),
+        today: getDateString(0),
+        tomorrow: getDateString(1)
+    };
 
-  return (
-    <div className="container-fluid px-4 px-md-5 py-4 w-100">
+    // 4. L'URL se met à jour automatiquement quand on clique sur un bouton !
+    const apiUrl = `/matches?date=${dateMap[activeFilter]}`;
 
-      <DashboardHeader onDateChange={handleDateChange} />
+    // 1. On récupère les vraies données, l'état de chargement et les erreurs via le hook
+    const {data, isLoading, error} = useFetch(apiUrl);
+    const matches = data ? data.matches : [];
 
-      <DashboardFilters onLeagueChange={handleLeagueChange} />
+    const handleDateChange = (event) => {
+        console.log("Date sélectionnée :", event.target.value);
+    };
 
-      {/* Section match */}
-      <div className="d-flex justify-content-between align-items-end mb-4">
-        <div>
-          <h3 className="fw-bold text-white mb-1" style={{ fontSize: "1.25rem" }}>
-            Liste des Matchs 
-          </h3>
+    const handleLeagueChange = (event) => {
+        console.log("Ligue sélectionnée :", event.target.value);
+    };
 
-          <p
-            className="mb-0"
-            style={{
-              color: "var(--color-text-muted)",
-              fontSize: "0.875rem"
-            }}
-          >
-            Actualités footballistiques en temps réel du monde entier
-          </p>
+    return (
+        <div className="container-fluid px-4 px-md-5 py-4 w-100">
+
+            <DashboardHeader onDateChange={handleDateChange}/>
+
+            <DashboardFilters onLeagueChange={handleLeagueChange} activeFilter={activeFilter} onFilterChange={setActiveFilter}/>
+
+            {/* Section match (En-tête) */}
+            <div className="d-flex justify-content-between align-items-end mb-4">
+                <div>
+                    <h3 className="fw-bold text-white mb-1" style={{fontSize: "1.25rem"}}>
+                        Liste des Matchs
+                    </h3>
+                    <p className="mb-0"
+                        style={{
+                            color: "var(--color-text-muted)",
+                            fontSize: "0.875rem"
+                        }}
+                    >
+                        Actualités footballistiques en temps réel du monde entier
+                    </p>
+                </div>
+
+                <div className="d-flex align-items-center gap-2">
+                    <span
+                        className="rounded-circle animate-pulse"
+                        style={{
+                            width: "8px",
+                            height: "8px",
+                            backgroundColor: "var(--color-primary)"
+                        }}
+                    ></span>
+
+                    <span
+                        className="text-uppercase fw-bold"
+                        style={{
+                            fontSize: "0.75rem",
+                            color: "var(--color-primary)",
+                            letterSpacing: "0.05em"
+                        }}
+                    >
+
+                        {matches.length} Today
+                    </span>
+                </div>
+            </div>
+
+            {/* --- GESTION DE L'AFFICHAGE DU CONTENU --- */}
+
+            {/* 1. État de chargement (Spinner) */}
+            {isLoading && (
+                <div className="text-center py-5">
+                    <div className="spinner-border" style={{ color: 'var(--color-primary)' }} role="status"></div>
+                    <p className="text-white mt-3">Chargement des matchs en cours...</p>
+                </div>
+            )}
+
+            {/* 2. État d'erreur */}
+            {error && (
+                <div className="alert alert-danger" role="alert">
+                    {error}
+                </div>
+            )}
+
+            {/* 3. État vide (Aucun match retourné par l'API) */}
+            {!isLoading && !error && matches.length === 0 && (
+                <p className="text-white text-center py-5">Aucun match prévu aujourd'hui.</p>
+            )}
+
+            {/* 4. Affichage de la Grille avec les vraies données */}
+            {!isLoading && !error && matches.length > 0 && (
+                <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4 pb-5">
+                    {matches.map((match) => (
+                        <div className="col" key={match.id}>
+                            <MatchCard match={match}/>
+                        </div>
+                    ))}
+                </div>
+            )}
+
         </div>
-
-        <div className="d-flex align-items-center gap-2">
-          <span
-            className="rounded-circle animate-pulse"
-            style={{
-              width: "8px",
-              height: "8px",
-              backgroundColor: "var(--color-primary)"
-            }}
-          ></span>
-
-          <span
-            className="text-uppercase fw-bold"
-            style={{
-              fontSize: "0.75rem",
-              color: "var(--color-primary)",
-              letterSpacing: "0.05em"
-            }}
-          >
-            {matchesData.length} Live Now
-          </span>
-        </div>
-      </div>
-
-      {/* Grid */}
-      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4 pb-5">
-        {matchesData.map((match, index) => (
-          <div className="col" key={index}>
-            <MatchCard match={match} />
-          </div>
-        ))}
-      </div>
-
-    </div>
-  );
+    );
 }
 
 export default Dashboard;
