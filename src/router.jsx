@@ -7,6 +7,8 @@ import Players from "./components/Players/Players.jsx";
 import Favorites from "./components/Favorites/Favorites.jsx";
 import Profile from "./components/Profile/Profile.jsx";
 import React from "react";
+import CompetitionDetailNavBar
+    from "./components/Competitions/CompetitionDetail/CompetitionDetailNavBar/CompetitionDetailNavBar.jsx";
 
 const router = createBrowserRouter([
     {
@@ -49,7 +51,15 @@ const router = createBrowserRouter([
             {
                 path: "competition/teams",
                 element: <Teams />,
+            },
+            {
+               // path: "competition/:name" // Le ":" indique que le name est dynamique
+            },
+            {
+                path : "competitions/name/navBar",
+                element: <CompetitionDetailNavBar />
             }
+
         ],
     },
 ]);
