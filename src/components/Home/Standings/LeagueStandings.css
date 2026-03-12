@@ -80,3 +80,14 @@
     color: #00ff85 !important;
     text-shadow: 0 0 8px rgba(0, 255, 133, 0.4);
 }
+
+.team-link {
+    text-decoration: none; /* Enlève le soulignement [cite: 75] */
+    color: inherit;       /* Garde la couleur de ton thème */
+    font-weight: bold;
+    display: block;       /* Permet de cliquer sur toute la cellule */
+}
+
+.team-link:hover {
+    color: #00ff85;       /* Ton vert fluo au survol */
+}

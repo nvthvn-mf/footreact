@@ -64,7 +64,8 @@ const LeagueStandings = ({ leagueCode = 'FL1' }) => {
                         <tbody className="fw-bold">
                         {teams.map((t) => (
                             <StandingRow
-                                key={t.pos}
+                                key={t.id}
+                                id={t.id}
                                 pos={t.pos}
                                 team={t.team}
                                 p={t.p}
