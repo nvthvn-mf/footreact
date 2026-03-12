@@ -1,0 +1,51 @@
+.competition-detail-navbar {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    padding: 4px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 14px;
+    width: fit-content;
+}
+
+.competition-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 10px;
+    color: #a0aec0;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.2s ease-in-out;
+    white-space: nowrap;
+}
+
+.competition-nav-item:hover {
+    background-color: rgba(0, 255, 133, 0.08);
+    color: #00ff85;
+}
+
+.competition-nav-item:hover .competition-nav-icon {
+    color: #00ff85;
+}
+
+.competition-nav-item.active {
+    background-color: rgba(0, 255, 133, 0.12);
+    color: #00ff85;
+    font-weight: bold;
+}
+
+.competition-nav-item.active .competition-nav-icon {
+    color: #00ff85;
+}
+
+.competition-nav-icon {
+    font-size: 1.1rem;
+    transition: color 0.2s ease;
+}
+
+.competition-nav-label {
+    transition: all 0.2s ease;
+}
