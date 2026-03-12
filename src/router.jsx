@@ -45,6 +45,10 @@ const router = createBrowserRouter([
             {
                 path: "profil",
                 element: <Profile />
+            },
+            {
+                path: "competition/teams",
+                element: <Teams />,
             }
         ],
     },

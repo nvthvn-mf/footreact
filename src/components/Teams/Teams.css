@@ -1,0 +1,6 @@
+.teams-page {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-white);
+    height: 100%;
+    overflow-y: auto;
+}
