@@ -4,7 +4,7 @@ const API_KEY='e54c0687314746b882f10e330625734b';
 const API_URL='https://api.football-data.org/v4';
 
 const apiClient = axios.create({
-    baseURL : API_URL,
+    baseURL : '/api',
     headers: {
         'X-Auth-Token': API_KEY,
         //'X-Auth-'
