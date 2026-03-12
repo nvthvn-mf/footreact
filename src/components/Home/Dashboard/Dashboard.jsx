@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./Dashboard.css";
 
 import DashboardHeader from "../DashboardHeader/DashboardHeader.jsx";
@@ -8,8 +8,27 @@ import {useFetch} from '../../../hooks/useFetch';
 
 function Dashboard() {
 
+    const [activeFilter, setActiveFilter] = useState("today");
+
+    const getDateString = (offsetDays) => {
+        const date = new Date();
+        date.setDate(date.getDate() + offsetDays);
+        console.log(date.toISOString().split('T')[0], 'Date récupéré : ')
+        return date.toISOString().split('T')[0];
+    };
+
+    // On associe notre filtre au bon décalage de jour
+    const dateMap = {
+        yesterday: getDateString(-1),
+        today: getDateString(0),
+        tomorrow: getDateString(1)
+    };
+
+    // 4. L'URL se met à jour automatiquement quand on clique sur un bouton !
+    const apiUrl = `/matches?date=${dateMap[activeFilter]}`;
+
     // 1. On récupère les vraies données, l'état de chargement et les erreurs via le hook
-    const {data, isLoading, error} = useFetch('/matches');
+    const {data, isLoading, error} = useFetch(apiUrl);
     const matches = data ? data.matches : [];
 
     const handleDateChange = (event) => {
@@ -25,7 +44,7 @@ function Dashboard() {
 
             <DashboardHeader onDateChange={handleDateChange}/>
 
-            <DashboardFilters onLeagueChange={handleLeagueChange}/>
+            <DashboardFilters onLeagueChange={handleLeagueChange} activeFilter={activeFilter} onFilterChange={setActiveFilter}/>
 
             {/* Section match (En-tête) */}
             <div className="d-flex justify-content-between align-items-end mb-4">
