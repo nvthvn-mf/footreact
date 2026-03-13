@@ -13,12 +13,15 @@ const CompetitionHeader = ({ competitionName, competitionEmblem, startYear, endY
                         />
                     </div>
                 )}                <h4 className="text-white m-0 fw-bold">
-                    {competitionName} {startYear}/{endYear} Standings
+                    {competitionName} {startYear}/{endYear}
                 </h4>
             </div>
             <div className="d-flex gap-2">
-                <button className="btn btn-outline-secondary text-white rounded-pill px-4">
-                    <i className="bi bi-download"></i> Export
+                <button className="btn-custom-export d-flex align-items-center gap-2 px-4 py-2">
+                    <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>
+                        download
+                    </span>
+                    Export
                 </button>
             </div>
         </div>

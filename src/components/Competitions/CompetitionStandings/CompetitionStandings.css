@@ -88,7 +88,6 @@
     color: #0c1410 !important;
 }
 
-/* Ajoute ceci à ton CompetitionStandings.css existant */
 
 .clickable-row {
     transition: background-color 0.2s ease, color 0.2s ease;
@@ -98,5 +97,29 @@
 .leader-row {
     background-color: #52FFA8 !important;
     border-radius: 8px; /* Si tu veux des bords arrondis */
+}
+
+
+
+/* Le bouton Export (Design rectangulaire arrondi vert forêt) */
+.btn-custom-export {
+    background-color: #14402c; /* Ta couleur verte personnalisée */
+    color: #ffffff;
+    border: none;
+    border-radius: 8px; /* Forme rectangulaire avec bords arrondis (plus de pilule) */
+    font-size: 0.9rem;
+    font-weight: 600; /* Police plus épaisse et adaptée */
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+    cursor: pointer;
+}
+
+/* Petit effet sympa quand on passe la souris dessus */
+.btn-custom-export:hover {
+    background-color: #1b543a; /* Un vert très légèrement plus clair au survol */
+}
+
+/* Effet quand on clique dessus */
+.btn-custom-export:active {
+    transform: scale(0.97);
 }
 
