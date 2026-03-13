@@ -1,17 +1,15 @@
-// components/Competitions/CompetitionStandings/CompetitionStandings.jsx
 import React, {useState} from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { fetchCompetitionStandings } from '../../../services/FootballService';
 import FullStandingRow from './FullStandingRow';
-import './CompetitionStandings.css'; // On va créer ce fichier juste après
+import './CompetitionStandings.css';
+import CompetitionHeader from "./CompetitionHeader.jsx";
 
-// 1. Le Loader
 // eslint-disable-next-line react-refresh/only-export-components
 export const competitionStandingsLoader = async ({ params }) => {
     return await fetchCompetitionStandings(params.id);
 };
 
-// 2. Le Composant
 const CompetitionStandings = () => {
     const data = useLoaderData();
     const [hoveredTeamId, setHoveredTeamId] = useState(null);
@@ -28,19 +26,11 @@ const CompetitionStandings = () => {
             <div className="standings-board p-4 rounded-4">
 
                 {/* En-tête */}
-                <div className="d-flex justify-content-between align-items-center mb-4">
-                    <div className="d-flex align-items-center gap-3">
-                        <span className="badge bg-success bg-opacity-25 text-success px-3 py-2 rounded-pill">LIVE</span>
-                        <h4 className="text-white m-0 fw-bold">
-                            {competition.name} {startYear}/{endYear} Standings
-                        </h4>
-                    </div>
-                    <div className="d-flex gap-2">
-                        <button className="btn btn-outline-secondary text-white rounded-pill px-4">
-                            <i className="bi bi-download"></i> Export
-                        </button>
-                    </div>
-                </div>
+                <CompetitionHeader
+                    competitionName={competition.name}
+                    startYear={startYear}
+                    endYear={endYear}
+                />
 
                 {/* Le Tableau */}
                 <div className="table-responsive" style={{ overflowX: 'auto' }}>
