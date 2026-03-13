@@ -10,9 +10,10 @@ import React from "react";
 import {leagueStandingsLoader} from "./components/Home/Standings/LeagueStandings.jsx";
 import CompetitionStandings, {
     competitionStandingsLoader
-} from "./components/Competitions/CompetitionStandings/CompetitionStandings.jsx";
+} from "./components/Competitions/CompetitionDetail/CompetitionStandings/CompetitionStandings.jsx";
 import CompetitionDetailNavBar
     from "./components/Competitions/CompetitionDetail/CompetitionDetailNavBar/CompetitionDetailNavBar.jsx";
+import TopScorer from "./components/Home/TopScorer/TopScorer.jsx";
 
 const router = createBrowserRouter([
     {
@@ -32,6 +33,28 @@ const router = createBrowserRouter([
                 path: "competitions/:id",
                 element: <CompetitionStandings />,
                 loader: competitionStandingsLoader,
+                children: [
+                    {
+                        path: "classement",
+                        element: <div className="p-4 text-white">Classement à venir</div>
+                    },
+                    {
+                        path: "equipes",
+                        element: <Teams />,
+                    },
+                    {
+                        path: "buteurs",
+                        element: <TopScorer />,
+                    },
+                    {
+                        path: "resultats",
+                        element: <div className="p-4 text-white">Résultats à venir</div>,
+                    },
+                    {
+                        path: "calendrier",
+                        element: <div className="p-4 text-white">Calendrier à venir</div>,
+                    }
+                ]
             },
             {
                 path: "equipes",

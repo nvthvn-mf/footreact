@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import { useLoaderData } from 'react-router-dom';
-import { fetchCompetitionStandings } from '../../../services/FootballService';
-import FullStandingRow from './FullStandingRow';
+import { fetchCompetitionStandings } from '../../../../services/FootballService.jsx';
+import FullStandingRow from './FullStandingRow.jsx';
 import './CompetitionStandings.css';
 import CompetitionHeader from "./CompetitionHeader.jsx";
 import {usePDF} from "react-to-pdf";
+import CompetitionDetailNavBar from "../CompetitionDetailNavBar/CompetitionDetailNavBar.jsx";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const competitionStandingsLoader = async ({ params }) => {
@@ -49,6 +50,10 @@ const CompetitionStandings = () => {
                     endYear={endYear}
                     onExport={() => toPDF()}
                 />
+
+                <div className="mb-4" data-html2canvas-ignore="true">
+                    <CompetitionDetailNavBar />
+                </div>
 
                 {/* Le Tableau */}
                 <div className="table-responsive p-3 rounded-4"  >
