@@ -28,6 +28,7 @@ const CompetitionStandings = () => {
                 {/* En-tête */}
                 <CompetitionHeader
                     competitionName={competition.name}
+                    competitionEmblem={competition.emblem}
                     startYear={startYear}
                     endYear={endYear}
                 />
@@ -45,7 +46,6 @@ const CompetitionStandings = () => {
                             <th className="text-center pb-3">L</th>
                             <th className="text-center pb-3">GD</th>
                             <th className="text-center pb-3">Pts</th>
-                            <th className="text-center pb-3">Form</th>
                         </tr>
                         </thead>
                         <tbody>

@@ -1,11 +1,18 @@
 import React from 'react';
 
-const CompetitionHeader = ({ competitionName, startYear, endYear }) => {
+const CompetitionHeader = ({ competitionName, competitionEmblem, startYear, endYear }) => {
     return (
         <div className="d-flex justify-content-between align-items-center mb-4">
             <div className="d-flex align-items-center gap-3">
-                <span className="badge bg-success bg-opacity-25 text-success px-3 py-2 rounded-pill">LIVE</span>
-                <h4 className="text-white m-0 fw-bold">
+                {competitionEmblem && (
+                    <div className="bg-white rounded-circle d-flex justify-content-center align-items-center shadow-sm" style={{ width: '48px', height: '48px' }}>
+                        <img
+                            src={competitionEmblem}
+                            alt={`${competitionName} logo`}
+                            style={{ maxWidth: '30px', maxHeight: '30px' }}
+                        />
+                    </div>
+                )}                <h4 className="text-white m-0 fw-bold">
                     {competitionName} {startYear}/{endYear} Standings
                 </h4>
             </div>
