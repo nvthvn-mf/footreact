@@ -23,7 +23,7 @@
 }
 
 .team-crest-container:hover {
-    transform: scale(1.05);
+    transform: scale(1.28);
     border-color: rgba(0, 255, 136, 0.3);
 }
 
@@ -45,4 +45,29 @@
     background-color: rgba(0, 255, 136, 0.05);
     border-radius: 50%;
     filter: blur(60px);
+}
+/* Barre de progression des statistiques H2H */
+.h2h-progress-bar {
+    height: 8px;
+    border-radius: 4px;
+    background-color: var(--color-bg-dark);
+    display: flex;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.h2h-home-wins { background-color: var(--color-primary); }
+.h2h-draws { background-color: var(--color-text-muted); }
+.h2h-away-wins { background-color: #ef4444; /* Un rouge pour contraster l'équipe adverse */ }
+
+/* Liste des matchs récents */
+.h2h-match-row {
+    background-color: var(--color-bg-dark);
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    transition: border-color 0.2s;
+}
+
+.h2h-match-row:hover {
+    border-color: var(--color-primary);
 }
