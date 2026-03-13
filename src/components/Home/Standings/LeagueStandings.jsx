@@ -3,6 +3,7 @@ import './LeagueStandings.css';
 import {fetchLigue1Standings} from "../../../services/FootballService.jsx";
 import {useLoaderData} from "react-router-dom";
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const leagueStandingsLoader = async () => {
     return await fetchLigue1Standings();
 };

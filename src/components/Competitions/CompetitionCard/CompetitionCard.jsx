@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './CompetitionCard.css';
 
 const CompetitionCard = ({ competition }) => {
-  const { name, emblem, area, plan, type, currentSeason } = competition;
+  const { id, name, emblem, area, plan, type, currentSeason } = competition;
   const currentMatchday = currentSeason ? currentSeason.currentMatchday : 'N/A';
 
   const getBadgeInfo = () => {
@@ -36,33 +37,37 @@ const CompetitionCard = ({ competition }) => {
   const badge = getBadgeInfo();
 
   return (
-    <div className="competition-card d-flex flex-column p-3">
-      <div className="d-flex justify-content-between align-items-start mb-3">
-        <img src={emblem} alt={`${name} emblem`} className="competition-emblem" />
-        {badge.text && (
-          <span className={`badge ${badge.className}`}>
+      <Link
+          to={`/competitions/${id}`}
+          className="competition-card d-flex flex-column p-3 text-decoration-none"
+      >
+          <div className="d-flex justify-content-between align-items-start mb-3">
+              <img src={emblem} alt={`${name} emblem`} className="competition-emblem" />
+              {badge.text && (
+                  <span className={`badge ${badge.className}`}>
             {badge.text}
           </span>
-        )}
-      </div>
-      <h5 className="competition-name text-white mb-1">{name}</h5>
+              )}
+          </div>
 
-      <p className="competition-area text-white mb-auto"> {/* Revert to text-white */}
-        <img src={area.flag} alt={`${area.name} flag`} className="area-flag me-1" />
-        {area.name} • {type === 'LEAGUE' ? 'League' : 'Cup'}
-      </p>
+          <h5 className="competition-name text-white mb-1">{name}</h5>
 
-      {/* Separator */}
-      <div className="card-separator my-3"></div>
+          <p className="competition-area text-white mb-auto"> {/* Revert to text-white */}
+              <img src={area.flag} alt={`${area.name} flag`} className="area-flag me-1" />
+              {area.name} • {type === 'LEAGUE' ? 'League' : 'Cup'}
+          </p>
 
-      <div className="d-flex justify-content-between align-items-center">
-        <div>
-          <small className="text-white d-block">MATCHDAY</small> {/* Revert to text-white */}
-          <span className="text-white fw-bold">{currentMatchday}</span> {/* Added fw-bold */}
-        </div>
-        <i className="bi bi-arrow-right text-primary fs-4"></i>
-      </div>
-    </div>
+          {/* Separator */}
+          <div className="card-separator my-3"></div>
+
+          <div className="d-flex justify-content-between align-items-center">
+              <div>
+                  <small className="text-white d-block">MATCHDAY</small> {/* Revert to text-white */}
+                  <span className="text-white fw-bold">{currentMatchday}</span> {/* Added fw-bold */}
+              </div>
+              <i className="bi bi-arrow-right text-primary fs-4"></i>
+          </div>
+      </Link>
   );
 };
 

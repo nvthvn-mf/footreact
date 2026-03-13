@@ -1,0 +1,102 @@
+/* Le conteneur principal (La carte noire) */
+.standings-board {
+    background-color: #16201a; /* Vert très sombre/Gris */
+    border: none; /* Pas de bordure sur la maquette */
+}
+
+/* La table */
+.custom-standings-table {
+    --bs-table-bg: transparent;
+    --bs-table-color: #ffffff;
+}
+
+/* Les titres de colonnes (POS, TEAM, MP...) */
+.custom-standings-table thead th {
+    color: #8c9b93; /* Gris clair text-muted */
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Ligne discrète */
+    padding-bottom: 1rem;
+}
+
+/* Les lignes normales */
+.standard-row {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.standard-row:last-child {
+    border-bottom: none; /* Pas de ligne tout en bas */
+}
+
+/* La ligne du Leader (Manchester City sur ta maquette) */
+.leader-row {
+    background-color: #52FFA8 !important; /* Le vert néon exact */
+}
+.leader-row td {
+    color: #0c1410 !important; /* Texte presque noir */
+}
+.leader-row .team-link {
+    color: #0c1410 !important;
+}
+
+.team-link:hover {
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+/* Le conteneur principal de la page */
+.competitions-page-container {
+    background-color: #0f231a !important; /* Ton nouveau fond de page */
+    min-height: 100vh;
+}
+
+/* Le conteneur du tableau (La carte) */
+.standings-board {
+    background-color: #172b22 !important; /* Ton nouveau fond de tableau */
+    border-radius: 16px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* La table */
+.custom-standings-table {
+    --bs-table-bg: transparent;
+    --bs-table-color: #ffffff;
+}
+
+/* Les titres de colonnes */
+.custom-standings-table thead th {
+    color: #8c9b93;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 1rem;
+}
+
+/* Les lignes normales */
+.standard-row {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* La ligne du Leader */
+.leader-row {
+    background-color: #52FFA8 !important; /* Le vert néon conservé */
+}
+
+.leader-row td, .leader-row .team-link {
+    color: #0c1410 !important;
+}
+
+/* Ajoute ceci à ton CompetitionStandings.css existant */
+
+.clickable-row {
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* La ligne du Leader (et de survol) */
+.leader-row {
+    background-color: #52FFA8 !important;
+    border-radius: 8px; /* Si tu veux des bords arrondis */
+}
+

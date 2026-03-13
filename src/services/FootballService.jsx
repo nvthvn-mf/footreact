@@ -12,3 +12,9 @@ export const fetchLigue1Standings = async () => {
         pts: item.points
     }));
 };
+
+export const fetchCompetitionStandings = async (competitionId) => {
+    // On récupère tout le classement brut de l'API
+    const data = await get(`/competitions/${competitionId}/standings`);
+    return data;
+};

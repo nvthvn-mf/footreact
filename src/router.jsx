@@ -8,6 +8,9 @@ import Favorites from "./components/Favorites/Favorites.jsx";
 import Profile from "./components/Profile/Profile.jsx";
 import React from "react";
 import {leagueStandingsLoader} from "./components/Home/Standings/LeagueStandings.jsx";
+import CompetitionStandings, {
+    competitionStandingsLoader
+} from "./components/Competitions/CompetitionStandings/CompetitionStandings.jsx";
 
 const router = createBrowserRouter([
     {
@@ -22,6 +25,11 @@ const router = createBrowserRouter([
             {
                 path: "competitions",
                 element: <Competitions />,
+            },
+            {
+                path: "competitions/:id",
+                element: <CompetitionStandings />,
+                loader: competitionStandingsLoader,
             },
             {
                 path: "equipes",
