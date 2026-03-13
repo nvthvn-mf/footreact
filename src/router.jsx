@@ -51,7 +51,7 @@ const router = createBrowserRouter([
                 element: <Profile />
             },
             {
-                path: "competitions/:name",
+                path: "competitions/:id",
                 element: <CompetitionDetail />,
                 children: [
                     {

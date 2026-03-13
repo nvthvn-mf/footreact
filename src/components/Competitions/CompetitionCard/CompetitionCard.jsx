@@ -1,9 +1,12 @@
 import React from 'react';
 import './CompetitionCard.css';
+import {useNavigate} from "react-router-dom";
 
 const CompetitionCard = ({ competition }) => {
-  const { name, emblem, area, plan, type, currentSeason } = competition;
+  const { name, emblem, area, plan, type, currentSeason, id } = competition;
   const currentMatchday = currentSeason ? currentSeason.currentMatchday : 'N/A';
+
+  const navigate = useNavigate();
 
   const getBadgeInfo = () => {
     const today = new Date();
@@ -36,7 +39,10 @@ const CompetitionCard = ({ competition }) => {
   const badge = getBadgeInfo();
 
   return (
-    <div className="competition-card d-flex flex-column p-3">
+    <div className="competition-card d-flex flex-column p-3"
+         onClick={() => navigate(`/competitions/${id}/classement`)}
+
+    >
       <div className="d-flex justify-content-between align-items-start mb-3">
         <img src={emblem} alt={`${name} emblem`} className="competition-emblem" />
         {badge.text && (
