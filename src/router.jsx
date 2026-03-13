@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import {createBrowserRouter} from "react-router-dom";
 import App from "./App.jsx";
 import Home from "./components/Home/Home.jsx";
 import Competitions from "./components/Competitions/Competitions.jsx";
@@ -9,31 +9,33 @@ import Profile from "./components/Profile/Profile.jsx";
 import React from "react";
 import CompetitionDetailNavBar
     from "./components/Competitions/CompetitionDetail/CompetitionDetailNavBar/CompetitionDetailNavBar.jsx";
+import MatchDetails, {matchDetailsLoader} from "./components/MatchDetails/MatchDetails.jsx";
+
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <App />, // App contient la Sidebar et l'Outlet (le Layout)
+        element: <App/>, // App contient la Sidebar et l'Outlet (le Layout)
         children: [
             {
                 index: true, // Notion 16 : C'est la page par défaut (Accueil)
-                element: <Home />,
+                element: <Home/>,
             },
             {
                 path: "competitions",
-                element: <Competitions />,
+                element: <Competitions/>,
             },
             {
                 path: "equipes",
-                element: <Teams />,
+                element: <Teams/>,
             },
             {
                 path: "joueurs",
-                element: <Players />,
+                element: <Players/>,
             },
             {
                 path: "favoris",
-                element: <Favorites />,
+                element: <Favorites/>,
             },
             {
                 path: "actualites",
@@ -46,18 +48,23 @@ const router = createBrowserRouter([
             },
             {
                 path: "profil",
-                element: <Profile />
+                element: <Profile/>
             },
             {
                 path: "competition/teams",
-                element: <Teams />,
+                element: <Teams/>,
             },
             {
-               // path: "competition/:name" // Le ":" indique que le name est dynamique
+                // path: "competition/:name" // Le ":" indique que le name est dynamique
             },
             {
-                path : "competitions/name/navBar",
-                element: <CompetitionDetailNavBar />
+                path: "competitions/name/navBar",
+                element: <CompetitionDetailNavBar/>
+            }, {
+                path: "matches/:id",
+                element: <MatchDetails/>,
+                loader: matchDetailsLoader,
+                errorElement: <div className="p-5 text-white">Erreur lors du chargement de la page.</div> // React Router gère les erreurs automatiquement
             }
 
         ],

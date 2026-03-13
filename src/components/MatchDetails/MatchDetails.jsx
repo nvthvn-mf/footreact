@@ -4,11 +4,22 @@ import MatchHeader from './MatchHeader';
 import MatchScoreBoard from './MatchScoreBoard';
 import MatchH2H from './MatchH2H';
 import MatchReferees from './MatchReferees';
+import { get } from '../../services/Network';
+import {useLoaderData} from "react-router-dom";
 
-import matchData from '../../mockData/matchDetails.json';
+export const matchDetailsLoader = async ({ params }) => {
+    try {
+        // params.id correspond à ":id" dans le routeur
+        const data = await get(`/matches/${params.id}`);
+        return data;
+    } catch (error) {
+        throw new Error("Impossible de charger les détails du match.");
+    }
+};
 
 function MatchDetails() {
     // Simulation des données du match principal
+    const matchData = useLoaderData();
 
     return (
         <div className="container-fluid px-4 px-md-5 py-4 w-100 min-vh-100 overflow-auto" style={{ backgroundColor: 'var(--color-bg-dark)' }}>
