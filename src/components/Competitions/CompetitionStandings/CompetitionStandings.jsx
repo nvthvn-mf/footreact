@@ -4,6 +4,7 @@ import { fetchCompetitionStandings } from '../../../services/FootballService';
 import FullStandingRow from './FullStandingRow';
 import './CompetitionStandings.css';
 import CompetitionHeader from "./CompetitionHeader.jsx";
+import {usePDF} from "react-to-pdf";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const competitionStandingsLoader = async ({ params }) => {
@@ -21,9 +22,13 @@ const CompetitionStandings = () => {
     const startYear = season?.startDate?.substring(0, 4);
     const endYear = season?.endDate?.substring(2, 4);
 
+    const { toPDF, targetRef } = usePDF({
+        filename: 'page.pdf'
+    });
+
     return (
         <div className="competitions-page-container p-4 flex-grow-1 h-100 overflow-auto">
-            <div className="standings-board p-4 rounded-4">
+            <div className="standings-board p-4 rounded-4" ref={targetRef}>
 
                 {/* En-tête */}
                 <CompetitionHeader
@@ -31,6 +36,7 @@ const CompetitionStandings = () => {
                     competitionEmblem={competition.emblem}
                     startYear={startYear}
                     endYear={endYear}
+                    onExport={() => toPDF()}
                 />
 
                 {/* Le Tableau */}

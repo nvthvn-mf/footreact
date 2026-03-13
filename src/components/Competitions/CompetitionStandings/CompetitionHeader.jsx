@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CompetitionHeader = ({ competitionName, competitionEmblem, startYear, endYear }) => {
+const CompetitionHeader = ({ competitionName, competitionEmblem, startYear, endYear, onExport }) => {
     return (
         <div className="d-flex justify-content-between align-items-center mb-4">
             <div className="d-flex align-items-center gap-3">
@@ -17,7 +17,10 @@ const CompetitionHeader = ({ competitionName, competitionEmblem, startYear, endY
                 </h4>
             </div>
             <div className="d-flex gap-2">
-                <button className="btn-custom-export d-flex align-items-center gap-2 px-4 py-2">
+                <button
+                    className="btn-custom-export d-flex align-items-center gap-2 px-4 py-2"
+                    onClick={onExport}
+                >
                     <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>
                         download
                     </span>
