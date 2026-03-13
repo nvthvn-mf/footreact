@@ -65,7 +65,7 @@ const router = createBrowserRouter([
                 element: <MatchDetails/>,
                 loader: matchDetailsLoader,
                 errorElement: <div className="p-5 text-white">Erreur lors du chargement de la page.</div> // React Router gère les erreurs automatiquement
-            }
+            },
 
         ],
     },

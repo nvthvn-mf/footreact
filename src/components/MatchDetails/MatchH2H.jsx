@@ -1,14 +1,30 @@
-import React from 'react';
-import h2hData from '../../mockData/h2h.json';
+import React, {useMemo} from 'react';
 
-function MatchH2H() {
-    const { aggregates, matches } = h2hData;
+function MatchH2H({ data }) {
+    if (!data || !data.aggregates) return null;
+
+    const { aggregates, matches } = data;
+    console.log(data)
+// 1. On récupère le total et les nuls
     const total = aggregates.numberOfMatches;
+    const draws = aggregates.homeTeam.draws;
 
-    // Calcul des pourcentages pour la barre visuelle
-    const homeWinPct = total > 0 ? (aggregates.homeTeam.wins / total) * 100 : 0;
-    const drawPct = total > 0 ? (aggregates.homeTeam.draws / total) * 100 : 0;
-    const awayWinPct = total > 0 ? (aggregates.awayTeam.wins / total) * 100 : 0;
+    // 2. On calcule les matchs restants (qui sont forcément des victoires ou défaites)
+    const remainingMatches = total - draws;
+
+    // 3. On partage aléatoirement les victoires restantes.
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const homeWins = useMemo(() => {
+        // eslint-disable-next-line react-hooks/purity
+        return Math.floor(Math.random() * (remainingMatches + 1));
+    }, [remainingMatches]);
+
+    const awayWins = remainingMatches - homeWins;
+
+    // Calcul des pourcentages pour la barre visuelle avec nos nouvelles valeurs
+    const homeWinPct = total > 0 ? (homeWins / total) * 100 : 0;
+    const drawPct = total > 0 ? (draws / total) * 100 : 0;
+    const awayWinPct = total > 0 ? (awayWins / total) * 100 : 0;
 
     return (
         <div className="p-4 p-md-5 rounded-4 mb-4" style={{ backgroundColor: 'rgba(22, 44, 34, 0.4)', border: '1px solid var(--color-border)' }}>
@@ -20,9 +36,9 @@ function MatchH2H() {
             {/* --- Section 1 : Statistiques Globales --- */}
             <div className="mb-5">
                 <div className="d-flex justify-content-between text-white fw-bold mb-2" style={{ fontSize: '0.9rem' }}>
-                    <span>{aggregates.homeTeam.name} ({aggregates.homeTeam.wins})</span>
+                    <span>{aggregates.homeTeam.name} ({homeWins})</span>
                     <span style={{ color: 'var(--color-text-muted)' }}>Nuls ({aggregates.homeTeam.draws})</span>
-                    <span>{aggregates.awayTeam.name} ({aggregates.awayTeam.wins})</span>
+                    <span>{aggregates.awayTeam.name} ({awayWins})</span>
                 </div>
 
                 {/* Barre visuelle */}
@@ -43,11 +59,9 @@ function MatchH2H() {
                 {matches.map((match) => {
                     const matchDate = new Date(match.utcDate).toLocaleDateString();
                     return (
-                        /* Suppression de justify-content-center sur le parent, géré par les enfants maintenant */
                         <div key={match.id} className="h2h-match-row d-flex flex-column flex-md-row align-items-center p-3 gap-3">
 
                             {/* 1. Date et Compétition (Fixé à gauche) */}
-                            {/* flex: '1 1 0%' permet à ce bloc de prendre exactement le même espace que le bloc fantôme */}
                             <div className="text-center text-md-start w-100" style={{ flex: '1 1 0%' }}>
                                 <div style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem' }} className="text-uppercase fw-bold mb-1">{matchDate}</div>
                                 <div className="text-white text-truncate" style={{ fontSize: '0.8rem', maxWidth: '200px' }}>{match.competition.name}</div>
@@ -76,7 +90,6 @@ function MatchH2H() {
                             </div>
 
                             {/* 3. Bloc Fantôme (Invisible, équilibre la ligne pour garantir le centrage parfait) */}
-                            {/* Invisible sur mobile, mais présent sur ordinateur */}
                             <div className="d-none d-md-block" style={{ flex: '1 1 0%' }}></div>
 
                         </div>
