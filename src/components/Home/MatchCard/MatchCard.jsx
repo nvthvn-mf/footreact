@@ -22,12 +22,9 @@ function MatchCard({ match }) {
       <div className="card-body d-flex flex-column p-4">
         
         {/* En-tête : Ligue & Statut */}
-        <div className="d-flex justify-content-between align-items-center mb-4">
+        <div className="badge rounded-pill match-card-badge d-flex justify-content-between align-items-center mb-4">
           <span className="text-uppercase fw-bold text-truncate match-card-league">
             {league}
-          </span>
-          <span className="badge rounded-pill match-card-badge">
-            {isFinished ? 'FT' : 'TIMED'}
           </span>
         </div>
 

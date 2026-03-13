@@ -11,6 +11,8 @@ import {leagueStandingsLoader} from "./components/Home/Standings/LeagueStandings
 import CompetitionStandings, {
     competitionStandingsLoader
 } from "./components/Competitions/CompetitionStandings/CompetitionStandings.jsx";
+import CompetitionDetailNavBar
+    from "./components/Competitions/CompetitionDetail/CompetitionDetailNavBar/CompetitionDetailNavBar.jsx";
 
 const router = createBrowserRouter([
     {
@@ -59,7 +61,15 @@ const router = createBrowserRouter([
             {
                 path: "competition/teams",
                 element: <Teams />,
+            },
+            {
+               // path: "competition/:name" // Le ":" indique que le name est dynamique
+            },
+            {
+                path : "competitions/name/navBar",
+                element: <CompetitionDetailNavBar />
             }
+
         ],
     },
 ]);

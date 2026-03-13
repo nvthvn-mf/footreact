@@ -25,5 +25,7 @@ export const useFetch = (endpoint) => {
         fetchData();
     }, [endpoint]);
 
+    console.log("render ----")
+
     return { data, isLoading, error };
 };
