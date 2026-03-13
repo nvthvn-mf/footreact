@@ -22,7 +22,7 @@ const CompetitionStandings = () => {
     const endYear = season?.endDate?.substring(2, 4);
 
     return (
-        <div className="p-4 flex-grow-1">
+        <div className="competitions-page-container p-4 flex-grow-1 h-100 overflow-auto">
             <div className="standings-board p-4 rounded-4">
 
                 {/* En-tête */}
