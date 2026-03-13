@@ -7,21 +7,31 @@ import Players from "./components/Players/Players.jsx";
 import Favorites from "./components/Favorites/Favorites.jsx";
 import Profile from "./components/Profile/Profile.jsx";
 import React from "react";
+import {leagueStandingsLoader} from "./components/Home/Standings/LeagueStandings.jsx";
+import CompetitionStandings, {
+    competitionStandingsLoader
+} from "./components/Competitions/CompetitionStandings/CompetitionStandings.jsx";
 import CompetitionDetailNavBar
     from "./components/Competitions/CompetitionDetail/CompetitionDetailNavBar/CompetitionDetailNavBar.jsx";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <App />, // App contient la Sidebar et l'Outlet (le Layout)
+        element: <App />,
         children: [
             {
-                index: true, // Notion 16 : C'est la page par défaut (Accueil)
+                index: true,
                 element: <Home />,
+                loader: leagueStandingsLoader,
             },
             {
                 path: "competitions",
                 element: <Competitions />,
+            },
+            {
+                path: "competitions/:id",
+                element: <CompetitionStandings />,
+                loader: competitionStandingsLoader,
             },
             {
                 path: "equipes",

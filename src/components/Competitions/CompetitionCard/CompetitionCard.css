@@ -74,3 +74,14 @@
   margin-top: 0.5rem; /* Adjust as needed */
   margin-bottom: 0.5rem; /* Adjust as needed */
 }
+.competition-card {
+    /* ... tes autres styles ... */
+    color: inherit; /* Force le lien à garder la couleur d'origine */
+    display: flex; /* Assure-toi que flexbox fonctionne bien sur le Link */
+}
+
+/* Optionnel : un petit effet sympa au survol */
+.competition-card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
