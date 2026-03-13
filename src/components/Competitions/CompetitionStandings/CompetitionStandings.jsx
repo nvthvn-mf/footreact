@@ -23,12 +23,23 @@ const CompetitionStandings = () => {
     const endYear = season?.endDate?.substring(2, 4);
 
     const { toPDF, targetRef } = usePDF({
-        filename: 'page.pdf'
+        filename: 'page.pdf',
+        page: {
+            margin: 10,
+            format: 'a4',
+            orientation: 'landscape'
+        },
+        canvas: {
+            useCORS: true // Autorise le téléchargement des images (logos) depuis l'API externe
+        }
     });
 
     return (
         <div className="competitions-page-container p-4 flex-grow-1 h-100 overflow-auto">
-            <div className="standings-board p-4 rounded-4" ref={targetRef}>
+            <div
+                ref={targetRef}
+                style={{ backgroundColor: '#0f231a', padding: '10px' }} // Fond sombre pour le PDF
+            >
 
                 {/* En-tête */}
                 <CompetitionHeader
@@ -40,7 +51,7 @@ const CompetitionStandings = () => {
                 />
 
                 {/* Le Tableau */}
-                <div className="table-responsive" style={{ overflowX: 'auto' }}>
+                <div className="table-responsive p-3 rounded-4"  >
                     <table className="table table-borderless align-middle text-white mb-0 custom-standings-table">
                         <thead className="small text-uppercase text-secondary border-bottom border-secondary border-opacity-25">
                         <tr>

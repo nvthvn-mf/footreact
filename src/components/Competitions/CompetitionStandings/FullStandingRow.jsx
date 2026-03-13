@@ -47,7 +47,11 @@ const FullStandingRow = ({ teamData, isHovered, onMouseEnter, onMouseLeave }) =>
             <td className="py-3">
                 <div className="d-flex align-items-center">
                     <div className="bg-white rounded-circle d-flex justify-content-center align-items-center me-3" style={{ width: '32px', height: '32px' }}>
-                        <img src={team.crest} alt={team.name} style={{ maxWidth: '20px', maxHeight: '20px' }} />
+                        <img
+                            src={team.crest}
+                            alt={team.name}
+                            style={{ maxWidth: '20px', maxHeight: '20px' }}
+                        />
                     </div>
 
                     <span className={`fw-bold me-2 ${display ? 'text-dark' : 'text-white'}`}>
