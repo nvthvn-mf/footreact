@@ -1,0 +1,152 @@
+{
+  "filters": {
+    "limit": 15,
+    "permission": "TIER_ONE"
+  },
+  "resultSet": {
+    "count": 2,
+    "competitions": "BSA",
+    "first": "2021-07-09",
+    "last": "2021-11-02"
+  },
+  "aggregates": {
+    "numberOfMatches": 12,
+    "totalGoals": 15,
+    "homeTeam": {
+      "id": 1772,
+      "name": "Chapecoense AF",
+      "wins": 0,
+      "draws": 2,
+      "losses": 0
+    },
+    "awayTeam": {
+      "id": 1779,
+      "name": "SC Corinthians Paulista",
+      "wins": 0,
+      "draws": 2,
+      "losses": 0
+    }
+  },
+  "matches": [
+    {
+      "area": {
+        "id": 2032,
+        "name": "Brazil",
+        "code": "BRA",
+        "flag": "https://crests.football-data.org/764.svg"
+      },
+      "competition": {
+        "id": 2013,
+        "name": "Campeonato Brasileiro Série A",
+        "code": "BSA",
+        "type": "LEAGUE",
+        "emblem": "https://crests.football-data.org/bsa.png"
+      },
+      "season": {
+        "id": 726,
+        "startDate": "2021-05-30",
+        "endDate": "2021-12-05",
+        "currentMatchday": 37,
+        "winner": null
+      },
+      "id": 324815,
+      "utcDate": "2021-11-02T00:30:00Z",
+      "status": "FINISHED",
+      "matchday": 29,
+      "stage": "REGULAR_SEASON",
+      "group": null,
+      "lastUpdated": "2022-02-13T08:20:28Z",
+      "homeTeam": {
+        "id": 1779,
+        "name": "SC Corinthians Paulista",
+        "shortName": "Corinthians",
+        "tla": "COR",
+        "crest": "https://crests.football-data.org/1779.png"
+      },
+      "awayTeam": {
+        "id": 1772,
+        "name": "Chapecoense AF",
+        "shortName": "Chapecoense",
+        "tla": "CHA",
+        "crest": "https://crests.football-data.org/1772_large.png"
+      },
+      "score": {
+        "winner": "HOME_TEAM",
+        "duration": "REGULAR",
+        "fullTime": {
+          "home": 1,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "odds": {
+        "msg": "Activate Odds-Package in User-Panel to retrieve odds."
+      },
+      "referees": [
+      ]
+    },
+    {
+      "area": {
+        "id": 2032,
+        "name": "Brazil",
+        "code": "BRA",
+        "flag": "https://crests.football-data.org/764.svg"
+      },
+      "competition": {
+        "id": 2013,
+        "name": "Campeonato Brasileiro Série A",
+        "code": "BSA",
+        "type": "LEAGUE",
+        "emblem": "https://crests.football-data.org/bsa.png"
+      },
+      "season": {
+        "id": 726,
+        "startDate": "2021-05-30",
+        "endDate": "2021-12-05",
+        "currentMatchday": 37,
+        "winner": null
+      },
+      "id": 324985,
+      "utcDate": "2021-07-09T00:00:00Z",
+      "status": "FINISHED",
+      "matchday": 10,
+      "stage": "REGULAR_SEASON",
+      "group": null,
+      "lastUpdated": "2022-02-13T08:20:27Z",
+      "homeTeam": {
+        "id": 1772,
+        "name": "Chapecoense AF",
+        "shortName": "Chapecoense",
+        "tla": "CHA",
+        "crest": "https://crests.football-data.org/1772_large.png"
+      },
+      "awayTeam": {
+        "id": 1779,
+        "name": "SC Corinthians Paulista",
+        "shortName": "Corinthians",
+        "tla": "COR",
+        "crest": "https://crests.football-data.org/1779.png"
+      },
+      "score": {
+        "winner": "AWAY_TEAM",
+        "duration": "REGULAR",
+        "fullTime": {
+          "home": 0,
+          "away": 1
+        },
+        "halfTime": {
+          "home": 0,
+          "away": 0
+        }
+      },
+      "odds": {
+        "msg": "Activate Odds-Package in User-Panel to retrieve odds."
+      },
+      "referees": [
+      ]
+    }
+  ]
+}

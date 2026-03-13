@@ -14,6 +14,8 @@ import CompetitionStandings, {
 import CompetitionDetailNavBar
     from "./components/Competitions/CompetitionDetail/CompetitionDetailNavBar/CompetitionDetailNavBar.jsx";
 import TopScorer from "./components/Home/TopScorer/TopScorer.jsx";
+import MatchDetails, {matchDetailsLoader} from "./components/MatchDetails/MatchDetails.jsx";
+
 
 const router = createBrowserRouter([
     {
@@ -89,9 +91,14 @@ const router = createBrowserRouter([
                // path: "competition/:name" // Le ":" indique que le name est dynamique
             },
             {
-                path : "competitions/name/navBar",
-                element: <CompetitionDetailNavBar />
-            }
+                path: "competitions/name/navBar",
+                element: <CompetitionDetailNavBar/>
+            }, {
+                path: "matches/:id",
+                element: <MatchDetails/>,
+                loader: matchDetailsLoader,
+                errorElement: <div className="p-5 text-white">Erreur lors du chargement de la page.</div> // React Router gère les erreurs automatiquement
+            },
 
         ],
     },

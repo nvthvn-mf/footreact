@@ -5,6 +5,7 @@ import DashboardHeader from "../DashboardHeader/DashboardHeader.jsx";
 import DashboardFilters from "../DashboardFilters/DashboardFilters.jsx";
 import MatchCard from "../MatchCard/MatchCard.jsx";
 import {useFetch} from '../../../hooks/useFetch';
+import {Link} from "react-router-dom";
 
 function Dashboard() {
 
@@ -44,7 +45,8 @@ function Dashboard() {
 
             <DashboardHeader onDateChange={handleDateChange}/>
 
-            <DashboardFilters onLeagueChange={handleLeagueChange} activeFilter={activeFilter} onFilterChange={setActiveFilter}/>
+            <DashboardFilters onLeagueChange={handleLeagueChange} activeFilter={activeFilter}
+                              onFilterChange={setActiveFilter}/>
 
             {/* Section match (En-tête) */}
             <div className="d-flex justify-content-between align-items-end mb-4">
@@ -53,10 +55,10 @@ function Dashboard() {
                         Liste des Matchs
                     </h3>
                     <p className="mb-0"
-                        style={{
-                            color: "var(--color-text-muted)",
-                            fontSize: "0.875rem"
-                        }}
+                       style={{
+                           color: "var(--color-text-muted)",
+                           fontSize: "0.875rem"
+                       }}
                     >
                         Actualités footballistiques en temps réel du monde entier
                     </p>
@@ -91,7 +93,7 @@ function Dashboard() {
             {/* 1. État de chargement (Spinner) */}
             {isLoading && (
                 <div className="text-center py-5">
-                    <div className="spinner-border" style={{ color: 'var(--color-primary)' }} role="status"></div>
+                    <div className="spinner-border" style={{color: 'var(--color-primary)'}} role="status"></div>
                     <p className="text-white mt-3">Chargement des matchs en cours...</p>
                 </div>
             )}
@@ -112,9 +114,11 @@ function Dashboard() {
             {!isLoading && !error && matches.length > 0 && (
                 <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4 pb-5">
                     {matches.map((match) => (
-                        <div className="col" key={match.id}>
-                            <MatchCard match={match}/>
-                        </div>
+                        <Link to={`/matches/${match.id}`} key={match.id} style={{ textDecoration: 'none' }}>
+                            <div className="col" key={match.id}>
+                                <MatchCard match={match}/>
+                            </div>
+                        </Link>
                     ))}
                 </div>
             )}
