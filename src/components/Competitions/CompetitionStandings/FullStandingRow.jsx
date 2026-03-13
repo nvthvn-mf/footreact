@@ -64,11 +64,6 @@ const FullStandingRow = ({ teamData, isHovered, onMouseEnter, onMouseLeave }) =>
             <td className={`text-center py-3 fw-semibold ${display ? 'text-dark' : 'text-white'}`}>{lost}</td>
             <td className={`text-center py-3 fw-semibold ${display ? 'text-dark' : 'text-white'}`}>{goalDifference > 0 ? `+${goalDifference}` : goalDifference}</td>
             <td className={`text-center py-3 fw-bold fs-5 ${display ? 'text-dark' : 'text-white'}`}>{points}</td>
-            <td className="text-center py-3">
-                <div className="d-flex justify-content-center gap-1 align-items-center h-100">
-                    {renderForm(form)}
-                </div>
-            </td>
         </tr>
     );
 };
