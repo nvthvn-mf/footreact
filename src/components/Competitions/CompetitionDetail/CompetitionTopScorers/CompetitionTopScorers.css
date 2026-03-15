@@ -93,3 +93,26 @@
     background: rgba(0, 255, 133, 0.15);
     font-size: 1.1rem;
 }
+
+/* Effet de survol pour le Podium */
+.podium-item {
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.podium-item:hover {
+    transform: translateY(-10px); /* Fait "sauter" le joueur vers le haut */
+}
+
+.podium-item.first:hover {
+    transform: translateY(-30px); /* Le premier est déjà à -20px, on le monte à -30px */
+}
+
+/* Effet de survol pour les lignes du tableau */
+.standard-row {
+    transition: background-color 0.2s ease;
+}
+
+.standard-row:hover {
+    background-color: rgba(255, 255, 255, 0.05); /* Éclaire légèrement la ligne */
+}

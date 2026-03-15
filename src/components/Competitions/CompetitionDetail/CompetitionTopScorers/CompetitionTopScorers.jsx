@@ -10,10 +10,10 @@ const CompetitionTopScorers = () => {
     if (!scorers || scorers.length === 0) return <div className="text-white p-4">Aucune donnée disponible.</div>;
 
     const podium = scorers.slice(0, 3);
-    const others = scorers.slice(3, 8);
+    const others = scorers.slice(3, 10);
 
     return (
-        <div className="top-scorers-container mt-4">
+        <div className="top-scorers-container mt-4 ">
 
             {/* Section Podium : On réorganise pour que le 1er soit au milieu visuellement */}
             <div className="podium-section d-flex justify-content-center align-items-end mb-5">
@@ -24,7 +24,7 @@ const CompetitionTopScorers = () => {
 
             {/* Section Liste */}
             <div className="standings-board p-4 rounded-4">
-                <table className="table table-borderless align-middle text-white mb-0 custom-standings-table">
+                <table className="table table-borderless align-middle text-white mb-0 custom-standings-table overflow-auto">
                     <thead className="small text-uppercase text-secondary border-bottom border-secondary border-opacity-25">
                     <tr>
                         <th className="text-center pb-3">Pos</th>

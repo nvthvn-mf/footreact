@@ -107,6 +107,10 @@ const router = createBrowserRouter([
                 loader: matchDetailsLoader,
                 errorElement: <div className="p-5 text-white">Erreur lors du chargement de la page.</div> // React Router gère les erreurs automatiquement
             },
+            {
+                path: "joueurs/:id",
+                element: <Players /> // Le futur composant de profil d'un joueur
+            }
 
         ],
     },
