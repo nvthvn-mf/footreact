@@ -15,6 +15,9 @@ import CompetitionDetailNavBar
     from "./components/Competitions/CompetitionDetail/CompetitionDetailNavBar/CompetitionDetailNavBar.jsx";
 import TopScorer from "./components/Home/TopScorer/TopScorer.jsx";
 import MatchDetails, {matchDetailsLoader} from "./components/MatchDetails/MatchDetails.jsx";
+import CompetitionDetail, {
+    competitionDetailLoader
+} from "./components/Competitions/CompetitionDetail/CompetitionDetail.jsx";
 
 
 const router = createBrowserRouter([
@@ -33,12 +36,13 @@ const router = createBrowserRouter([
             },
             {
                 path: "competitions/:id",
-                element: <CompetitionStandings />,
-                loader: competitionStandingsLoader,
+                element: <CompetitionDetail />,
+                loader: competitionDetailLoader,
                 children: [
                     {
                         path: "classement",
-                        element: <div className="p-4 text-white">Classement à venir</div>
+                        element: <CompetitionStandings />, // Ici tu mets le code du tableau seul
+                        loader: competitionStandingsLoader,
                     },
                     {
                         path: "equipes",
