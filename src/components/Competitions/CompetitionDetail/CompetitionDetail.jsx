@@ -3,7 +3,7 @@ import { useLoaderData, Outlet } from 'react-router-dom';
 import './CompetitionStandings/CompetitionStandings.css'; // On garde ton CSS
 import { usePDF } from "react-to-pdf";
 import CompetitionDetailNavBar from "./CompetitionDetailNavBar/CompetitionDetailNavBar.jsx";
-import CompetitionHeader from "./CompetitionStandings/CompetitionHeader.jsx";
+import CompetitionHeader from "./CompetitionHeader.jsx";
 import {fetchCompetitionStandings} from "../../../services/FootballService.jsx";
 
 
@@ -23,7 +23,6 @@ const CompetitionDetail = () => {
     const { toPDF, targetRef } = usePDF({
         filename: `Classement_${competition.name}.pdf`,
         page: { margin: 10, format: 'a4', orientation: 'landscape' },
-        canvas: { useCORS: true }
     });
 
     return (

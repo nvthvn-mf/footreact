@@ -18,6 +18,9 @@ import MatchDetails, {matchDetailsLoader} from "./components/MatchDetails/MatchD
 import CompetitionDetail, {
     competitionDetailLoader
 } from "./components/Competitions/CompetitionDetail/CompetitionDetail.jsx";
+import CompetitionTopScorers
+    from "./components/Competitions/CompetitionDetail/CompetitionTopScorers/CompetitionTopScorers.jsx";
+import {topScorersLoader} from "./services/FootballService.jsx";
 
 
 const router = createBrowserRouter([
@@ -50,7 +53,8 @@ const router = createBrowserRouter([
                     },
                     {
                         path: "buteurs",
-                        element: <TopScorer />,
+                        element: <CompetitionTopScorers />,
+                        loader: topScorersLoader,
                     },
                     {
                         path: "resultats",

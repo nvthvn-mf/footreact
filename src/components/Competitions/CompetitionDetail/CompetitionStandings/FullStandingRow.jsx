@@ -1,31 +1,13 @@
-// components/Competitions/CompetitionStandings/FullStandingRow.jsx
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const FullStandingRow = ({ teamData, isHovered, onMouseEnter, onMouseLeave }) => {
-    const { position, team, playedGames, won, draw, lost, goalDifference, points, form } = teamData;
+    const { position, team, playedGames, won, draw, lost, goalDifference, points } = teamData;
     const navigate = useNavigate();
 
     const isLeader = position === 1;
 
     const display = isHovered;
-
-    const renderForm = (formString) => {
-        if (!formString) return null;
-        return formString.split(',').map((result, index) => {
-            let bgColor = '#4F5953';
-            if (result === 'W') bgColor = '#52FFA8';
-            if (result === 'L') bgColor = '#FF5959';
-
-            return (
-                <span
-                    key={index}
-                    className="rounded-circle d-inline-block mx-1"
-                    style={{ width: '8px', height: '8px', backgroundColor: bgColor }}
-                ></span>
-            );
-        });
-    };
 
     const teamNameDisplay = display ? team.name.toUpperCase() : team.name;
 

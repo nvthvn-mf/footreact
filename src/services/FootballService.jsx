@@ -18,3 +18,11 @@ export const fetchCompetitionStandings = async (competitionId) => {
     const data = await get(`/competitions/${competitionId}/standings`);
     return data;
 };
+
+export const topScorersLoader = async ({ params }) => {
+    const data = await get(`/competitions/${params.id}/scorers`);
+    return data;
+};
+
+
+
