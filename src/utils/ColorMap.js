@@ -11,6 +11,7 @@ const colorMap = {
 };
 
 export const parseClubColors = (clubColors) => {
+    if(!clubColors) return ["#ccc"];
     return clubColors
         .split(" / ")
         .map(c => colorMap[c.toLowerCase()] ?? c.toLowerCase());

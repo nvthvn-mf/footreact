@@ -1,13 +1,12 @@
 import TeamsCard from "./TeamsCard/TeamsCard.jsx";
 import './Teams.css';
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import {useFetch} from "../../hooks/useFetch.js";
 
 const Teams = () => {
 
-    const {id} = useParams();
-
-    const apiUrl = `/competitions/${id}/teams`;
+    const {id: competitionId} = useParams();
+    const apiUrl = `/competitions/${competitionId}/teams`;
     const {data, isLoading, error} = useFetch(apiUrl);
 
     const teams = data ? data.teams : [];
@@ -42,9 +41,13 @@ const Teams = () => {
 
             {!isLoading && !error && teams.length > 0 && (
                 <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 mb-5">
-                    {teams.map((team, index) => (
-                        <div className="col" key={index}>
-                            <TeamsCard team={team} />
+                    {teams.map((team) => (
+                        <div className="col" key={team.id}>
+                            <Link
+                                to={`/competitions/${competitionId}/equipes/${team.id}`}
+                                style={{ textDecoration: "none" }}>
+                                <TeamsCard team={team} />
+                            </Link>
                         </div>
                     ))}
                 </div>

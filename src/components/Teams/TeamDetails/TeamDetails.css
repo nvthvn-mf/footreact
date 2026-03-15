@@ -1,0 +1,181 @@
+.team-detail-page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+    background-color: var(--color-bg-dark);
+    color: #fff;
+}
+
+/* ── HEADER ── */
+.team-detail-header {
+    position: relative;
+    background: var(--team-gradient);
+    padding: 2rem 2rem 2.5rem;
+    overflow: hidden;
+}
+
+.team-detail-header-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.82) 100%);
+}
+
+.team-detail-header-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.team-detail-identity {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.team-detail-crest {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
+}
+
+.team-detail-name {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0 0 0.5rem;
+    letter-spacing: -0.5px;
+}
+
+.team-detail-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255,255,255,0.7);
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+}
+
+.team-detail-flag {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.meta-separator {
+    color: rgba(255,255,255,0.3);
+}
+
+/* Stats row */
+.team-detail-stats {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.team-detail-stat-block {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 100px;
+}
+
+.stat-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.45);
+    font-weight: 600;
+}
+
+.stat-value {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.stat-value--big {
+    font-size: 1.8rem;
+    line-height: 1;
+    color: var(--color-primary);
+}
+
+.stat-sub {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.5);
+}
+
+.competitions-emblems {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-top: 2px;
+}
+
+.competition-emblem-sm {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.color-swatches {
+    display: flex;
+    gap: 6px;
+    margin-top: 2px;
+}
+
+.color-swatch {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+/* ── SQUAD ── */
+.team-detail-squad {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.squad-section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.squad-section-title h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0;
+    color: #fff;
+}
+
+.squad-section-icon {
+    color: var(--color-primary);
+    font-size: 1.3rem;
+}
+
+.squad-section-count {
+    background-color: rgba(0, 255, 133, 0.12);
+    color: var(--color-primary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 255, 133, 0.25);
+}
+
+.squad-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+}

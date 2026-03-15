@@ -1,0 +1,93 @@
+.player-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.player-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 12px rgba(0, 255, 136, 0.2);
+}
+
+.player-card-top {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: rgba(255,255,255,0.03);
+    height: 90px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.player-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.06);
+    border: 2px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -20px;
+}
+
+.player-avatar .material-symbols-outlined {
+    font-size: 2rem;
+    color: rgba(255,255,255,0.3);
+}
+
+.player-card-body {
+    padding: 1.5rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.player-name {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.player-position {
+    font-size: 0.75rem;
+    color: var(--color-primary);
+    margin: 0;
+    font-weight: 600;
+}
+
+.player-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.player-age {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.45);
+}
+
+.player-nationality {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.45);
+}
+
+.player-flag {
+    width: 16px;
+    height: 12px;
+    object-fit: cover;
+    border-radius: 2px;
+}
