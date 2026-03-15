@@ -6,6 +6,7 @@ import Teams from "./components/Teams/Teams.jsx";
 import Players from "./components/Players/Players.jsx";
 import Favorites from "./components/Favorites/Favorites.jsx";
 import Profile from "./components/Profile/Profile.jsx";
+import TeamDetails from "./components/Teams/TeamDetails/TeamDetails.jsx";
 import React from "react";
 import {leagueStandingsLoader} from "./components/Home/Standings/LeagueStandings.jsx";
 import CompetitionStandings, {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
                     {
                         path: "equipes",
                         element: <Teams />,
+                    },
+                    {
+                        path: "equipes/:teamId",
+                        element: <TeamDetails />,
                     },
                     {
                         path: "buteurs",
