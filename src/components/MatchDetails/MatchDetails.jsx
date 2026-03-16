@@ -45,6 +45,7 @@ function MatchDetails() {
                     score={matchData.score}
                     status={matchData.status}
                     utcDate={matchData.utcDate}
+                    competition={matchData.competition}
                 />
 
                 {/* Composant 3 : Head-to-Head (Toute la largeur) */}

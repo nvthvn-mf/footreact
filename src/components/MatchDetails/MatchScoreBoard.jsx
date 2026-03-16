@@ -1,11 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-function MatchScoreBoard({ homeTeam, awayTeam, score, status, utcDate }) {
+function MatchScoreBoard({ homeTeam, awayTeam, score, status, utcDate, competition }) {
     const isFinished = status === 'FINISHED';
 
     // Si le match n'est pas fini, on affiche l'heure au lieu du score
     const matchTime = new Date(utcDate).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     const displayStatus = isFinished ? 'Score Final' : 'Coup d\'envoi';
+
+    console.log("Competition ID : "+competition.id)
+    console.log("Equipe ID : "+homeTeam.id)
 
     return (
         <div className="score-board-card p-4 p-md-5 mb-4">
@@ -14,7 +18,9 @@ function MatchScoreBoard({ homeTeam, awayTeam, score, status, utcDate }) {
                 {/* Équipe Domicile */}
                 <div className="d-flex flex-column align-items-center gap-3">
                     <div className="team-crest-container">
+                        <Link to={`/competitions/${competition.id}/equipes/${homeTeam.id}`}>
                         <img src={homeTeam.crest} alt={homeTeam.name} className="img-fluid" style={{ maxHeight: '80px' }} />
+                         </Link>
                     </div>
                     <div className="text-center">
                         <h3 className="fs-4 fw-bold text-white m-0">{homeTeam.shortName}</h3>
@@ -51,7 +57,9 @@ function MatchScoreBoard({ homeTeam, awayTeam, score, status, utcDate }) {
                 {/* Équipe Extérieur */}
                 <div className="d-flex flex-column align-items-center gap-3">
                     <div className="team-crest-container">
+                        <Link to={`/competitions/${competition.id}/equipes/${awayTeam.id}`}>
                         <img src={awayTeam.crest} alt={awayTeam.name} className="img-fluid" style={{ maxHeight: '80px' }} />
+                        </Link>
                     </div>
                     <div className="text-center">
                         <h3 className="fs-4 fw-bold text-white m-0">{awayTeam.shortName}</h3>
