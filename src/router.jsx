@@ -45,7 +45,7 @@ const router = createBrowserRouter([
                 children: [
                     {
                         path: "classement",
-                        element: <CompetitionStandings />, // Ici tu mets le code du tableau seul
+                        element: <CompetitionStandings />, 
                         loader: competitionStandingsLoader,
                     },
                     {

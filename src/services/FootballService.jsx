@@ -14,15 +14,10 @@ export const fetchLigue1Standings = async () => {
 };
 
 export const fetchCompetitionStandings = async (competitionId) => {
-    // On récupère tout le classement brut de l'API
     const data = await get(`/competitions/${competitionId}/standings`);
     return data;
 };
 
-/*export const topScorersLoader = async ({ params }) => {
-    const data = await get(`/competitions/${params.id}/scorers`);
-    return data;
-};*/
 
 export const fetchPlayerPhoto = async (playerName) => {
     try {
@@ -31,9 +26,6 @@ export const fetchPlayerPhoto = async (playerName) => {
         const response = await fetch(`https://www.thesportsdb.com/api/v1/json/3/searchplayers.php?p=${queryName}`);
         const data = await response.json();
 
-        // L'API renvoie un tableau 'player'. On prend le premier résultat.
-        // 'strCutout' est l'image du joueur sans fond (parfait pour ton design).
-        // Si strCutout n'existe pas, on prend 'strThumb' (photo classique).
         if (data.player && data.player.length > 0) {
             return data.player[0].strCutout || data.player[0].strThumb || null;
         }
@@ -45,7 +37,7 @@ export const fetchPlayerPhoto = async (playerName) => {
 };
 
 export const topScorersLoader = async ({ params }) => {
-    // 1. On récupère les buteurs via ton Network.js
+
     const data = await get(`/competitions/${params.id}/scorers`);
     const scorers = data.scorers || [];
 
