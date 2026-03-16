@@ -103,10 +103,7 @@ const router = createBrowserRouter([
             {
                // path: "competition/:name" // Le ":" indique que le name est dynamique
             },
-            {
-                path: "competitions/name/navBar",
-                element: <CompetitionDetailNavBar/>
-            }, {
+             {
                 path: "matches/:id",
                 element: <MatchDetails/>,
                 loader: matchDetailsLoader,
