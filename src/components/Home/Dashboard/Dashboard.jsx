@@ -25,10 +25,8 @@ function Dashboard() {
         tomorrow: getDateString(1)
     };
 
-    // 4. L'URL se met à jour automatiquement quand on clique sur un bouton !
     const apiUrl = `/matches?date=${dateMap[activeFilter]}`;
 
-    // 1. On récupère les vraies données, l'état de chargement et les erreurs via le hook
     const {data, isLoading, error} = useFetch(apiUrl);
     const matches = data ? data.matches : [];
 

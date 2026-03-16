@@ -1,30 +1,26 @@
-import React, { useState } from 'react'; // Import useState
+import React, { useState } from 'react'; 
 import CompetitionCard from './CompetitionCard/CompetitionCard';
-import competitionsData from '../../mockData/competitionsData.json'; // Adjust path as needed
+import competitionsData from '../../mockData/competitionsData.json'; 
 import './Competitions.css';
 
 const Competitions = () => {
-    // Accède au tableau 'competitions' de l'objet JSON
     const allCompetitions = competitionsData.competitions;
 
-    // État pour gérer le filtre actif
     const [activeFilter, setActiveFilter] = useState('all'); // 'all', 'league', 'cup'
 
-    // Fonction pour gérer le changement de filtre
     const handleFilterChange = (filterType) => {
         setActiveFilter(filterType);
     };
 
-    // Filtrage des compétitions en fonction du filtre actif
     const filteredCompetitions = allCompetitions.filter(competition => {
         if (activeFilter === 'all') {
-            return true; // Affiche toutes les compétitions
+            return true; 
         } else if (activeFilter === 'league') {
             return competition.type === 'LEAGUE';
         } else if (activeFilter === 'cup') {
             return competition.type === 'CUP';
         }
-        return true; // Fallback, devrait afficher toutes les compétitions par défaut
+        return true; 
     });
 
     // Filtrage pour les "Coupes Majeures" (cette section reste séparée)
