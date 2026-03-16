@@ -1,30 +1,100 @@
+/* --- HERO SECTION (CORRIGÉE) --- */
+/* --- HERO SECTION (CORRIGÉE) --- */
 .competitions-page {
-    background-color: var(--color-bg-dark); /* Ensure background matches global theme */
+    background-color: var(--color-bg-dark);
     color: var(--color-text-white);
-    padding: 1.5rem; /* Adjust padding as needed */
-    height: 100%; /* Take full height of parent */
-    overflow-y: auto; /* Enable scrolling for this specific content area */
+    padding: 1.5rem;
+    
+    /* CORRECTION DU SCROLL */
+    height: 100vh; /* Donne une hauteur fixe (tout l'écran) pour que le composant gère son propre scroll */
+    overflow-y: auto; /* Crée la barre de défilement verticale si le contenu dépasse 100vh */
+    overflow-x: hidden; /* Sécurité : empêche le scroll horizontal souvent causé par les grilles Bootstrap */
 }
 
-/* Custom button style for category navigation */
-.btn-primary-outline {
-    background-color: transparent;
-    border: 1px solid var(--color-border);
-    color: var(--color-text-muted);
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    transition: all 0.2s ease-in-out;
+/* On s'assure que le container de la grille ne bloque rien */
+.competitions-page .row {
+    margin-right: 0;
+    margin-left: 0;
 }
 
-.btn-primary-outline:hover,
-.btn-primary-outline.active {
-    background-color: var(--color-primary);
-    border-color: var(--color-primary);
-    color: var(--color-bg-dark); /* Text color for active/hovered button */
+html {
+    scroll-behavior: smooth;
 }
 
-/* Ensure the grid container takes available height and scrolls */
-.competitions-page .row.flex-grow-1 {
-    /* flex-grow-1 is applied in JSX, this ensures it works as expected */
-    /* min-height: 0; /* Important for flex items with overflow */
+.competitions-hero {
+    position: relative;
+    background: linear-gradient(135deg, #0b1a13 0%, #122a1d 100%);
+    border-radius: 20px;
+    padding: 50px 40px; /* Augmentation du padding vertical */
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid rgba(0, 255, 133, 0.1);
+    min-height: 280px; /* Assure une hauteur minimale pour éviter l'écrasement */
+}
+
+.hero-content {
+    z-index: 2;
+    max-width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-title {
+    font-size: 3rem; /* Légèrement plus grand */
+    font-weight: 800;
+    color: white;
+    margin: 0 0 20px 0; /* Marges nettes pour éviter les conflits */
+    line-height: 1.1; /* Ajustement précis de l'interligne du titre */
+    letter-spacing: -0.02em; /* Un look plus "pro" pour les gros titres */
+}
+
+.hero-subtitle {
+    font-size: 1.15rem;
+    color: #a0aec0;
+    line-height: 1.7; /* Interligne plus aérée pour le texte descriptif */
+    margin: 0;
+    max-width: 90%;
+}
+
+/* On s'assure que le badge ne compresse pas le titre */
+.hero-badge {
+    align-self: flex-start; /* Évite qu'il s'étire */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0, 255, 133, 0.1);
+    color: #00ff85;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+/* --- OPTIMISATION POUR LES PETITS ÉCRANS --- */
+@media (max-width: 768px) {
+    .competitions-hero {
+        padding: 30px;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+    
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-visual {
+        display: none; /* Cache l'icône sur mobile pour libérer de l'espace */
+    }
 }
