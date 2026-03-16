@@ -10,6 +10,7 @@ import {Link} from "react-router-dom";
 function Dashboard() {
 
     const [activeFilter, setActiveFilter] = useState("today");
+    const [selectedLeague, setSelectedLeague] = useState("");
 
     const getDateString = (offsetDays) => {
         const date = new Date();
@@ -30,12 +31,20 @@ function Dashboard() {
     const {data, isLoading, error} = useFetch(apiUrl);
     const matches = data ? data.matches : [];
 
+    const filteredMatches = selectedLeague 
+        ? matches.filter(match => match.competition.code === selectedLeague)
+        : matches;
+
+    const availableLeagues = Array.from(
+        new Map(matches.map(m => [m.competition.code, m.competition])).values()
+    );
+
     const handleDateChange = (event) => {
         console.log("Date sélectionnée :", event.target.value);
     };
 
     const handleLeagueChange = (event) => {
-        console.log("Ligue sélectionnée :", event.target.value);
+        setSelectedLeague(event.target.value);
     };
 
     return (
@@ -43,8 +52,14 @@ function Dashboard() {
 
             <DashboardHeader onDateChange={handleDateChange}/>
 
-            <DashboardFilters onLeagueChange={handleLeagueChange} activeFilter={activeFilter}
-                              onFilterChange={setActiveFilter}/>
+            <DashboardFilters onLeagueChange={handleLeagueChange} 
+                activeFilter={activeFilter}
+                onFilterChange={(filter) => {
+                    setActiveFilter(filter);
+                    setSelectedLeague(""); // Reset le filtre ligue quand on change de jour
+                }}
+                leagues={availableLeagues}
+                selectedLeague={selectedLeague}/>
 
             {/* Section match (En-tête) */}
             <div className="d-flex justify-content-between align-items-end mb-4">
@@ -109,9 +124,9 @@ function Dashboard() {
             )}
 
             {/* 4. Affichage de la Grille avec les vraies données */}
-            {!isLoading && !error && matches.length > 0 && (
+            {!isLoading && !error && filteredMatches.length > 0 && (
                 <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4 pb-5">
-                    {matches.map((match) => (
+                    {filteredMatches.map((match) => (
                         <Link to={`/matches/${match.id}`} key={match.id} style={{ textDecoration: 'none' }}>
                             <div className="col" key={match.id}>
                                 <MatchCard match={match}/>
@@ -119,6 +134,11 @@ function Dashboard() {
                         </Link>
                     ))}
                 </div>
+            )}
+
+            {/* Message si le filtre ligue ne retourne rien */}
+            {!isLoading && !error && matches.length > 0 && filteredMatches.length === 0 && (
+                <p className="text-white text-center py-5">Aucun match pour cette ligue aujourd'hui.</p>
             )}
 
         </div>
