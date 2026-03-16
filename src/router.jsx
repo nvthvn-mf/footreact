@@ -21,7 +21,8 @@ import CompetitionDetail, {
 } from "./components/Competitions/CompetitionDetail/CompetitionDetail.jsx";
 import CompetitionTopScorers
     from "./components/Competitions/CompetitionDetail/CompetitionTopScorers/CompetitionTopScorers.jsx";
-import {topScorersLoader} from "./services/FootballService.jsx";
+import {playerProfileLoader, topScorersLoader} from "./services/FootballService.jsx";
+import PlayerProfile from "./components/Players/PlayerProfile/PlayerProfile.jsx";
 
 
 const router = createBrowserRouter([
@@ -114,8 +115,11 @@ const router = createBrowserRouter([
             },
             {
                 path: "joueurs/:id",
-                element: <Players /> // Le futur composant de profil d'un joueur
+                element: <PlayerProfile />, // Ton nouveau composant designé par Stitch
+                loader: playerProfileLoader, // Le loader qui récupère les stats + photo
+                errorElement: <div className="p-5 text-white">Joueur introuvable.</div>
             }
+
 
         ],
     },
