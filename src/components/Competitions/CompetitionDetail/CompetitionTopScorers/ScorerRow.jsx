@@ -1,13 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const ScorerRow = ({ scorer, position }) => {
-    const navigate = useNavigate();
+const ScorerRow = ({ scorer, position, onSelect }) => {
 
     return (
         <tr
             className="standard-row"
-            onClick={() => navigate(`/joueurs/${scorer.player.id}`)}
+            onClick={() => onSelect(scorer.player.id)}
             style={{ cursor: 'pointer' }} // Change le curseur en petite main
         >
             <td className="text-center py-3 fw-bold">{position}</td>
