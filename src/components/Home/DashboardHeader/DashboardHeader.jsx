@@ -1,7 +1,14 @@
 import React from "react";
 import "./DashboardHeader.css";
 
-function DashboardHeader({ onDateChange }) {
+function DashboardHeader({ onDateChange, isCustomDate }) {
+  
+  // On ne calcule plus que la date maximum (Aujourd'hui + 10 jours)
+  const today = new Date();
+  const maxDate = new Date();
+  maxDate.setDate(today.getDate() + 10);
+  const maxDateStr = maxDate.toISOString().split('T')[0];
+
   return (
     <header className="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-4 mb-5">
       
@@ -35,7 +42,7 @@ function DashboardHeader({ onDateChange }) {
         </button>
 
         {/* Calendar */}
-        <label className="icon-btn border-0 m-0 position-relative">
+        <label className={`icon-btn border-0 m-0 position-relative ${isCustomDate ? 'active-calendar' : ''}`}>
           <span className="material-symbols-outlined">calendar_today</span>
 
           <input
@@ -49,6 +56,7 @@ function DashboardHeader({ onDateChange }) {
               left: 0
             }}
             onChange={onDateChange}
+            max={maxDateStr} /* On garde uniquement la limite de 10 jours dans le futur */
           />
         </label>
 

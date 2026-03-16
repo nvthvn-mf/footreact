@@ -10,12 +10,12 @@ import {Link} from "react-router-dom";
 function Dashboard() {
 
     const [activeFilter, setActiveFilter] = useState("today");
+    const [customDate, setCustomDate] = useState(""); 
     const [selectedLeague, setSelectedLeague] = useState("");
 
     const getDateString = (offsetDays) => {
         const date = new Date();
         date.setDate(date.getDate() + offsetDays);
-        console.log(date.toISOString().split('T')[0], 'Date récupéré : ')
         return date.toISOString().split('T')[0];
     };
 
@@ -26,7 +26,8 @@ function Dashboard() {
         tomorrow: getDateString(1)
     };
 
-    const apiUrl = `/matches?date=${dateMap[activeFilter]}`;
+    const fetchDate = activeFilter === "custom" ? customDate : dateMap[activeFilter];
+    const apiUrl = `/matches?date=${fetchDate}`;
 
     const {data, isLoading, error} = useFetch(apiUrl);
     const matches = data ? data.matches : [];
@@ -40,7 +41,11 @@ function Dashboard() {
     );
 
     const handleDateChange = (event) => {
-        console.log("Date sélectionnée :", event.target.value);
+        if (event.target.value) {
+            setCustomDate(event.target.value);
+            setActiveFilter("custom"); // Cela désactivera automatiquement les boutons "Hier, Aujourd'hui, Demain"
+            setSelectedLeague("");
+        }
     };
 
     const handleLeagueChange = (event) => {
@@ -50,7 +55,7 @@ function Dashboard() {
     return (
         <div className="container-fluid px-4 px-md-5 py-4 w-100">
 
-            <DashboardHeader onDateChange={handleDateChange}/>
+            <DashboardHeader onDateChange={handleDateChange} isCustomDate={activeFilter === "custom"}/>
 
             <DashboardFilters onLeagueChange={handleLeagueChange} 
                 activeFilter={activeFilter}
