@@ -5,7 +5,7 @@ const apiClient = axios.create({
     headers: {
         'X-Auth-Token': import.meta.env.VITE_FOOTBALL_API_KEY,
     },
-    timeout: 10000,
+    timeout: 1000000000,
 });
 
 export const get = async (endpoint) => {
