@@ -1,7 +1,7 @@
 import StandingRow from "./StandingRow.jsx";
 import './LeagueStandings.css';
 import {fetchLigue1Standings} from "../../../services/FootballService.jsx";
-import {useLoaderData} from "react-router-dom";
+import {useLoaderData, useNavigate} from "react-router-dom";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const leagueStandingsLoader = async () => {
@@ -10,6 +10,8 @@ export const leagueStandingsLoader = async () => {
 
 const LeagueStandings = () => {
     const teams = useLoaderData();
+    const navigate = useNavigate();
+    const ligue1Id = 2015; // ID de la Ligue 1 dans l'API
 
     return (
         <div className="standings-container">
@@ -36,14 +38,18 @@ const LeagueStandings = () => {
                             team={t.team}
                             p={t.p}
                             pts={t.pts}
+                            compId={ligue1Id}
                         />
                     ))}
                     </tbody>
                 </table>
             </div>
 
-            <button className="btn w-100 mt-4 py-2 text-uppercase fw-bold standings-btn">
-                View Full Table
+            <button
+                onClick={() => navigate(`/competitions/${ligue1Id}/classement`)}
+                className="btn w-100 mt-4 py-2 text-uppercase fw-bold standings-btn"
+            >
+                Voir Tableau Entier
             </button>
         </div>
     );

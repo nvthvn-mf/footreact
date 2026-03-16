@@ -1,18 +1,20 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import {useNavigate, useParams} from 'react-router-dom';
 
 const FullStandingRow = ({ teamData, isHovered, onMouseEnter, onMouseLeave }) => {
     const { position, team, playedGames, won, draw, lost, goalDifference, points } = teamData;
     const navigate = useNavigate();
 
+    const { id } = useParams();
+
     const isLeader = position === 1;
 
     const display = isHovered;
 
-    const teamNameDisplay = display ? team.name.toUpperCase() : team.name;
+    const teamNameDisplay = display ? team?.name?.toUpperCase() : team?.name;
 
     const handleRowClick = () => {
-        navigate(`/equipes/${team.id}`);
+        navigate(`/competitions/${id}/equipes/${team.id}`);
     };
 
     return (
