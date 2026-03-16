@@ -1,6 +1,17 @@
+/* On applique le scroll sur le conteneur principal de la page */
+.top-scorers-container {
+    width: 100%;
+    overflow-x: auto; /* Active le curseur horizontal si besoin */
+    overflow-y: hidden; /* Évite les doubles barres verticales inutiles */
+    display: block; /* S'assure que le conteneur se comporte comme un bloc */
+    -webkit-overflow-scrolling: touch; /* Rend le scroll fluide sur iPhone/iPad */
+    padding-bottom: 20px; /* Un peu d'espace pour ne pas que la barre de scroll cache le contenu */
+}
+
+/* On s'assure que le podium ne reste pas figé sur une largeur immense */
 .podium-section {
-    color: white;
-    text-align: center;
+    min-width: fit-content; /* S'adapte au contenu pour permettre le scroll */
+    padding: 10px;
 }
 
 .podium-item {
@@ -170,6 +181,37 @@
     }
 }
 
+/* ---- GESTION DU PODIUM SUR PETITS ÉCRANS ---- */
+@media (max-width: 992px) {
+    .podium-section {
+        /* On passe d'une ligne (row) à une colonne (column) */
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 30px !important; /* Espace entre les joueurs */
+    }
+
+    /* * MAGIE FLEXBOX : On réorganise l'ordre d'affichage vertical
+     * sans avoir à modifier le code React !
+     */
+
+    /* Le 2ème dans le code HTML (Le gagnant) passe tout en haut */
+    .podium-section > :nth-child(2) {
+        order: 1;
+        transform: scale(1.1); /* On le grossit un peu pour qu'il ressorte bien */
+        margin-bottom: 15px;
+    }
+
+    /* Le 1er dans le code HTML (Le 2ème du classement) passe au milieu */
+    .podium-section > :nth-child(1) {
+        order: 2;
+    }
+
+    /* Le 3ème dans le code HTML (Le 3ème du classement) reste en bas */
+    .podium-section > :nth-child(3) {
+        order: 3;
+    }
+}
+
 .close-btn {
     position: absolute;
     top: 20px;
@@ -179,4 +221,17 @@
     color: white;
     font-size: 2rem;
     cursor: pointer;
+}
+
+.top-scorers-container::-webkit-scrollbar {
+    height: 8px; /* Hauteur de la barre horizontale */
+}
+
+.top-scorers-container::-webkit-scrollbar-thumb {
+    background: #00ff85; /* Couleur de ta thématique (vert) */
+    border-radius: 10px;
+}
+
+.top-scorers-container::-webkit-scrollbar-track {
+    background: #1a1a1a; /* Fond de la barre */
 }
