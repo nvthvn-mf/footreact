@@ -38,7 +38,7 @@ const CompetitionCard = ({ competition }) => {
 
   return (
       <Link
-          to={`/competitions/${id}`}
+          to={`/competitions/${id}/classement`}
           className="competition-card d-flex flex-column p-3 text-decoration-none"
       >
           <div className="d-flex justify-content-between align-items-start mb-3">
