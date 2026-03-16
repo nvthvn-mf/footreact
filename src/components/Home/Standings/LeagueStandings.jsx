@@ -49,7 +49,7 @@ const LeagueStandings = () => {
                 onClick={() => navigate(`/competitions/${ligue1Id}/classement`)}
                 className="btn w-100 mt-4 py-2 text-uppercase fw-bold standings-btn"
             >
-                View Full Table
+                Voir Tableau Entier
             </button>
         </div>
     );
