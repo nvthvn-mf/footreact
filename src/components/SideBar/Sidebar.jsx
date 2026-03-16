@@ -34,7 +34,7 @@ const Sidebar = () => {
                 />
                 <SidebarItem 
                     icon="trophy" 
-                    label={language === "fr" ? "Compétitions" : "Competition"} 
+                    label={language === "fr" ? "Compétitions" : "Competitions"} 
                     path="/competitions" 
                 />
             </nav>
