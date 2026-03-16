@@ -57,7 +57,9 @@ function MatchScoreBoard({ homeTeam, awayTeam, score, status, utcDate, competiti
                 {/* Équipe Extérieur */}
                 <div className="d-flex flex-column align-items-center gap-3">
                     <div className="team-crest-container">
+                        <Link to={`/competitions/${competition.id}/equipes/${awayTeam.id}`}>
                         <img src={awayTeam.crest} alt={awayTeam.name} className="img-fluid" style={{ maxHeight: '80px' }} />
+                        </Link>
                     </div>
                     <div className="text-center">
                         <h3 className="fs-4 fw-bold text-white m-0">{awayTeam.shortName}</h3>
