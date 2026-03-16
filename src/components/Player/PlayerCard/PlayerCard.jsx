@@ -1,12 +1,5 @@
 import './PlayerCard.css';
-
-const FLAG_API = 'https://flagcdn.com/24x18';
-
-const NATIONALITY_TO_CODE = {
-    'Belgium': 'be', 'Ukraine': 'ua', 'Spain': 'es', 'France': 'fr',
-    'England': 'gb-eng', 'Germany': 'de', 'Brazil': 'br', 'Uruguay': 'uy',
-    'Austria': 'at', 'Morocco': 'ma', 'Turkey': 'tr', 'Argentina': 'ar',
-};
+import {NATIONALITY_TO_CODE, FLAG_API_BASE} from "../../../utils/CountryCode.js";
 
 const PlayerCard = ({ player }) => {
     const { name, position, nationality } = player;
@@ -27,7 +20,7 @@ const PlayerCard = ({ player }) => {
                     <span className="player-nationality">
                         {countryCode && (
                             <img
-                                src={`${FLAG_API}/${countryCode}.png`}
+                                src={`${FLAG_API_BASE}/${countryCode}.png`}
                                 alt={nationality}
                                 className="player-flag"
                             />
