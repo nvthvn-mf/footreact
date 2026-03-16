@@ -1,49 +1,60 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import SidebarItem from './SidebarItem';
 import './Sidebar.css';
 import { useNavigate } from 'react-router-dom';
+import LanguageContext from '../../contexte/LanguageContexte'
 
 const Sidebar = () => {
-
+    const { language, setLanguage } = useContext(LanguageContext);
     const navigate = useNavigate();
 
-    const handleLogoClick = () => {
-        console.log("Clic sur le logo : Retour à l'accueil");
-        navigate("/");
-    };
-
-    const handleProfileClick = () => {
-        console.log("Clic sur le profil : Ouverture des paramètres utilisateur");
-        navigate("/profil");
+    const toggle = () => {
+        setLanguage(language === "fr" ? "en" : "fr");
     };
 
     return (
         <div className="sidebar-container">
-            {/* Header: Logo et Nom */}
-            <div className="sidebar-header clickable" onClick={handleLogoClick}>
+            {/* Header */}
+            <div className="sidebar-header clickable" onClick={() => navigate("/")}>
                 <div className="logo-box">
-                    <span className="material-symbols-outlined" style={{ fontSize: '24px' }}>
-                        sports_soccer
-                    </span>
+                    <span className="material-symbols-outlined">sports_soccer</span>
                 </div>
                 <div>
-                    <h1 className="logo-text" >FootReact</h1>
-                    <p className="logo-subtext" >Match Day Hub</p>
+                    <h1 className="logo-text">FootReact</h1>
+                    <p className="logo-subtext">Match Day Hub</p>
                 </div>
             </div>
 
-            {/* Menu principal */}
+            {/* Menu principal (optimisé) */}
             <nav className="sidebar-menu">
-                <SidebarItem icon="home" label="Accueil" path="/" />
-                <SidebarItem icon="trophy" label="Compétitions" path="/competitions" />
-                <SidebarItem icon="diversity_3" label="Équipes" path="/equipes" />
-                <SidebarItem icon="person" label="Joueurs" path="/joueurs" />
-                <SidebarItem icon="bookmark_heart" label="Favorites" path="/favoris" />
-                <SidebarItem icon="newspaper" label="Actualités" path="/actualites" />
+                <SidebarItem 
+                    icon="home" 
+                    label={language === "fr" ? "Accueil" : "Home"} 
+                    path="/" 
+                />
+                <SidebarItem 
+                    icon="trophy" 
+                    label={language === "fr" ? "Compétitions" : "Competition"} 
+                    path="/competitions" 
+                />
             </nav>
 
-            {/* Footer: Profil Utilisateur */}
-            <div className="sidebar-footer clickable" onClick={handleProfileClick}>
+            {/* LE SLIDER DE LANGUE */}
+            <div className="lang-toggle-wrapper">
+                <span className={`lang-text ${language === 'fr' ? 'active' : ''}`}>FR</span>
+                <label className="lang-switch">
+                    <input 
+                        type="checkbox" 
+                        onChange={toggle} 
+                        checked={language === "en"} 
+                    />
+                    <span className="lang-slider"></span>
+                </label>
+                <span className={`lang-text ${language === 'en' ? 'active' : ''}`}>EN</span>
+            </div>
+
+            {/* Footer */}
+            <div className="sidebar-footer clickable" onClick={() => navigate("/profil")}>
                 <div className="user-info">
                     <span className="material-symbols-outlined" style={{ fontSize: '40px' }}>
                         account_circle

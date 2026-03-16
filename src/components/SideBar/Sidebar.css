@@ -172,3 +172,70 @@
     color: #718096;
     cursor: pointer;
 }
+
+/* --- TOGGLE DE LANGUE --- */
+.lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.lang-text {
+    color: #718096;
+    font-size: 0.75rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.lang-text.active {
+    color: #00ff85; /* Ton vert fluo */
+}
+
+.lang-switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 22px;
+}
+
+.lang-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.lang-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #1a2c23; /* Un peu plus clair que le fond sidebar */
+    transition: .4s;
+    border-radius: 34px;
+    border: 1px solid rgba(0, 255, 133, 0.2);
+}
+
+.lang-slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 4px;
+    bottom: 3px;
+    background-color: #00ff85; /* Le bouton interne est vert fluo */
+    transition: .4s;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(0, 255, 133, 0.4);
+}
+
+input:checked + .lang-slider {
+    background-color: rgba(0, 255, 133, 0.1);
+}
+
+input:checked + .lang-slider:before {
+    transform: translateX(20px);
+}
