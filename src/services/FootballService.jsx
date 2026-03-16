@@ -59,4 +59,15 @@ export const topScorersLoader = async ({ params }) => {
     return { ...data, scorers: finalScorers };
 };
 
+// 2. Ton loader corrigé (sans l'import dynamique qui plantait)
+export const playerProfileLoader = async ({ params }) => {
+    const person = await get(`/persons/${params.id}`);
+    const stats = await get(`/persons/${params.id}/matches?limit=5`);
+
+    // On appelle directement la fonction qui est dans le même fichier
+    const photo = await fetchPlayerPhoto(person.name);
+
+    return { person, stats, photo };
+};
+
 
