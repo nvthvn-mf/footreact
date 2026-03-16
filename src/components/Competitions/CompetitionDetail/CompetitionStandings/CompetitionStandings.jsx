@@ -13,6 +13,20 @@ const CompetitionStandings = () => {
     const data = useLoaderData();
     const [hoveredTeamId, setHoveredTeamId] = useState(null);
 
+    if (!data.standings || data.standings.length === 0) {
+        return (
+            <div className="d-flex flex-column align-items-center justify-content-center p-5 mt-4 rounded-4" style={{ backgroundColor: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)' }}>
+                <span className="material-symbols-outlined text-secondary mb-3" style={{ fontSize: '48px' }}>
+                    trophy
+                </span>
+                <h4 className="text-white fw-bold">Aucun classement classique</h4>
+                <p className="text-secondary text-center max-w-500">
+                    Cette compétition fonctionne sous forme de matchs à élimination directe (Coupe) ou les données de groupes ne sont pas encore disponibles pour cette saison.
+                </p>
+            </div>
+        );
+    }
+
     // Extraction de la table de classement
     const table = data.standings?.[0]?.table || [];
 

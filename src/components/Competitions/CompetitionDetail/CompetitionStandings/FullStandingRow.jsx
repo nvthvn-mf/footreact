@@ -11,7 +11,7 @@ const FullStandingRow = ({ teamData, isHovered, onMouseEnter, onMouseLeave }) =>
 
     const display = isHovered;
 
-    const teamNameDisplay = display ? team.name.toUpperCase() : team.name;
+    const teamNameDisplay = display ? team?.name?.toUpperCase() : team?.name;
 
     const handleRowClick = () => {
         navigate(`/competitions/${id}/equipes/${team.id}`);
