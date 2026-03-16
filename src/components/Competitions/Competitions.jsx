@@ -76,11 +76,9 @@ const Competitions = () => {
             {/* Suppression de flex-grow-1 et overflow-y-auto ici */}
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 mb-3">
                 {filteredCompetitions.map(competition => (
-                    <Link to={`competitions/${competition.id}/classement`}>
                     <div className="col" key={competition.id}>
                         <CompetitionCard competition={competition} />
                     </div>
-                    </Link>
                 ))}
             </div>
         </div>
