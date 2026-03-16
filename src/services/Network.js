@@ -34,6 +34,7 @@ export const get = async (endpoint) => {
         const client = axios_clients[calls%size]
         const response = await client.get(endpoint);
         calls ++;
+        console.log("Clé "+calls%size+ " utilisé ")
         return response.data
     } catch (error){
         if (error.response){
