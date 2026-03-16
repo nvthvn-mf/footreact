@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const apiClient = axios.create({
+const apiClient1 = axios.create({
     baseURL : '/api',
     headers: {
         'X-Auth-Token': import.meta.env.VITE_FOOTBALL_API_KEY_1,
@@ -19,12 +19,37 @@ const apiClient2 = axios.create({
 const apiClient3 = axios.create({
     baseURL : '/api',
     headers: {
-        'X-Auth-Token': import.meta.env.VITE_FOOTBALL_API_KEY_2,
+        'X-Auth-Token': import.meta.env.VITE_FOOTBALL_API_KEY_3,
     },
     timeout: 10000,
 });
 
-const axios_clients = [apiClient,apiClient2, apiClient3]
+const apiClient4 = axios.create({
+    baseURL : '/api',
+    headers: {
+        'X-Auth-Token': import.meta.env.VITE_FOOTBALL_API_KEY_4,
+    },
+    timeout: 10000,
+});
+
+const apiClient5 = axios.create({
+    baseURL : '/api',
+    headers: {
+        'X-Auth-Token': import.meta.env.VITE_FOOTBALL_API_KEY_5,
+    },
+    timeout: 10000,
+});
+
+const apiClient6 = axios.create({
+    baseURL : '/api',
+    headers: {
+        'X-Auth-Token': import.meta.env.VITE_FOOTBALL_API_KEY_6,
+    },
+    timeout: 10000,
+});
+
+
+const axios_clients = [apiClient1,apiClient2, apiClient3, apiClient4, apiClient5, apiClient6]
 const size = axios_clients.length;
 
 let calls = 0; 
