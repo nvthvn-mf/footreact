@@ -1,12 +1,12 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom"; // Import du hook de navigation
 
-const StandingRow = ({ pos, team, p, pts, id }) => {
+const StandingRow = ({ pos, team, p, pts, id, compId }) => {
     const navigate = useNavigate();
 
     const handleRowClick = () => {
         // Redirection programmatique vers l'ID de l'équipe
-        navigate(`/equipes/${id}`);
+        navigate(`/competitions/${compId}/equipes/${id}`);
     };
 
     return (
