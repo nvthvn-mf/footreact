@@ -78,7 +78,7 @@ const router = createBrowserRouter([
                     },
                     {
                         path: "calendrier",
-                        element: <div className="p-4 text-white">Calendrier à venir</div>,
+                        element: <CompetitionMatches />
                     }
                 ]
             },

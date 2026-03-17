@@ -1,0 +1,202 @@
+/* --- Couleurs et Variables Vortex --- */
+:root {
+    --vortex-bg-dark: #071913; /* Fond de la modale */
+    --vortex-input-bg: #102920; /* Fond des inputs */
+    --vortex-green: #00ff88; /* Vert fluo principal */
+    --vortex-green-hover: #00cc6a;
+    --vortex-green-glow: rgba(0, 255, 136, 0.4);
+    --vortex-overlay: rgba(0, 0, 0, 0.7); /* Fond derrière la modale */
+    --vortex-text-primary: #ffffff;
+    --vortex-text-secondary: #8a9a95;
+    --vortex-border: rgba(255, 255, 255, 0.08);
+}
+
+/* --- Overlay (Fond flou et sombre) --- */
+.vortex-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--vortex-overlay);
+    backdrop-filter: blur(8px); /* Effet de flou sur l'arrière-plan */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; /* Assure d'être au-dessus de tout */
+    opacity: 0;
+    animation: vortexFadeIn 0.3s forwards;
+}
+
+/* --- Contenu de la Modale --- */
+.vortex-modal-content {
+    background-color: var(--vortex-bg-dark);
+    width: 90%;
+    max-width: 650px; /* Légèrement plus large pour le style */
+    max-height: 90vh;
+    overflow-y: auto;
+    border: 1px solid var(--vortex-border);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    transform: translateY(20px);
+    animation: vortexSlideUp 0.3s 0.1s forwards;
+}
+
+/* --- En-tête et Fermeture --- */
+.text-vortex-green {
+    color: var(--vortex-green);
+}
+
+.vortex-close-btn {
+    background: none;
+    border: none;
+    color: var(--vortex-text-secondary);
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.vortex-close-btn:hover {
+    color: #ff4d4d;
+    transform: rotate(90deg);
+}
+
+/* --- Section Avatar (Statique) --- */
+.vortex-avatar-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+}
+
+.vortex-avatar-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid var(--vortex-border);
+}
+
+.vortex-edit-avatar-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: var(--vortex-green);
+    color: #000;
+    border: 3px solid var(--vortex-bg-dark);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.vortex-avatar-text {
+    color: var(--vortex-green);
+    font-weight: 600;
+    font-size: 15px;
+}
+
+/* --- Labels et Inputs Vortex --- */
+.vortex-label {
+    color: var(--vortex-text-primary);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.vortex-input {
+    background-color: var(--vortex-input-bg) !important;
+    color: var(--vortex-text-primary) !important;
+    border: 1px solid var(--vortex-border) !important;
+    border-radius: 10px !important;
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+    transition: border-color 0.2s, box-shadow 0.2s !important;
+    /* Effet d'ombre interne pour le look Neumorphe */
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.2) !important;
+}
+
+/* Input avec icône */
+.vortex-input-icon {
+    padding-left: 45px !important;
+}
+
+/* Placeholder color */
+.vortex-input::placeholder {
+    color: #4a6159 !important;
+}
+
+/* Focus state (Lueur verte) */
+.vortex-input:focus {
+    border-color: var(--vortex-green) !important;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.2), 0 0 10px var(--vortex-green-glow) !important;
+    outline: none !important;
+}
+
+/* --- Boîte d'info (Sécurité) --- */
+.vortex-info-box {
+    background-color: rgba(0, 255, 136, 0.03);
+    border: 1px solid rgba(0, 255, 136, 0.1);
+}
+
+/* --- Boutons d'action (Vortex style) --- */
+.vortex-btn-cancel {
+    background: none;
+    border: none;
+    color: var(--vortex-text-secondary);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 12px 30px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.vortex-btn-cancel:hover {
+    color: #ff4d4d;
+}
+
+.vortex-btn-save {
+    background-color: var(--vortex-green);
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 30px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s, transform 0.1s;
+    box-shadow: 0 4px 15px rgba(0, 255, 136, 0.2);
+}
+
+.vortex-btn-save:hover:not(:disabled) {
+    background-color: var(--vortex-green-hover);
+    box-shadow: 0 6px 20px var(--vortex-green-glow);
+}
+
+.vortex-btn-save:active:not(:disabled) {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px var(--vortex-green-glow);
+}
+
+.vortex-btn-save:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* --- Utilitaires --- */
+.letter-spacing-1 {
+    letter-spacing: 1px;
+}
+
+/* --- Animations --- */
+@keyframes vortexFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes vortexSlideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}

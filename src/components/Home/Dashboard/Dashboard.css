@@ -95,3 +95,10 @@
   background-color: var(--color-surface);
   color: var(--color-text-white);
 }
+
+/* --- État Actif pour le bouton calendrier --- */
+.icon-btn.active-calendar {
+  background-color: var(--color-primary);
+  color: var(--color-bg-dark);
+  box-shadow: 0 4px 15px rgba(0, 255, 136, 0.2);
+}

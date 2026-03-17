@@ -1,0 +1,44 @@
+.matchday-matches {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.matchday-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.25rem;
+}
+
+.matchday-header .material-symbols-outlined {
+    color: var(--color-primary);
+    font-size: 1.1rem;
+}
+
+.matchday-header h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0;
+}
+
+.matchday-count {
+    background: rgba(0, 255, 133, 0.1);
+    color: var(--color-primary);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 255, 133, 0.2);
+}
+
+.matches-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-width: 750px;
+    margin: 0 auto;
+    width: 100%;
+}
