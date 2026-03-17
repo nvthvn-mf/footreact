@@ -4,17 +4,12 @@ import Home from "./components/Home/Home.jsx";
 import Competitions from "./components/Competitions/Competitions.jsx";
 import Teams from "./components/Teams/Teams.jsx";
 import Players from "./components/Players/Players.jsx";
-import Favorites from "./components/Favorites/Favorites.jsx";
-import Profile from "./components/Profile/Profile.jsx";
 import TeamDetails from "./components/Teams/TeamDetails/TeamDetails.jsx";
 import React from "react";
 import {leagueStandingsLoader} from "./components/Home/Standings/LeagueStandings.jsx";
 import CompetitionStandings, {
     competitionStandingsLoader
 } from "./components/Competitions/CompetitionDetail/CompetitionStandings/CompetitionStandings.jsx";
-import CompetitionDetailNavBar
-    from "./components/Competitions/CompetitionDetail/CompetitionDetailNavBar/CompetitionDetailNavBar.jsx";
-import TopScorer from "./components/Home/TopScorer/TopScorer.jsx";
 import MatchDetails, {matchDetailsLoader} from "./components/MatchDetails/MatchDetails.jsx";
 import CompetitionDetail, {
     competitionDetailLoader
@@ -24,7 +19,7 @@ import CompetitionTopScorers
 import {playerProfileLoader, topScorersLoader} from "./services/FootballService.jsx";
 import PlayerProfile from "./components/Players/PlayerProfile/PlayerProfile.jsx";
 import CompetitionMatches from "./components/Competitions/CompetitionMatches/CompetitionMatches.jsx";
-
+import Favorites from './components/Favorites/Favorites.jsx';
 
 const router = createBrowserRouter([
     {
@@ -82,22 +77,9 @@ const router = createBrowserRouter([
                 element: <Players />,
             },
             {
-                path: "favoris",
-                element: <Favorites />,
-            },
-            {
-                path: "actualites",
-                element: (
-                    <div className="container-fluid p-4 text-white">
-                        <h2 className="fw-bold mb-4">Actualités</h2>
-                        <p className="text-secondary">Dernières news du monde du foot.</p>
-                    </div>
-                ),
-            },
-            {
-                path: "profil",
-                element: <Profile />
-            },
+    path: "/favorites",
+    element: <Favorites />
+},
             {
                 path: "competition/teams",
                 element: <Teams />,
