@@ -31,6 +31,7 @@ import { competitionStandingsLoader } from "./components/Competitions/Competitio
 import { competitionDetailLoader } from "./components/Competitions/CompetitionDetail/CompetitionDetail.jsx";
 import { matchDetailsLoader } from "./components/MatchDetails/MatchDetails.jsx";
 import { playerProfileLoader, topScorersLoader } from "./services/FootballService.jsx";
+import CompetitionMatches from "./components/Competitions/CompetitionMatches/CompetitionMatches.jsx";
 
 // 4. Les styles et assets
 // (Pas de fichier CSS spécifique importé ici)
