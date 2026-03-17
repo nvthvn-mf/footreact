@@ -1,6 +1,12 @@
-import React, { useEffect, useState } from 'react';
+// Les imports de base (React, hooks, librairies essentielles)
+import { useEffect, useState } from 'react';
+
+// Tes composants et modules
+// Utilitaires et helpers (Services)
 import { get } from '../../../../services/Network';
-import {fetchPlayerPhoto} from "../../../../services/FootballService.jsx";
+import { fetchPlayerPhoto } from "../../../../services/FootballService.jsx";
+
+// Les styles et assets
 import './CompetitionTopScorers.css';
 
 

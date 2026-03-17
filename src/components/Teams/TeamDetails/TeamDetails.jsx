@@ -1,8 +1,18 @@
-import { parseClubColors } from '../../../utils/ColorMap.js';
-import PlayerCard from "../../Player/PlayerCard/PlayerCard.jsx";
-import './TeamDetails.css';
+// Les imports de base (React, hooks, librairies essentielles)
+import React from 'react'; // Ajouté pour la cohérence avec le modèle du prof
 import { useParams } from "react-router-dom";
+
+// Tes composants et modules
+// Composants enfants
+import PlayerCard from "../../Player/PlayerCard/PlayerCard.jsx";
+
+// Utilitaires et helpers (Hooks et fonctions)
 import { useFetch } from "../../../hooks/useFetch.js";
+import { parseClubColors } from '../../../utils/ColorMap.js';
+
+// Les styles et assets
+import './TeamDetails.css';
+
 
 const TeamDetails = () => {
 

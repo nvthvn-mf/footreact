@@ -1,5 +1,8 @@
+// Les imports de base (React, hooks, librairies essentielles)
 import { NavLink, useParams } from 'react-router-dom';
-import './CompetititonDetailNavBar.css'
+
+// Les styles et assets
+import './CompetititonDetailNavBar.css';
 
 
 const NAV_ITEMS = [

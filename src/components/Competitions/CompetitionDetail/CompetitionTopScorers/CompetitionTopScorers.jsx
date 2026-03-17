@@ -1,9 +1,15 @@
-import React, {useState} from 'react';
+// Les imports de base (React, hooks, librairies essentielles)
+import { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
-import PodiumItem from './PodiumItem'; // Si tu les sépares en fichiers
+
+// Tes composants et modules
+// Composants enfants
+import PodiumItem from './PodiumItem';
 import ScorerRow from './ScorerRow';
-import './CompetitionTopScorers.css';
 import PlayerModal from "./PlayerModal.jsx";
+
+// Les styles et assets
+import './CompetitionTopScorers.css';
 
 const CompetitionTopScorers = () => {
     const { scorers } = useLoaderData();

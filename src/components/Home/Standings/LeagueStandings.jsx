@@ -1,7 +1,17 @@
+// Les imports de base (React, hooks, librairies essentielles)
+import React from 'react';
+import { useLoaderData, useNavigate } from "react-router-dom";
+
+// Tes composants et modules
+// Composants enfants
 import StandingRow from "./StandingRow.jsx";
+
+// Utilitaires et helpers
+import { fetchLigue1Standings } from "../../../services/FootballService.jsx";
+
+// Les styles et assets
 import './LeagueStandings.css';
-import {fetchLigue1Standings} from "../../../services/FootballService.jsx";
-import {useLoaderData, useNavigate} from "react-router-dom";
+
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const leagueStandingsLoader = async () => {

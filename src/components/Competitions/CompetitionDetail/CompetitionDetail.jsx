@@ -1,10 +1,19 @@
-import React from 'react';
+// Les imports de base (React, hooks, librairies essentielles)
 import { useLoaderData, Outlet } from 'react-router-dom';
-import './CompetitionStandings/CompetitionStandings.css'; // On garde ton CSS
+
+// Les bibliothèques tierces
 import { usePDF } from "react-to-pdf";
-import CompetitionDetailNavBar from "./CompetitionDetailNavBar/CompetitionDetailNavBar.jsx";
+
+// Tes composants et modules
+// Composants parents/enfants
 import CompetitionHeader from "./CompetitionHeader.jsx";
-import {fetchCompetitionStandings} from "../../../services/FootballService.jsx";
+import CompetitionDetailNavBar from "./CompetitionDetailNavBar/CompetitionDetailNavBar.jsx";
+
+// Utilitaires et helpers
+import { fetchCompetitionStandings } from "../../../services/FootballService.jsx";
+
+// Les styles et assets
+import './CompetitionStandings/CompetitionStandings.css';
 
 
 // eslint-disable-next-line react-refresh/only-export-components

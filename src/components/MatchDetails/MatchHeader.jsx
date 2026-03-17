@@ -1,5 +1,3 @@
-import React from 'react';
-
 function MatchHeader({ area, competition, matchday, status }) {
     // Formatage du statut en français
     const getStatusBadge = () => {

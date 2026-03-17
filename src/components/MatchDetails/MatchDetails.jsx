@@ -1,11 +1,19 @@
-import React from 'react';
-import './MatchDetails.css';
+// Les imports de base (React, hooks, librairies essentielles)
+import { useLoaderData } from "react-router-dom";
+
+// Tes composants et modules
+// Composants enfants
 import MatchHeader from './MatchHeader';
 import MatchScoreBoard from './MatchScoreBoard';
 import MatchH2H from './MatchH2H';
 import MatchReferees from './MatchReferees';
+
+// Utilitaires et helpers
 import { get } from '../../services/Network';
-import {useLoaderData} from "react-router-dom";
+
+// Les styles et assets
+import './MatchDetails.css';
+
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const matchDetailsLoader = async ({ params }) => {

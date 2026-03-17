@@ -1,9 +1,16 @@
+// Les imports de base (React, hooks, librairies essentielles)
 import React from 'react';
-import './Home.css';
+
+// Tes composants et modules
+// Composants parents
 import Dashboard from './Dashboard/Dashboard.jsx';
 import LeagueStandings from './Standings/LeagueStandings.jsx';
 import TopScorer from './TopScorer/TopScorer.jsx';
 import QuickTips from './QuickTips/QuickTips.jsx';
+
+// Les styles et assets
+import './Home.css';
+
 
 function Home() {
   return (

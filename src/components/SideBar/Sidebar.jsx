@@ -1,8 +1,16 @@
+// Les imports de base (React, hooks, librairies essentielles)
 import React, { useContext } from 'react';
-import SidebarItem from './SidebarItem';
-import './Sidebar.css';
 import { useNavigate } from 'react-router-dom';
-import LanguageContext from '../../contexte/LanguageContexte'
+
+// Tes composants et modules
+// Composants enfants
+import SidebarItem from './SidebarItem';
+
+// Utilitaires et helpers (Contextes)
+import LanguageContext from '../../contexte/LanguageContexte';
+
+// Les styles et assets
+import './Sidebar.css';
 
 const Sidebar = () => {
     const { language, setLanguage } = useContext(LanguageContext);

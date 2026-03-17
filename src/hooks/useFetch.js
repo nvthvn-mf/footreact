@@ -1,4 +1,8 @@
+// Les imports de base (React, hooks, librairies essentielles)
 import { useState, useEffect } from 'react';
+
+// Tes composants et modules
+// Utilitaires et helpers (Services)
 import { get } from '../services/Network.js';
 
 export const useFetch = (endpoint) => {

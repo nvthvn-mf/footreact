@@ -1,7 +1,17 @@
+// Les imports de base (React, hooks, librairies essentielles)
+import React from 'react';
+import { Link, useParams } from "react-router-dom";
+
+// Tes composants et modules
+// Composants enfants
 import TeamsCard from "./TeamsCard/TeamsCard.jsx";
+
+// Utilitaires et helpers (Hooks)
+import { useFetch } from "../../hooks/useFetch.js";
+
+// Les styles et assets
 import './Teams.css';
-import {Link, useParams} from "react-router-dom";
-import {useFetch} from "../../hooks/useFetch.js";
+
 
 const Teams = () => {
 

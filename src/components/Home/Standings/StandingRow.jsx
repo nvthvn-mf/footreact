@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from "react-router-dom"; // Import du hook de navigation
 
 const StandingRow = ({ pos, team, p, pts, id, compId }) => {
