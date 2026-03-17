@@ -1,0 +1,317 @@
+.competition-matches {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    color: #fff;
+}
+
+/* ── Loader ── */
+.matches-loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 4rem;
+    color: #fff;
+}
+
+/* ── Résumé saison ── */
+.season-summary {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background-color: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 1rem;
+    flex-wrap: wrap;
+}
+
+.season-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.season-stat-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1;
+}
+
+.season-stat-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.4);
+}
+
+/* ── Sélecteur de journée ── */
+.matchday-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.matchday-nav-btn {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: #fff;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.matchday-nav-btn:hover:not(:disabled) {
+    background: rgba(0, 255, 133, 0.1);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.matchday-nav-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.matchday-tabs {
+    display: flex;
+    gap: 4px;
+    overflow-x: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.1) transparent;
+    flex: 1;
+    padding-bottom: 6px;
+}
+
+.matchday-tabs::-webkit-scrollbar {
+    height: 3px;
+}
+
+.matchday-tabs::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.matchday-tabs::-webkit-scrollbar-thumb {
+    background-color: rgba(255,255,255,0.15);
+    border-radius: 999px;
+}
+
+.matchday-tab {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.45);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.matchday-tab:hover {
+    background: rgba(255,255,255,0.05);
+    color: #fff;
+}
+
+.matchday-tab.current {
+    border-color: rgba(0, 255, 133, 0.3);
+    color: rgba(0, 255, 133, 0.7);
+}
+
+.matchday-tab.active {
+    background: rgba(0, 255, 133, 0.12);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+/* ── Matchs de la journée ── */
+.matchday-matches {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.matchday-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.25rem;
+}
+
+.matchday-header .material-symbols-outlined {
+    color: var(--color-primary);
+    font-size: 1.1rem;
+}
+
+.matchday-header h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0;
+}
+
+.matchday-count {
+    background: rgba(0, 255, 133, 0.1);
+    color: var(--color-primary);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 255, 133, 0.2);
+}
+
+.matches-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-width: 750px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* ── Match Row ── */
+.match-row {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 0.75rem;
+    padding: 0.85rem 1.25rem;
+    transition: background 0.2s ease, border-color 0.2s ease;
+    cursor: pointer;
+}
+
+.match-row:hover {
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(255,255,255,0.12);
+}
+
+.match-row--live {
+    border-color: rgba(0, 255, 133, 0.3);
+    background: rgba(0, 255, 133, 0.04);
+}
+
+/* Équipe */
+.match-team {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.match-team--home {
+    justify-content: flex-end;
+}
+
+.match-team--away {
+    justify-content: flex-start;
+}
+
+.team-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 130px;
+}
+
+.team-name--winner {
+    color: #fff;
+    font-weight: 800;
+}
+
+.team-crest-sm {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* Centre : score / heure */
+.match-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    min-width: 70px;
+}
+
+.match-score {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: rgba(255,255,255,0.6);
+}
+
+.score-sep {
+    color: rgba(255,255,255,0.25);
+}
+
+.score--winner {
+    color: #fff;
+}
+
+.match-time {
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.5);
+}
+
+/* Badges de statut */
+.match-status {
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 2px 7px;
+    border-radius: 999px;
+}
+
+.status-finished {
+    background: rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.4);
+}
+
+.status-live {
+    background: rgba(0, 255, 133, 0.15);
+    color: var(--color-primary);
+}
+
+.status-scheduled {
+    background: rgba(100, 160, 255, 0.12);
+    color: #7eb8ff;
+}
+
+.status-postponed {
+    background: rgba(255, 100, 100, 0.12);
+    color: #ff7f7f;
+}
+
+.live-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    animation: pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.4; transform: scale(0.7); }
+}
