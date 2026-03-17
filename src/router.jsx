@@ -18,30 +18,20 @@ import CompetitionDetailNavBar from "./components/Competitions/CompetitionDetail
 import Teams from "./components/Teams/Teams.jsx";
 import Players from "./components/Players/Players.jsx";
 import TeamDetails from "./components/Teams/TeamDetails/TeamDetails.jsx";
-import React from "react";
 import {leagueStandingsLoader} from "./components/Home/Standings/LeagueStandings.jsx";
-import CompetitionStandings, {
-    competitionStandingsLoader
+import {
+competitionStandingsLoader
 } from "./components/Competitions/CompetitionDetail/CompetitionStandings/CompetitionStandings.jsx";
-import MatchDetails, {matchDetailsLoader} from "./components/MatchDetails/MatchDetails.jsx";
-import CompetitionDetail, {
-    competitionDetailLoader
-} from "./components/Competitions/CompetitionDetail/CompetitionDetail.jsx";
-import CompetitionTopScorers
-    from "./components/Competitions/CompetitionDetail/CompetitionTopScorers/CompetitionTopScorers.jsx";
-import {playerProfileLoader, topScorersLoader} from "./services/FootballService.jsx";
+import MatchDetails from "./components/MatchDetails/MatchDetails.jsx";
 import PlayerProfile from "./components/Players/PlayerProfile/PlayerProfile.jsx";
 import Favorites from "./components/Favorites/Favorites.jsx";
 import TopScorer from "./components/Home/TopScorer/TopScorer.jsx";
 
 // Utilitaires et helpers (Loaders et Services)
-import { leagueStandingsLoader } from "./components/Home/Standings/LeagueStandings.jsx";
-import { competitionStandingsLoader } from "./components/Competitions/CompetitionDetail/CompetitionStandings/CompetitionStandings.jsx";
 import { competitionDetailLoader } from "./components/Competitions/CompetitionDetail/CompetitionDetail.jsx";
 import { matchDetailsLoader } from "./components/MatchDetails/MatchDetails.jsx";
 import { playerProfileLoader, topScorersLoader } from "./services/FootballService.jsx";
 import CompetitionMatches from "./components/Competitions/CompetitionMatches/CompetitionMatches.jsx";
-import Favorites from './components/Favorites/Favorites.jsx';
 
 const router = createBrowserRouter([
     {
