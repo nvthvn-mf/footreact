@@ -59,6 +59,10 @@ const Sidebar = () => {
                     label={language === "fr" ? "Compétitions" : "Competitions"} 
                     path="/competitions" 
                 />
+                <SidebarItem icon="favorite"
+                     label={language === "fr" ? "Favoris" : "Favorites"} 
+                    path="/favorites" 
+                />
             </nav>
 
             {/* LE SLIDER DE LANGUE */}

@@ -56,7 +56,7 @@ const Teams = () => {
                             <Link
                                 to={`/competitions/${competitionId}/equipes/${team.id}`}
                                 style={{ textDecoration: "none" }}>
-                                <TeamsCard team={team} />
+                                <TeamsCard team={team} competitionId={competitionId}/>
                             </Link>
                         </div>
                     ))}

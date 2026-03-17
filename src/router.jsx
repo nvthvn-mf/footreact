@@ -16,11 +16,20 @@ import CompetitionDetailNavBar from "./components/Competitions/CompetitionDetail
 
 // Composants d'Équipes et Matchs
 import Teams from "./components/Teams/Teams.jsx";
-import TeamDetails from "./components/Teams/TeamDetails/TeamDetails.jsx";
-import MatchDetails from "./components/MatchDetails/MatchDetails.jsx";
-
-// Composants de Joueurs et Favoris
 import Players from "./components/Players/Players.jsx";
+import TeamDetails from "./components/Teams/TeamDetails/TeamDetails.jsx";
+import React from "react";
+import {leagueStandingsLoader} from "./components/Home/Standings/LeagueStandings.jsx";
+import CompetitionStandings, {
+    competitionStandingsLoader
+} from "./components/Competitions/CompetitionDetail/CompetitionStandings/CompetitionStandings.jsx";
+import MatchDetails, {matchDetailsLoader} from "./components/MatchDetails/MatchDetails.jsx";
+import CompetitionDetail, {
+    competitionDetailLoader
+} from "./components/Competitions/CompetitionDetail/CompetitionDetail.jsx";
+import CompetitionTopScorers
+    from "./components/Competitions/CompetitionDetail/CompetitionTopScorers/CompetitionTopScorers.jsx";
+import {playerProfileLoader, topScorersLoader} from "./services/FootballService.jsx";
 import PlayerProfile from "./components/Players/PlayerProfile/PlayerProfile.jsx";
 import Favorites from "./components/Favorites/Favorites.jsx";
 import TopScorer from "./components/Home/TopScorer/TopScorer.jsx";
@@ -32,9 +41,7 @@ import { competitionDetailLoader } from "./components/Competitions/CompetitionDe
 import { matchDetailsLoader } from "./components/MatchDetails/MatchDetails.jsx";
 import { playerProfileLoader, topScorersLoader } from "./services/FootballService.jsx";
 import CompetitionMatches from "./components/Competitions/CompetitionMatches/CompetitionMatches.jsx";
-
-// 4. Les styles et assets
-// (Pas de fichier CSS spécifique importé ici)
+import Favorites from './components/Favorites/Favorites.jsx';
 
 const router = createBrowserRouter([
     {
@@ -92,18 +99,9 @@ const router = createBrowserRouter([
                 element: <Players />,
             },
             {
-                path: "favoris",
-                element: <Favorites />,
-            },
-            {
-                path: "actualites",
-                element: (
-                    <div className="container-fluid p-4 text-white">
-                        <h2 className="fw-bold mb-4">Actualités</h2>
-                        <p className="text-secondary">Dernières news du monde du foot.</p>
-                    </div>
-                ),
-            },
+    path: "/favorites",
+    element: <Favorites />
+},
             {
                 path: "competition/teams",
                 element: <Teams />,
