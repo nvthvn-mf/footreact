@@ -1,28 +1,39 @@
+// 1. Les imports de base (React, hooks, librairies essentielles)
+import React from "react";
 import { createBrowserRouter } from "react-router-dom";
+
+// 3. Tes composants et modules
+// Composants Parents / Layout
 import App from "./App.jsx";
 import Home from "./components/Home/Home.jsx";
-import Competitions from "./components/Competitions/Competitions.jsx";
-import Teams from "./components/Teams/Teams.jsx";
-import Players from "./components/Players/Players.jsx";
-import Favorites from "./components/Favorites/Favorites.jsx";
-import TeamDetails from "./components/Teams/TeamDetails/TeamDetails.jsx";
-import React from "react";
-import {leagueStandingsLoader} from "./components/Home/Standings/LeagueStandings.jsx";
-import CompetitionStandings, {
-    competitionStandingsLoader
-} from "./components/Competitions/CompetitionDetail/CompetitionStandings/CompetitionStandings.jsx";
-import CompetitionDetailNavBar
-    from "./components/Competitions/CompetitionDetail/CompetitionDetailNavBar/CompetitionDetailNavBar.jsx";
-import TopScorer from "./components/Home/TopScorer/TopScorer.jsx";
-import MatchDetails, {matchDetailsLoader} from "./components/MatchDetails/MatchDetails.jsx";
-import CompetitionDetail, {
-    competitionDetailLoader
-} from "./components/Competitions/CompetitionDetail/CompetitionDetail.jsx";
-import CompetitionTopScorers
-    from "./components/Competitions/CompetitionDetail/CompetitionTopScorers/CompetitionTopScorers.jsx";
-import {playerProfileLoader, topScorersLoader} from "./services/FootballService.jsx";
-import PlayerProfile from "./components/Players/PlayerProfile/PlayerProfile.jsx";
 
+// Composants de Compétition
+import Competitions from "./components/Competitions/Competitions.jsx";
+import CompetitionDetail from "./components/Competitions/CompetitionDetail/CompetitionDetail.jsx";
+import CompetitionStandings from "./components/Competitions/CompetitionDetail/CompetitionStandings/CompetitionStandings.jsx";
+import CompetitionTopScorers from "./components/Competitions/CompetitionDetail/CompetitionTopScorers/CompetitionTopScorers.jsx";
+import CompetitionDetailNavBar from "./components/Competitions/CompetitionDetail/CompetitionDetailNavBar/CompetitionDetailNavBar.jsx";
+
+// Composants d'Équipes et Matchs
+import Teams from "./components/Teams/Teams.jsx";
+import TeamDetails from "./components/Teams/TeamDetails/TeamDetails.jsx";
+import MatchDetails from "./components/MatchDetails/MatchDetails.jsx";
+
+// Composants de Joueurs et Favoris
+import Players from "./components/Players/Players.jsx";
+import PlayerProfile from "./components/Players/PlayerProfile/PlayerProfile.jsx";
+import Favorites from "./components/Favorites/Favorites.jsx";
+import TopScorer from "./components/Home/TopScorer/TopScorer.jsx";
+
+// Utilitaires et helpers (Loaders et Services)
+import { leagueStandingsLoader } from "./components/Home/Standings/LeagueStandings.jsx";
+import { competitionStandingsLoader } from "./components/Competitions/CompetitionDetail/CompetitionStandings/CompetitionStandings.jsx";
+import { competitionDetailLoader } from "./components/Competitions/CompetitionDetail/CompetitionDetail.jsx";
+import { matchDetailsLoader } from "./components/MatchDetails/MatchDetails.jsx";
+import { playerProfileLoader, topScorersLoader } from "./services/FootballService.jsx";
+
+// 4. Les styles et assets
+// (Pas de fichier CSS spécifique importé ici)
 
 const router = createBrowserRouter([
     {
@@ -45,7 +56,7 @@ const router = createBrowserRouter([
                 children: [
                     {
                         path: "classement",
-                        element: <CompetitionStandings />, 
+                        element: <CompetitionStandings />,
                         loader: competitionStandingsLoader,
                     },
                     {
@@ -97,9 +108,9 @@ const router = createBrowserRouter([
                 element: <Teams />,
             },
             {
-               // path: "competition/:name" // Le ":" indique que le name est dynamique
+                // path: "competition/:name" // Le ":" indique que le name est dynamique
             },
-             {
+            {
                 path: "matches/:id",
                 element: <MatchDetails/>,
                 loader: matchDetailsLoader,

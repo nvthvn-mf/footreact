@@ -1,4 +1,3 @@
-import React from "react";
 import "./DashboardHeader.css";
 
 function DashboardHeader({ onDateChange }) {

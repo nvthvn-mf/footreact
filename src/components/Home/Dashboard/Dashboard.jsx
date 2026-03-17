@@ -1,11 +1,18 @@
-import React, {useState} from "react";
-import "./Dashboard.css";
+// Les imports de base (React, hooks, librairies essentielles)
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
+// Tes composants et modules
+// Composants enfants
 import DashboardHeader from "../DashboardHeader/DashboardHeader.jsx";
 import DashboardFilters from "../DashboardFilters/DashboardFilters.jsx";
 import MatchCard from "../MatchCard/MatchCard.jsx";
-import {useFetch} from '../../../hooks/useFetch';
-import {Link} from "react-router-dom";
+
+// Utilitaires et helpers (Hooks)
+import { useFetch } from '../../../hooks/useFetch';
+
+// Les styles et assets
+import "./Dashboard.css";
 
 function Dashboard() {
 
