@@ -11,19 +11,22 @@ const MatchdaySelector = ({ matchdays, displayed, currentMatchday, onSelect }) =
         </button>
 
         <div className="matchday-tabs">
-            {matchdays.map(day => (
-                <button
-                    key={day}
-                    className={[
-                        'matchday-tab',
-                        displayed === day    ? 'active'  : '',
-                        day === currentMatchday ? 'current' : '',
-                    ].join(' ')}
-                    onClick={() => onSelect(day)}
-                >
-                    J{day}
-                </button>
-            ))}
+            {matchdays.map(day => {
+                console.log("day", day);
+                return (
+                    <button
+                        key={day}
+                        className={[
+                            'matchday-tab',
+                            displayed === day    ? 'active'  : '',
+                            day === currentMatchday ? 'current' : '',
+                        ].join(' ')}
+                        onClick={() => onSelect(day)}
+                    >
+                        J{day}
+                    </button>
+                );
+            })}
         </div>
 
         <button

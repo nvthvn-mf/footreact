@@ -26,10 +26,15 @@ const CompetitionMatches = () => {
         <p className="text-white text-center py-5">Aucun match trouvé.</p>
     );
 
-    const grouped         = groupByMatchday(matches);
-    const matchdays       = Object.keys(grouped).map(Number).sort((a, b) => a - b);
+    const grouped = groupByMatchday(matches);
+
+    const matchdays= Object.keys(grouped)
+        .map(Number)
+        .filter(Number.isFinite)
+        .sort((a, b) => a - b);
+
     const currentMatchday = data?.season?.currentMatchday ?? matchdays.at(-1);
-    const displayed       = activeMatchday ?? currentMatchday;
+    const displayed = activeMatchday ?? currentMatchday;
 
     return (
         <div className="competition-matches">

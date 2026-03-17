@@ -15,8 +15,12 @@ export const formatTime = (utcDate) =>
 
 export const groupByMatchday = (matches) =>
     matches.reduce((acc, match) => {
-        const day = match.matchday;
+        const day = Number(match.matchday);
+
+        if (!Number.isFinite(day)) return acc;
+
         if (!acc[day]) acc[day] = [];
         acc[day].push(match);
+
         return acc;
     }, {});
