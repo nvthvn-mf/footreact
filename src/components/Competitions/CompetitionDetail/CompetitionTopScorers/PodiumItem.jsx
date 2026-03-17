@@ -1,8 +1,24 @@
+import {useEffect, useState} from "react";
+import {fetchPlayerPhoto} from "../../../../services/FootballService.jsx";
+
 const PodiumItem = ({ scorer, rank, isWinner, onSelect }) => {
+    // État pour stocker la vraie photo
+    const [photo, setPhoto] = useState(null);
+
+    // Chargement asynchrone de la photo TheSportsDB
+    useEffect(() => {
+        const loadPhoto = async () => {
+            if (scorer && scorer.player.name) {
+                const imgUrl = await fetchPlayerPhoto(scorer.player.name);
+                setPhoto(imgUrl);
+            }
+        };
+        loadPhoto();
+    }, [scorer]);
+
     if (!scorer) return null;
 
-    const playerPhoto = scorer.playerPhoto || `https://ui-avatars.com/api/?name=${encodeURIComponent(scorer.player.name)}&background=172b22&color=00ff85`;
-
+    const playerPhoto = photo || `https://ui-avatars.com/api/?name=${encodeURIComponent(scorer.player.name)}&background=172b22&color=00ff85&bold=true`;
     return (
         <div
             onClick={() => onSelect(scorer.player.id)}
