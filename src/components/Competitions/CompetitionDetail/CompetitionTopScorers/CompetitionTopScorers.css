@@ -33,6 +33,7 @@
     border-radius: 50%;
     border: 4px solid #313a35;
     background-color: #172b22; /* Optionnel : fond foncé si l'image est transparente */
+    overflow: visible !important;
 }
 
 /* Le gagnant a un cercle plus grand */
@@ -41,6 +42,7 @@
     height: 160px;
     border: 4px solid #00ff85;
     box-shadow: 0 0 20px rgba(0, 255, 133, 0.3);
+    margin-top: 40px;
 }
 
 /* L'image prend tout l'espace du cercle et est bien centrée */
@@ -55,7 +57,7 @@
 /* L'étoile flotte en haut au centre */
 .winner-icon {
     position: absolute;
-    top: -15px; /* On la remonte un peu au-dessus de la bordure */
+    top: -18px; /* On la remonte un peu au-dessus de la bordure */
     left: 50%;
     transform: translateX(-50%); /* Centrage horizontal parfait */
     background: #00ff85;
