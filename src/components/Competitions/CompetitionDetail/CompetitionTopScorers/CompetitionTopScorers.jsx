@@ -58,7 +58,8 @@ const CompetitionTopScorers = () => {
             </div>
             {selectedPlayerId && (
                 <PlayerModal
-                    playerId={selectedPlayerId}
+                    // On cherche l'objet complet dans le tableau scorers
+                    scorer={scorers.find(s => s.player.id === selectedPlayerId)}
                     onClose={() => setSelectedPlayerId(null)}
                 />
             )}

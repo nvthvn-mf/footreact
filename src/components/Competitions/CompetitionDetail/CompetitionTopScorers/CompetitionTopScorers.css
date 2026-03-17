@@ -33,6 +33,7 @@
     border-radius: 50%;
     border: 4px solid #313a35;
     background-color: #172b22; /* Optionnel : fond foncé si l'image est transparente */
+    overflow: visible !important;
 }
 
 /* Le gagnant a un cercle plus grand */
@@ -41,6 +42,7 @@
     height: 160px;
     border: 4px solid #00ff85;
     box-shadow: 0 0 20px rgba(0, 255, 133, 0.3);
+    margin-top: 40px;
 }
 
 /* L'image prend tout l'espace du cercle et est bien centrée */
@@ -55,7 +57,7 @@
 /* L'étoile flotte en haut au centre */
 .winner-icon {
     position: absolute;
-    top: -15px; /* On la remonte un peu au-dessus de la bordure */
+    top: -18px; /* On la remonte un peu au-dessus de la bordure */
     left: 50%;
     transform: translateX(-50%); /* Centrage horizontal parfait */
     background: #00ff85;
@@ -234,4 +236,92 @@
 
 .top-scorers-container::-webkit-scrollbar-track {
     background: #1a1a1a; /* Fond de la barre */
+}
+
+/* Fond sombre général de la modale */
+.stitch-player-card {
+    background-color: #081711;
+    width: 100%;
+    max-width: 420px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Bouton fermeture discret */
+.stitch-close-btn {
+    background: #1a2a22;
+    border: none;
+    color: #8a9a95;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.stitch-close-btn:hover {
+    background: #25382e;
+    color: #ffffff;
+}
+
+/* --- L'avatar avec le halo vert --- */
+.stitch-avatar-glow {
+    width: 110px;
+    height: 110px;
+    border-radius: 24px; /* Forme de "Squircle" (carré arrondi) */
+    padding: 3px;
+    /* L'effet néon magique autour de l'image : */
+    background: linear-gradient(135deg, rgba(0,255,136,0.6) 0%, rgba(0,255,136,0.1) 100%);
+    box-shadow: 0 0 25px rgba(0, 255, 136, 0.25);
+}
+
+.stitch-player-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 21px; /* Légèrement inférieur pour rentrer dans le padding */
+    background-color: #0b1e16;
+}
+
+/* --- Les 3 boites de statistiques --- */
+.stitch-stat-box {
+    background-color: #10241b;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+/* --- La bannière de l'équipe --- */
+.stitch-team-banner {
+    background-color: #0c2018;
+    border: 1px solid rgba(0, 255, 136, 0.15);
+}
+
+.stitch-crest-bg {
+    background-color: #153225;
+    width: 44px;
+    height: 44px;
+}
+
+.stitch-team-crest {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+/* --- Le bouton "Plus de détails" fluo --- */
+.stitch-btn-details {
+    background-color: #00ff88;
+    transition: background-color 0.2s, transform 0.1s;
+    font-size: 14px;
+}
+
+.stitch-btn-details:hover {
+    background-color: #00e67a;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+}
+
+.stitch-btn-details:active {
+    transform: translateY(0);
 }
