@@ -1,12 +1,26 @@
-import React, { useContext } from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import SidebarItem from './SidebarItem';
 import './Sidebar.css';
 import { useNavigate } from 'react-router-dom';
 import LanguageContext from '../../contexte/LanguageContexte'
+import UserProfile from "../Profile/UserProfile.jsx";
 
 const Sidebar = () => {
     const { language, setLanguage } = useContext(LanguageContext);
     const navigate = useNavigate();
+
+    const [userName, setUserName] = useState(() => {
+        const savedUser = JSON.parse(localStorage.getItem('userProfile'));
+        return savedUser?.firstName ? `${savedUser.firstName} ${savedUser.lastName}` : "Alex Johnson";
+    });
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    // Fonction appelée par la modale quand on sauvegarde
+    const handleProfileUpdate = (newName) => {
+        setUserName(newName);
+        setIsModalOpen(false); // On ferme la modale
+    };
 
     const toggle = () => {
         setLanguage(language === "fr" ? "en" : "fr");
@@ -54,18 +68,24 @@ const Sidebar = () => {
             </div>
 
             {/* Footer */}
-            <div className="sidebar-footer clickable" onClick={() => navigate("/profil")}>
+            <div className="sidebar-footer clickable" onClick={() => setIsModalOpen(true)}>
                 <div className="user-info">
                     <span className="material-symbols-outlined" style={{ fontSize: '40px' }}>
                         account_circle
                     </span>
                     <div className="user-details">
-                        <span className="user-name">Alex Johnson</span>
+                        <span className="user-name">{userName}</span>
                         <span className="user-status">Premium Member</span>
                     </div>
                 </div>
                 <i className="bi bi-gear settings-icon"></i>
             </div>
+            {isModalOpen && (
+                <UserProfile
+                    onClose={() => setIsModalOpen(false)}
+                    onSave={handleProfileUpdate}
+                />
+            )}
         </div>
     );
 };

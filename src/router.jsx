@@ -5,7 +5,6 @@ import Competitions from "./components/Competitions/Competitions.jsx";
 import Teams from "./components/Teams/Teams.jsx";
 import Players from "./components/Players/Players.jsx";
 import Favorites from "./components/Favorites/Favorites.jsx";
-import Profile from "./components/Profile/Profile.jsx";
 import TeamDetails from "./components/Teams/TeamDetails/TeamDetails.jsx";
 import React from "react";
 import {leagueStandingsLoader} from "./components/Home/Standings/LeagueStandings.jsx";
@@ -93,10 +92,6 @@ const router = createBrowserRouter([
                         <p className="text-secondary">Dernières news du monde du foot.</p>
                     </div>
                 ),
-            },
-            {
-                path: "profil",
-                element: <Profile />
             },
             {
                 path: "competition/teams",
