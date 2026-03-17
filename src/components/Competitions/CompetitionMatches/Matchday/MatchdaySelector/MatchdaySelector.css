@@ -2,6 +2,8 @@
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    width: 100%;      /* contraint la largeur au parent */
+    min-width: 0;     /* permet le shrink si lui-même dans un flex parent */
 }
 
 .matchday-nav-btn {
@@ -33,7 +35,7 @@
 .matchday-tabs {
     display: flex;
     gap: 4px;
-    overflow-x: scroll;
+    overflow-x: auto;  /* auto plutôt que scroll : scrollbar seulement si besoin */
     scrollbar-width: thin;
     scrollbar-color: rgba(255,255,255,0.1) transparent;
     flex: 1;
