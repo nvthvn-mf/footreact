@@ -1,6 +1,3 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-
 const ScorerRow = ({ scorer, position, onSelect }) => {
 
     return (

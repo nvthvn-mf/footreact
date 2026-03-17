@@ -1,5 +1,3 @@
-import React from 'react';
-
 function MatchReferees({ referees }) {
     return (
         <div className="p-4 p-md-5 rounded-4 mb-4" style={{ backgroundColor: 'rgba(22, 44, 34, 0.4)', border: '1px solid var(--color-border)' }}>

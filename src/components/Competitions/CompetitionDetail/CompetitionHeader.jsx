@@ -1,5 +1,3 @@
-import React from 'react';
-
 const CompetitionHeader = ({ competitionName, competitionEmblem, startYear, endYear, onExport }) => {
 
 

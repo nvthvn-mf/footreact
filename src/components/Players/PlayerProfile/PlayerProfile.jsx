@@ -1,10 +1,9 @@
-import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+
 import './PlayerProfile.css';
 
 const PlayerProfile = () => {
     const { person, stats, photo } = useLoaderData();
-    const aggregations = stats.aggregations;
 
     // Fonction pour calculer l'âge
     const age = new Date().getFullYear() - new Date(person.dateOfBirth).getFullYear();

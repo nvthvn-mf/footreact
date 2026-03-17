@@ -1,4 +1,5 @@
 import { parseClubColors } from "../../../utils/ColorMap.js";
+
 import './TeamsCard.css';
 
 const TeamsCard = ({ team }) => {

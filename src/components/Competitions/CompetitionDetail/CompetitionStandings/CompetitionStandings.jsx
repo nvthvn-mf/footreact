@@ -1,8 +1,17 @@
-import React, { useState } from 'react';
+// Les imports de base (React, hooks, librairies essentielles)
+import { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+
+// Tes composants et modules
+// Composants enfants
 import FullStandingRow from './FullStandingRow.jsx';
+
+// Utilitaires et helpers
+import { fetchCompetitionStandings } from '../../../../services/FootballService.jsx';
+
+// Les styles et assets
 import './CompetitionStandings.css';
-import {fetchCompetitionStandings} from "../../../../services/FootballService.jsx";
+
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const competitionStandingsLoader = async ({ params }) => {

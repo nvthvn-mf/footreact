@@ -1,5 +1,6 @@
-import './PlayerCard.css';
 import {NATIONALITY_TO_CODE, FLAG_API_BASE} from "../../../utils/CountryCode.js";
+
+import './PlayerCard.css';
 
 const PlayerCard = ({ player }) => {
     const { name, position, nationality } = player;

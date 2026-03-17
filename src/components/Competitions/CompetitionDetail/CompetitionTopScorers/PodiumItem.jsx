@@ -1,5 +1,3 @@
-import React from 'react';
-
 const PodiumItem = ({ scorer, rank, isWinner, onSelect }) => {
     if (!scorer) return null;
 

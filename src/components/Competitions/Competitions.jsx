@@ -1,8 +1,16 @@
-import React, { useState } from 'react'; 
-import { Link } from 'react-router-dom';
+// Les imports de base (React, hooks, librairies essentielles)
+import React, { useState } from 'react';
+
+// Tes composants et modules
+// Composants enfants
 import CompetitionCard from './CompetitionCard/CompetitionCard';
-import competitionsData from '../../mockData/competitionsData.json'; 
+
+// Utilitaires et helpers (Données)
+import competitionsData from '../../mockData/competitionsData.json';
+
+// Les styles et assets
 import './Competitions.css';
+
 
 const Competitions = () => {
     const allCompetitions = competitionsData.competitions;

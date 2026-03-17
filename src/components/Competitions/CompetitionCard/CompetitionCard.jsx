@@ -1,5 +1,7 @@
-import React from 'react';
+// Les imports de base (React, hooks, librairies essentielles)
 import { Link } from 'react-router-dom';
+
+// Les styles et assets
 import './CompetitionCard.css';
 
 const CompetitionCard = ({ competition }) => {
