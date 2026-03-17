@@ -85,3 +85,24 @@
     transform: translateY(-5px);
     transition: transform 0.3s ease;
 }
+
+/* Style du bouton favori */
+.favorite-btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+    z-index: 10; /* Important pour que le clic fonctionne par dessus la carte */
+}
+
+.favorite-btn:hover {
+    transform: scale(1.1);
+}
+
+.favorite-btn:focus {
+    outline: none; /* Retire le contour par défaut au clic */
+}
