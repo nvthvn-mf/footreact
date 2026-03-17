@@ -23,6 +23,7 @@ import CompetitionTopScorers
     from "./components/Competitions/CompetitionDetail/CompetitionTopScorers/CompetitionTopScorers.jsx";
 import {playerProfileLoader, topScorersLoader} from "./services/FootballService.jsx";
 import PlayerProfile from "./components/Players/PlayerProfile/PlayerProfile.jsx";
+import CompetitionMatches from "./components/Competitions/CompetitionMatches/CompetitionMatches.jsx";
 
 
 const router = createBrowserRouter([
@@ -68,7 +69,7 @@ const router = createBrowserRouter([
                     },
                     {
                         path: "calendrier",
-                        element: <div className="p-4 text-white">Calendrier à venir</div>,
+                        element: <CompetitionMatches />
                     }
                 ]
             },
