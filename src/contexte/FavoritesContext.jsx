@@ -37,7 +37,7 @@ export const FavoritesProvider = ({ children }) => {
                 return prev.filter(t => t.id !== team.id); // Retire des favoris
             } else {
                 // Ajoute aux favoris
-                return [...prev, { id: team.id, name: team.name, crest: team.crest }];
+                return [...prev, { id: team.id, name: team.name, crest: team.crest , competitionId: team.competitionId}];
             }
         });
     };

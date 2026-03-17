@@ -81,8 +81,8 @@ const Favorites = () => {
                         {favoriteTeams.map(team => (
                             <div className="col" key={team.id}>
                                 <div className="favorite-item-card p-3 d-flex align-items-center justify-content-between">
-                                    {/* Adapte le lien "/teams/:id" selon la configuration de ton routeur */}
-                                    <Link to={`/teams/${team.id}`} className="d-flex align-items-center gap-3 text-decoration-none flex-grow-1 overflow-hidden">
+                                    
+                                    <Link to={`/competitions/${team.competitionId}/equipes/${team.id}`} className="d-flex align-items-center gap-3 text-decoration-none flex-grow-1 overflow-hidden">
                                         <img src={team.crest} alt={team.name} className="favorite-emblem" />
                                         <span className="text-white fw-bold text-truncate">{team.name}</span>
                                     </Link>

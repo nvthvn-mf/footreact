@@ -3,7 +3,7 @@ import { parseClubColors } from "../../../utils/ColorMap.js";
 import { useFavorites } from '../../../contexte/FavoritesContext';
 import './TeamsCard.css';
 
-const TeamsCard = ({ team }) => {
+const TeamsCard = ({ team, competitionId }) => {
     const { id, name, crest, founded, venue, clubColors, area } = team; 
 
     // Utilisation de notre hook de favoris
@@ -17,7 +17,7 @@ const TeamsCard = ({ team }) => {
     const handleFavoriteClick = (e) => {
         e.stopPropagation(); // Empêche l'événement de remonter si la carte est cliquable plus tard
         e.preventDefault();
-        toggleFavoriteTeam(team);
+        toggleFavoriteTeam({ ...team, competitionId });
     };
 
     return (
