@@ -3,6 +3,7 @@ import React, { createContext, useState, useEffect, useContext } from 'react';
 const FavoritesContext = createContext();
 
 //Hook personnalisé pour l'utiliser facilement dans les composants
+// eslint-disable-next-line react-refresh/only-export-components
 export const useFavorites = () => useContext(FavoritesContext);
 
 export const FavoritesProvider = ({ children }) => {
