@@ -17,10 +17,14 @@ const SeasonSummary = ({ resultSet, currentMatchday }) => (
             <span className="season-stat-value">{resultSet.count - resultSet.played}</span>
             <span className="season-stat-label">Restants</span>
         </div>
-        <div className="season-stat">
-            <span className="season-stat-value">J{currentMatchday}</span>
-            <span className="season-stat-label">Journée en cours</span>
-        </div>
+
+        { !Number.isNaN(currentMatchday) && (
+            <div className="season-stat">
+                <span className="season-stat-value">J{currentMatchday}</span>
+                <span className="season-stat-label">Journée en cours</span>
+            </div>
+        )}
+
     </div>
 );
 

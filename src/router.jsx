@@ -2,7 +2,6 @@
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 
-// 3. Tes composants et modules
 // Composants Parents / Layout
 import App from "./App.jsx";
 import Home from "./components/Home/Home.jsx";
@@ -12,7 +11,6 @@ import Competitions from "./components/Competitions/Competitions.jsx";
 import CompetitionDetail from "./components/Competitions/CompetitionDetail/CompetitionDetail.jsx";
 import CompetitionStandings from "./components/Competitions/CompetitionDetail/CompetitionStandings/CompetitionStandings.jsx";
 import CompetitionTopScorers from "./components/Competitions/CompetitionDetail/CompetitionTopScorers/CompetitionTopScorers.jsx";
-import CompetitionDetailNavBar from "./components/Competitions/CompetitionDetail/CompetitionDetailNavBar/CompetitionDetailNavBar.jsx";
 
 // Composants d'Équipes et Matchs
 import Teams from "./components/Teams/Teams.jsx";
@@ -25,7 +23,6 @@ competitionStandingsLoader
 import MatchDetails from "./components/MatchDetails/MatchDetails.jsx";
 import PlayerProfile from "./components/Players/PlayerProfile/PlayerProfile.jsx";
 import Favorites from "./components/Favorites/Favorites.jsx";
-import TopScorer from "./components/Home/TopScorer/TopScorer.jsx";
 
 // Utilitaires et helpers (Loaders et Services)
 import { competitionDetailLoader } from "./components/Competitions/CompetitionDetail/CompetitionDetail.jsx";
@@ -89,26 +86,23 @@ const router = createBrowserRouter([
                 element: <Players />,
             },
             {
-    path: "/favorites",
-    element: <Favorites />
-},
+                path: "/favorites",
+                element: <Favorites />
+            },
             {
                 path: "competition/teams",
                 element: <Teams />,
             },
             {
-                // path: "competition/:name" // Le ":" indique que le name est dynamique
-            },
-            {
                 path: "matches/:id",
                 element: <MatchDetails/>,
                 loader: matchDetailsLoader,
-                errorElement: <div className="p-5 text-white">Erreur lors du chargement de la page.</div> // React Router gère les erreurs automatiquement
+                errorElement: <div className="p-5 text-white">Erreur lors du chargement de la page.</div>
             },
             {
                 path: "joueurs/:id",
-                element: <PlayerProfile />, // Ton nouveau composant designé par Stitch
-                loader: playerProfileLoader, // Le loader qui récupère les stats + photo
+                element: <PlayerProfile />,
+                loader: playerProfileLoader,
                 errorElement: <div className="p-5 text-white">Joueur introuvable.</div>
             }
 
